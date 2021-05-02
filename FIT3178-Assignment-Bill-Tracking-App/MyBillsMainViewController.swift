@@ -7,28 +7,43 @@
 
 import UIKit
 
-class MyBillsMainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MyBillsMainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, DatabaseListener {
+    var listenerType: ListenerType = .all
+    
     let SECTION_UNPAID = 0
     let SECTION_PAID = 1
     
     let CELL_UNPAID = "cellUnpaid"
     let CELL_PAID = "cellPaid"
     
-    var unpaidBills: [Bill] = []
-    var paidBills: [Bill] = []
+    var paidExpenses: [Expense] = []
+    var unpaidExpenses: [Expense] = []
 
     @IBOutlet weak var tableView: UITableView!
+    weak var databaseController: DatabaseProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-    
-        // Do any additional setup after loading the view.
+        
+        //Initialize database controller
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        databaseController = appDelegate?.databaseController
     }
     
     func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        databaseController?.addListener(listener: self)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        databaseController?.removeListener(listener: self)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -38,9 +53,9 @@ class MyBillsMainViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
             case SECTION_UNPAID:
-                return unpaidBills.count
+                return unpaidExpenses.count
             case SECTION_PAID:
-                return paidBills.count
+                return paidExpenses.count
             default:
                 return 0
         }
@@ -58,11 +73,38 @@ class MyBillsMainViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for:
-        indexPath)
-        // Configure the cell...
-        return cell
-
+        if indexPath.section == SECTION_PAID {
+            let paidCell = tableView.dequeueReusableCell(withIdentifier: CELL_PAID, for: indexPath)
+            let expense = paidExpenses[indexPath.row]
+            
+            paidCell.textLabel?.text = expense.name
+            paidCell.detailTextLabel?.text = expense.amount.description
+            return paidCell
+        }
+        
+        // Otherwise, configure unpaid bills cell
+        let unpaidCell = tableView.dequeueReusableCell(withIdentifier: CELL_UNPAID, for: indexPath)
+        let expense = unpaidExpenses[indexPath.row]
+            
+        unpaidCell.textLabel?.text = expense.name
+        unpaidCell.detailTextLabel?.text = expense.amount.description
+        return unpaidCell
+    }
+    
+    // MARK: - DatabaseListener Protocol Methods
+    func onExpenseChange(change: DatabaseChange, expenses: [Expense]) {
+        // Do nothing
+    }
+    
+    func onPaidExpenseGroupChange(change: DatabaseChange, expenses: [Expense]) {
+        paidExpenses = expenses
+        tableView.reloadData()
+        
+    }
+    
+    func onUnpaidExpenseGroupChange(change: DatabaseChange, expenses: [Expense]) {
+        unpaidExpenses = expenses
+        tableView.reloadData()
     }
     
 

@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC43C2DB263F11B9008A167E /* Expense+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC43C2D7263F11B9008A167E /* Expense+CoreDataClass.swift */; };
+		FC43C2DC263F11B9008A167E /* Expense+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC43C2D8263F11B9008A167E /* Expense+CoreDataProperties.swift */; };
+		FC43C2DD263F11B9008A167E /* ExpenseGroup+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC43C2D9263F11B9008A167E /* ExpenseGroup+CoreDataClass.swift */; };
+		FC43C2DE263F11B9008A167E /* ExpenseGroup+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC43C2DA263F11B9008A167E /* ExpenseGroup+CoreDataProperties.swift */; };
 		FC46DF60263DADD700D3D3E5 /* FIT3178-ExpenseApp-DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FC46DF5E263DADD700D3D3E5 /* FIT3178-ExpenseApp-DataModel.xcdatamodeld */; };
-		FC46DF64263DB11A00D3D3E5 /* Expense+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC46DF62263DB11A00D3D3E5 /* Expense+CoreDataClass.swift */; };
-		FC46DF65263DB11A00D3D3E5 /* Expense+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC46DF63263DB11A00D3D3E5 /* Expense+CoreDataProperties.swift */; };
 		FC46DF69263DB22B00D3D3E5 /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC46DF68263DB22B00D3D3E5 /* MulticastDelegate.swift */; };
 		FC46DF6C263DB26200D3D3E5 /* DatabaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC46DF6B263DB26200D3D3E5 /* DatabaseProtocol.swift */; };
 		FC46DF6F263DB54700D3D3E5 /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC46DF6E263DB54700D3D3E5 /* CoreDataController.swift */; };
@@ -24,9 +26,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC43C2D7263F11B9008A167E /* Expense+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expense+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		FC43C2D8263F11B9008A167E /* Expense+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expense+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		FC43C2D9263F11B9008A167E /* ExpenseGroup+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExpenseGroup+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		FC43C2DA263F11B9008A167E /* ExpenseGroup+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExpenseGroup+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		FC46DF5F263DADD700D3D3E5 /* FIT3178-ExpenseApp-DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "FIT3178-ExpenseApp-DataModel.xcdatamodel"; sourceTree = "<group>"; };
-		FC46DF62263DB11A00D3D3E5 /* Expense+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expense+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		FC46DF63263DB11A00D3D3E5 /* Expense+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expense+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		FC46DF68263DB22B00D3D3E5 /* MulticastDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MulticastDelegate.swift; sourceTree = "<group>"; };
 		FC46DF6B263DB26200D3D3E5 /* DatabaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseProtocol.swift; sourceTree = "<group>"; };
 		FC46DF6E263DB54700D3D3E5 /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
@@ -56,8 +60,10 @@
 		FC46DF5D263DAD9C00D3D3E5 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
-				FC46DF62263DB11A00D3D3E5 /* Expense+CoreDataClass.swift */,
-				FC46DF63263DB11A00D3D3E5 /* Expense+CoreDataProperties.swift */,
+				FC43C2D7263F11B9008A167E /* Expense+CoreDataClass.swift */,
+				FC43C2D8263F11B9008A167E /* Expense+CoreDataProperties.swift */,
+				FC43C2D9263F11B9008A167E /* ExpenseGroup+CoreDataClass.swift */,
+				FC43C2DA263F11B9008A167E /* ExpenseGroup+CoreDataProperties.swift */,
 				FC46DF5E263DADD700D3D3E5 /* FIT3178-ExpenseApp-DataModel.xcdatamodeld */,
 			);
 			path = "Data Model";
@@ -177,14 +183,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC46DF64263DB11A00D3D3E5 /* Expense+CoreDataClass.swift in Sources */,
 				FC9FE4D126307CEA00CA8D9A /* ViewController.swift in Sources */,
 				FC46DF60263DADD700D3D3E5 /* FIT3178-ExpenseApp-DataModel.xcdatamodeld in Sources */,
+				FC43C2DB263F11B9008A167E /* Expense+CoreDataClass.swift in Sources */,
 				FC9FE4CD26307CEA00CA8D9A /* AppDelegate.swift in Sources */,
 				FC46DF6C263DB26200D3D3E5 /* DatabaseProtocol.swift in Sources */,
-				FC46DF65263DB11A00D3D3E5 /* Expense+CoreDataProperties.swift in Sources */,
 				FC46DF6F263DB54700D3D3E5 /* CoreDataController.swift in Sources */,
 				FCED3A4C26372AC7006114F3 /* MyBillsMainViewController.swift in Sources */,
+				FC43C2DE263F11B9008A167E /* ExpenseGroup+CoreDataProperties.swift in Sources */,
+				FC43C2DC263F11B9008A167E /* Expense+CoreDataProperties.swift in Sources */,
+				FC43C2DD263F11B9008A167E /* ExpenseGroup+CoreDataClass.swift in Sources */,
 				FCED3A5226372B9F006114F3 /* Bill.swift in Sources */,
 				FC9FE4CF26307CEA00CA8D9A /* SceneDelegate.swift in Sources */,
 				FC46DF69263DB22B00D3D3E5 /* MulticastDelegate.swift in Sources */,
