@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC37B3F7264051940007A434 /* AddEditExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC37B3F6264051940007A434 /* AddEditExpenseViewController.swift */; };
 		FC43C2DB263F11B9008A167E /* Expense+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC43C2D7263F11B9008A167E /* Expense+CoreDataClass.swift */; };
 		FC43C2DC263F11B9008A167E /* Expense+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC43C2D8263F11B9008A167E /* Expense+CoreDataProperties.swift */; };
 		FC43C2DD263F11B9008A167E /* ExpenseGroup+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC43C2D9263F11B9008A167E /* ExpenseGroup+CoreDataClass.swift */; };
@@ -21,11 +22,11 @@
 		FC9FE4D426307CEA00CA8D9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC9FE4D226307CEA00CA8D9A /* Main.storyboard */; };
 		FC9FE4D626307CED00CA8D9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC9FE4D526307CED00CA8D9A /* Assets.xcassets */; };
 		FC9FE4D926307CED00CA8D9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC9FE4D726307CED00CA8D9A /* LaunchScreen.storyboard */; };
-		FCED3A4C26372AC7006114F3 /* MyBillsMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCED3A4B26372AC7006114F3 /* MyBillsMainViewController.swift */; };
-		FCED3A5226372B9F006114F3 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCED3A5126372B9F006114F3 /* Bill.swift */; };
+		FCED3A4C26372AC7006114F3 /* MyExpensesMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCED3A4B26372AC7006114F3 /* MyExpensesMainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC37B3F6264051940007A434 /* AddEditExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditExpenseViewController.swift; sourceTree = "<group>"; };
 		FC43C2D7263F11B9008A167E /* Expense+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expense+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		FC43C2D8263F11B9008A167E /* Expense+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expense+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		FC43C2D9263F11B9008A167E /* ExpenseGroup+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExpenseGroup+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
@@ -42,8 +43,7 @@
 		FC9FE4D526307CED00CA8D9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC9FE4D826307CED00CA8D9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC9FE4DA26307CED00CA8D9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FCED3A4B26372AC7006114F3 /* MyBillsMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBillsMainViewController.swift; sourceTree = "<group>"; };
-		FCED3A5126372B9F006114F3 /* Bill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
+		FCED3A4B26372AC7006114F3 /* MyExpensesMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExpensesMainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +107,8 @@
 				FC9FE4D526307CED00CA8D9A /* Assets.xcassets */,
 				FC9FE4D726307CED00CA8D9A /* LaunchScreen.storyboard */,
 				FC9FE4DA26307CED00CA8D9A /* Info.plist */,
-				FCED3A4B26372AC7006114F3 /* MyBillsMainViewController.swift */,
-				FCED3A5126372B9F006114F3 /* Bill.swift */,
+				FCED3A4B26372AC7006114F3 /* MyExpensesMainViewController.swift */,
+				FC37B3F6264051940007A434 /* AddEditExpenseViewController.swift */,
 			);
 			path = "FIT3178-Assignment-Bill-Tracking-App";
 			sourceTree = "<group>";
@@ -188,12 +188,12 @@
 				FC43C2DB263F11B9008A167E /* Expense+CoreDataClass.swift in Sources */,
 				FC9FE4CD26307CEA00CA8D9A /* AppDelegate.swift in Sources */,
 				FC46DF6C263DB26200D3D3E5 /* DatabaseProtocol.swift in Sources */,
+				FC37B3F7264051940007A434 /* AddEditExpenseViewController.swift in Sources */,
 				FC46DF6F263DB54700D3D3E5 /* CoreDataController.swift in Sources */,
-				FCED3A4C26372AC7006114F3 /* MyBillsMainViewController.swift in Sources */,
+				FCED3A4C26372AC7006114F3 /* MyExpensesMainViewController.swift in Sources */,
 				FC43C2DE263F11B9008A167E /* ExpenseGroup+CoreDataProperties.swift in Sources */,
 				FC43C2DC263F11B9008A167E /* Expense+CoreDataProperties.swift in Sources */,
 				FC43C2DD263F11B9008A167E /* ExpenseGroup+CoreDataClass.swift in Sources */,
-				FCED3A5226372B9F006114F3 /* Bill.swift in Sources */,
 				FC9FE4CF26307CEA00CA8D9A /* SceneDelegate.swift in Sources */,
 				FC46DF69263DB22B00D3D3E5 /* MulticastDelegate.swift in Sources */,
 			);

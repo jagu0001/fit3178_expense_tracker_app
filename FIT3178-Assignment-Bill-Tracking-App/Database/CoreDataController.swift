@@ -66,8 +66,8 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
                 fatalError("Failed to load Core Data with error: \(error)")
             }
         }
+        
         super.init()
-        //testAddExpense()
     }
     
     func testAddExpense() {
@@ -129,6 +129,14 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
         let group = NSEntityDescription.insertNewObject(forEntityName: "ExpenseGroup", into: persistentContainer.viewContext) as! ExpenseGroup
         group.name = name
         return group
+    }
+    
+    func getContextExpense(expense: Expense?) -> Expense {
+        if let expense = expense {
+            return persistentContainer.viewContext.object(with: expense.objectID) as! Expense
+        }
+        let expense = NSEntityDescription.insertNewObject(forEntityName: "Expense", into: persistentContainer.viewContext) as! Expense
+        return expense
     }
     
     func deleteExpenseGroup(expenseGroup: ExpenseGroup) {
