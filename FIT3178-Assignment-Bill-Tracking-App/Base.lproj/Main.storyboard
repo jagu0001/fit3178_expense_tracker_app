@@ -227,7 +227,13 @@
                             <outlet property="delegate" destination="Jsm-ck-bGf" id="sH5-q5-Ghg"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Expense Information" id="vrc-n5-MC7"/>
+                    <navigationItem key="navigationItem" title="Expense Information" id="vrc-n5-MC7">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="8Z0-4N-iPl">
+                            <connections>
+                                <segue destination="Sjb-4u-6C4" kind="show" identifier="editExpense" id="FLW-aO-xMQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8pl-XM-oCu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -446,6 +452,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="FLW-aO-xMQ"/>
         <segue reference="vES-k9-lQ7"/>
     </inferredMetricsTieBreakers>
     <resources>

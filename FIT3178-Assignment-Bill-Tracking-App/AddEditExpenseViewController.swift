@@ -26,6 +26,19 @@ class AddEditExpenseViewController: UIViewController {
         // Set up database controller
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         databaseController = appDelegate?.databaseController
+        
+        // Initialize fields if expense is present
+        initializeFields()
+    }
+    
+    func initializeFields() {
+        if let expense = expense {
+            nameTextField.text = expense.name
+            amountTextField.text = expense.amount.description
+            tagTextField.text = expense.tag
+            descriptionTextView.text = expense.expenseDescription
+            payDatePicker.date = expense.date!
+        }
     }
     
     @IBAction func saveExpense(_ sender: Any) {
@@ -52,7 +65,6 @@ class AddEditExpenseViewController: UIViewController {
         // Go back to previous view
         navigationController?.popViewController(animated: true)
     }
-    
     
 
     /*
