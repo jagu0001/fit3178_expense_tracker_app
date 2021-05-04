@@ -78,7 +78,7 @@ class MyBillsMainViewController: UIViewController, UITableViewDelegate, UITableV
             let expense = paidExpenses[indexPath.row]
             
             paidCell.textLabel?.text = expense.name
-            paidCell.detailTextLabel?.text = expense.amount.description
+            paidCell.detailTextLabel?.text = "$\(expense.amount)"
             return paidCell
         }
         
@@ -87,8 +87,19 @@ class MyBillsMainViewController: UIViewController, UITableViewDelegate, UITableV
         let expense = unpaidExpenses[indexPath.row]
             
         unpaidCell.textLabel?.text = expense.name
-        unpaidCell.detailTextLabel?.text = expense.amount.description
+        unpaidCell.detailTextLabel?.text = "$\(expense.amount)"
         return unpaidCell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            if indexPath.section == SECTION_PAID {
+                databaseController?.deleteExpense(expense: paidExpenses[indexPath.row])
+            }
+            else if indexPath.section == SECTION_UNPAID {
+                databaseController?.deleteExpense(expense: unpaidExpenses[indexPath.row])
+            }
+        }
     }
     
     // MARK: - DatabaseListener Protocol Methods
@@ -114,5 +125,15 @@ class MyBillsMainViewController: UIViewController, UITableViewDelegate, UITableV
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "viewUnpaidExpenseDetailsSegue" {
+            let destination = segue.destination as! ExpenseDetailsTableViewController
+            let indexPath = tableView.indexPathForSelectedRow
+            destination.expense = unpaidExpenses[indexPath!.row]
+        }
+        else if segue.identifier == "viewPaidExpenseDetailsSegue" {
+            let destination = segue.destination as! ExpenseDetailsTableViewController
+            let indexPath = tableView.indexPathForSelectedRow
+            destination.expense = paidExpenses[indexPath!.row]
+        }
     }
 }
