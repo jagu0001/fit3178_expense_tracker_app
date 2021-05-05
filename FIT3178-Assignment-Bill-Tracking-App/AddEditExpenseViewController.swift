@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class AddEditExpenseViewController: UIViewController {
+class AddEditExpenseViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var amountTextField: UITextField!
@@ -29,6 +30,23 @@ class AddEditExpenseViewController: UIViewController {
         
         // Initialize fields if expense is present
         initializeFields()
+        
+        // Add button to dismiss keyboard when editing TextView
+        descriptionTextView.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
+        
+        // Assign self as delegate to text fields to dismiss properly
+        nameTextField.delegate = self
+        amountTextField.delegate = self
+        tagTextField.delegate = self
+    }
+    
+    @objc func tapDone(sender: Any) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     func initializeFields() {
@@ -44,13 +62,17 @@ class AddEditExpenseViewController: UIViewController {
     @IBAction func saveExpense(_ sender: Any) {
         let newExpense = databaseController!.getContextExpense(expense: expense)
         
-        if let name = nameTextField.text, name != "", let amount = amountTextField.text, amount != "", let tag = tagTextField.text, let description = descriptionTextView.text {
-            newExpense.name = name
-            newExpense.amount = (amount as NSString).floatValue
-            newExpense.expenseDescription = description
-            newExpense.tag = tag
-            newExpense.date = payDatePicker.date
+        guard let name = nameTextField.text, name != "", let amount = amountTextField.text, amount != "", let tag = tagTextField.text, let description = descriptionTextView.text, description != "" else {
+            displayMessage(title: "Error", message: "Please do not leave any blank fields")
+            return
         }
+        
+        // Set values for expense class
+        newExpense.name = name
+        newExpense.amount = (amount as NSString).floatValue
+        newExpense.expenseDescription = description
+        newExpense.tag = tag
+        newExpense.date = payDatePicker.date
         
         if paidSwitch.isOn {
             databaseController?.addExpenseToGroup(expense: newExpense, group: databaseController!.paidExpenseGroup)
@@ -65,7 +87,6 @@ class AddEditExpenseViewController: UIViewController {
         // Go back to previous view
         navigationController?.popViewController(animated: true)
     }
-    
 
     /*
     // MARK: - Navigation

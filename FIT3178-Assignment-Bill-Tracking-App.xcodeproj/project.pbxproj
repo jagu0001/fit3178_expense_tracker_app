@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		528F5EE9B0720F6C58D595C9 /* libPods-FIT3178-Assignment-Bill-Tracking-App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB677D11C1B97575C9E74EE9 /* libPods-FIT3178-Assignment-Bill-Tracking-App.a */; };
 		FC37B3F7264051940007A434 /* AddEditExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC37B3F6264051940007A434 /* AddEditExpenseViewController.swift */; };
 		FC43C2DB263F11B9008A167E /* Expense+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC43C2D7263F11B9008A167E /* Expense+CoreDataClass.swift */; };
 		FC43C2DC263F11B9008A167E /* Expense+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC43C2D8263F11B9008A167E /* Expense+CoreDataProperties.swift */; };
@@ -16,6 +17,7 @@
 		FC46DF69263DB22B00D3D3E5 /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC46DF68263DB22B00D3D3E5 /* MulticastDelegate.swift */; };
 		FC46DF6C263DB26200D3D3E5 /* DatabaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC46DF6B263DB26200D3D3E5 /* DatabaseProtocol.swift */; };
 		FC46DF6F263DB54700D3D3E5 /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC46DF6E263DB54700D3D3E5 /* CoreDataController.swift */; };
+		FC64C44126431E2800CA3B4B /* UIViewController-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC64C44026431E2800CA3B4B /* UIViewController-Extensions.swift */; };
 		FC95906B2641B71D009F5221 /* ExpenseDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95906A2641B71D009F5221 /* ExpenseDetailsTableViewController.swift */; };
 		FC9FE4CD26307CEA00CA8D9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9FE4CC26307CEA00CA8D9A /* AppDelegate.swift */; };
 		FC9FE4CF26307CEA00CA8D9A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9FE4CE26307CEA00CA8D9A /* SceneDelegate.swift */; };
@@ -27,6 +29,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B864705DBB522F02CD4487D /* Pods-FIT3178-Assignment-Bill-Tracking-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FIT3178-Assignment-Bill-Tracking-App.release.xcconfig"; path = "Target Support Files/Pods-FIT3178-Assignment-Bill-Tracking-App/Pods-FIT3178-Assignment-Bill-Tracking-App.release.xcconfig"; sourceTree = "<group>"; };
+		EB677D11C1B97575C9E74EE9 /* libPods-FIT3178-Assignment-Bill-Tracking-App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FIT3178-Assignment-Bill-Tracking-App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEFE8E4F51C760580DA58860 /* Pods-FIT3178-Assignment-Bill-Tracking-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FIT3178-Assignment-Bill-Tracking-App.debug.xcconfig"; path = "Target Support Files/Pods-FIT3178-Assignment-Bill-Tracking-App/Pods-FIT3178-Assignment-Bill-Tracking-App.debug.xcconfig"; sourceTree = "<group>"; };
 		FC37B3F6264051940007A434 /* AddEditExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditExpenseViewController.swift; sourceTree = "<group>"; };
 		FC43C2D7263F11B9008A167E /* Expense+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expense+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		FC43C2D8263F11B9008A167E /* Expense+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expense+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
@@ -36,6 +41,7 @@
 		FC46DF68263DB22B00D3D3E5 /* MulticastDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MulticastDelegate.swift; sourceTree = "<group>"; };
 		FC46DF6B263DB26200D3D3E5 /* DatabaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseProtocol.swift; sourceTree = "<group>"; };
 		FC46DF6E263DB54700D3D3E5 /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
+		FC64C44026431E2800CA3B4B /* UIViewController-Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController-Extensions.swift"; sourceTree = "<group>"; };
 		FC95906A2641B71D009F5221 /* ExpenseDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDetailsTableViewController.swift; sourceTree = "<group>"; };
 		FC9FE4C926307CEA00CA8D9A /* FIT3178-Assignment-Bill-Tracking-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FIT3178-Assignment-Bill-Tracking-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC9FE4CC26307CEA00CA8D9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -53,12 +59,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				528F5EE9B0720F6C58D595C9 /* libPods-FIT3178-Assignment-Bill-Tracking-App.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		610027CF392215EF0C13A342 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EEFE8E4F51C760580DA58860 /* Pods-FIT3178-Assignment-Bill-Tracking-App.debug.xcconfig */,
+				9B864705DBB522F02CD4487D /* Pods-FIT3178-Assignment-Bill-Tracking-App.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BB9A7A9004B1C75AC8F27429 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EB677D11C1B97575C9E74EE9 /* libPods-FIT3178-Assignment-Bill-Tracking-App.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FC46DF5D263DAD9C00D3D3E5 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +110,8 @@
 			children = (
 				FC9FE4CB26307CEA00CA8D9A /* FIT3178-Assignment-Bill-Tracking-App */,
 				FC9FE4CA26307CEA00CA8D9A /* Products */,
+				610027CF392215EF0C13A342 /* Pods */,
+				BB9A7A9004B1C75AC8F27429 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +138,7 @@
 				FCED3A4B26372AC7006114F3 /* MyExpensesMainViewController.swift */,
 				FC37B3F6264051940007A434 /* AddEditExpenseViewController.swift */,
 				FC95906A2641B71D009F5221 /* ExpenseDetailsTableViewController.swift */,
+				FC64C44026431E2800CA3B4B /* UIViewController-Extensions.swift */,
 			);
 			path = "FIT3178-Assignment-Bill-Tracking-App";
 			sourceTree = "<group>";
@@ -123,9 +150,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FC9FE4DD26307CED00CA8D9A /* Build configuration list for PBXNativeTarget "FIT3178-Assignment-Bill-Tracking-App" */;
 			buildPhases = (
+				C04BA4897895A6BD62896E3E /* [CP] Check Pods Manifest.lock */,
 				FC9FE4C526307CEA00CA8D9A /* Sources */,
 				FC9FE4C626307CEA00CA8D9A /* Frameworks */,
 				FC9FE4C726307CEA00CA8D9A /* Resources */,
+				524631A3FEBB8E6E31E2E1E4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -181,6 +210,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		524631A3FEBB8E6E31E2E1E4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FIT3178-Assignment-Bill-Tracking-App/Pods-FIT3178-Assignment-Bill-Tracking-App-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FIT3178-Assignment-Bill-Tracking-App/Pods-FIT3178-Assignment-Bill-Tracking-App-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FIT3178-Assignment-Bill-Tracking-App/Pods-FIT3178-Assignment-Bill-Tracking-App-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C04BA4897895A6BD62896E3E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FIT3178-Assignment-Bill-Tracking-App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FC9FE4C526307CEA00CA8D9A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -200,6 +271,7 @@
 				FC95906B2641B71D009F5221 /* ExpenseDetailsTableViewController.swift in Sources */,
 				FC9FE4CF26307CEA00CA8D9A /* SceneDelegate.swift in Sources */,
 				FC46DF69263DB22B00D3D3E5 /* MulticastDelegate.swift in Sources */,
+				FC64C44126431E2800CA3B4B /* UIViewController-Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +415,7 @@
 		};
 		FC9FE4DE26307CED00CA8D9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EEFE8E4F51C760580DA58860 /* Pods-FIT3178-Assignment-Bill-Tracking-App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -361,6 +434,7 @@
 		};
 		FC9FE4DF26307CED00CA8D9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B864705DBB522F02CD4487D /* Pods-FIT3178-Assignment-Bill-Tracking-App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
