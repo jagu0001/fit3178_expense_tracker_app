@@ -19,6 +19,8 @@
 		FC5D42BE26437E2E00F114DE /* ImageMetaData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D42BA26437E2E00F114DE /* ImageMetaData+CoreDataProperties.swift */; };
 		FC5D42BF26437E2E00F114DE /* Expense+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D42BB26437E2E00F114DE /* Expense+CoreDataClass.swift */; };
 		FC5D42C026437E2E00F114DE /* Expense+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D42BC26437E2E00F114DE /* Expense+CoreDataProperties.swift */; };
+		FC5D42C52643908B00F114DE /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D42C42643908B00F114DE /* CameraViewController.swift */; };
+		FC5D42CC2643A15100F114DE /* ExpenseImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D42CB2643A15100F114DE /* ExpenseImageViewController.swift */; };
 		FC64C44126431E2800CA3B4B /* UIViewController-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC64C44026431E2800CA3B4B /* UIViewController-Extensions.swift */; };
 		FC95906B2641B71D009F5221 /* ExpenseDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95906A2641B71D009F5221 /* ExpenseDetailsTableViewController.swift */; };
 		FC9FE4CD26307CEA00CA8D9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9FE4CC26307CEA00CA8D9A /* AppDelegate.swift */; };
@@ -45,6 +47,8 @@
 		FC5D42BA26437E2E00F114DE /* ImageMetaData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageMetaData+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		FC5D42BB26437E2E00F114DE /* Expense+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expense+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		FC5D42BC26437E2E00F114DE /* Expense+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expense+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		FC5D42C42643908B00F114DE /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		FC5D42CB2643A15100F114DE /* ExpenseImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseImageViewController.swift; sourceTree = "<group>"; };
 		FC64C44026431E2800CA3B4B /* UIViewController-Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController-Extensions.swift"; sourceTree = "<group>"; };
 		FC95906A2641B71D009F5221 /* ExpenseDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDetailsTableViewController.swift; sourceTree = "<group>"; };
 		FC9FE4C926307CEA00CA8D9A /* FIT3178-Assignment-Bill-Tracking-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FIT3178-Assignment-Bill-Tracking-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +149,8 @@
 				FC37B3F6264051940007A434 /* AddEditExpenseViewController.swift */,
 				FC95906A2641B71D009F5221 /* ExpenseDetailsTableViewController.swift */,
 				FC64C44026431E2800CA3B4B /* UIViewController-Extensions.swift */,
+				FC5D42C42643908B00F114DE /* CameraViewController.swift */,
+				FC5D42CB2643A15100F114DE /* ExpenseImageViewController.swift */,
 			);
 			path = "FIT3178-Assignment-Bill-Tracking-App";
 			sourceTree = "<group>";
@@ -275,11 +281,13 @@
 				FC43C2DE263F11B9008A167E /* ExpenseGroup+CoreDataProperties.swift in Sources */,
 				FC43C2DD263F11B9008A167E /* ExpenseGroup+CoreDataClass.swift in Sources */,
 				FC5D42BE26437E2E00F114DE /* ImageMetaData+CoreDataProperties.swift in Sources */,
+				FC5D42CC2643A15100F114DE /* ExpenseImageViewController.swift in Sources */,
 				FC95906B2641B71D009F5221 /* ExpenseDetailsTableViewController.swift in Sources */,
 				FC9FE4CF26307CEA00CA8D9A /* SceneDelegate.swift in Sources */,
 				FC46DF69263DB22B00D3D3E5 /* MulticastDelegate.swift in Sources */,
 				FC5D42C026437E2E00F114DE /* Expense+CoreDataProperties.swift in Sources */,
 				FC64C44126431E2800CA3B4B /* UIViewController-Extensions.swift in Sources */,
+				FC5D42C52643908B00F114DE /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

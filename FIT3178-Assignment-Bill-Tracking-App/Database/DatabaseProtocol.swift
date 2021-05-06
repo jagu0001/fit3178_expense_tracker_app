@@ -47,4 +47,6 @@ protocol DatabaseProtocol: AnyObject {
     func deleteExpenseGroup(expenseGroup: ExpenseGroup)
     func addExpenseToGroup(expense: Expense, group: ExpenseGroup)
     func removeExpenseFromGroup(expense: Expense, group: ExpenseGroup)
+    
+    func createAddImageToExpense(filename: String, expense: Expense)
 }

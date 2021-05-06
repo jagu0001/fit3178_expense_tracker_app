@@ -176,6 +176,12 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
         group.removeFromExpenses(expense)
     }
     
+    func createAddImageToExpense(filename: String, expense: Expense) {
+        let image = NSEntityDescription.insertNewObject(forEntityName: "ImageMetaData", into: expense.managedObjectContext!) as! ImageMetaData
+        image.filename = filename
+        expense.image = image
+    }
+    
     func fetchAllExpenses() -> [Expense] {
         if allExpensesFetchedResultsController == nil {
             let request: NSFetchRequest<Expense> = Expense.fetchRequest()

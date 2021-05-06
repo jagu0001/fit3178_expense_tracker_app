@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -210,6 +211,17 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="imageCell" id="aDf-vx-9F8">
+                                <rect key="frame" x="20" y="273" width="374" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aDf-vx-9F8" id="Mzo-ih-JOH">
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="kvr-Kl-wub" kind="show" identifier="viewImageSegue" id="nIj-BI-jf2"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="Jsm-ck-bGf" id="XKW-Eb-gTf"/>
@@ -227,6 +239,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8pl-XM-oCu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1048" y="790"/>
+        </scene>
+        <!--View Image-->
+        <scene sceneID="U6d-ku-CNi">
+            <objects>
+                <viewController id="kvr-Kl-wub" customClass="ExpenseImageViewController" customModule="FIT3178_Assignment_Bill_Tracking_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e6K-xL-sdl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ded-yh-lrq">
+                                <rect key="frame" x="8" y="96" width="398" height="398"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Ded-yh-lrq" secondAttribute="height" multiplier="1:1" id="VXg-D3-yLG"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="paj-HJ-zPZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ded-yh-lrq" firstAttribute="top" secondItem="paj-HJ-zPZ" secondAttribute="top" constant="8" id="Cvm-no-0NH"/>
+                            <constraint firstItem="Ded-yh-lrq" firstAttribute="top" secondItem="paj-HJ-zPZ" secondAttribute="top" constant="8" id="bJg-pX-CGe"/>
+                            <constraint firstItem="paj-HJ-zPZ" firstAttribute="trailing" secondItem="Ded-yh-lrq" secondAttribute="trailing" constant="8" id="fTm-DB-z9R"/>
+                            <constraint firstItem="Ded-yh-lrq" firstAttribute="leading" secondItem="paj-HJ-zPZ" secondAttribute="leading" constant="8" id="v1a-D8-mB6"/>
+                            <constraint firstItem="Ded-yh-lrq" firstAttribute="leading" secondItem="paj-HJ-zPZ" secondAttribute="leading" constant="8" id="x11-Lj-phl"/>
+                            <constraint firstItem="paj-HJ-zPZ" firstAttribute="trailing" secondItem="Ded-yh-lrq" secondAttribute="trailing" constant="8" id="zAL-FK-sq8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="View Image" id="mb2-4g-81F"/>
+                    <connections>
+                        <outlet property="imageView" destination="Ded-yh-lrq" id="By9-Jo-2OA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WYW-fr-VqI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1966.6666666666667" y="790.84821428571422"/>
         </scene>
         <!--Add New Expense-->
         <scene sceneID="jUZ-KC-FK1">
@@ -291,6 +338,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qlp-dB-SWQ">
                                 <rect key="frame" x="20" y="585" width="374" height="30"/>
                                 <state key="normal" title="Add Image"/>
+                                <connections>
+                                    <segue destination="9AL-ig-pzc" kind="show" identifier="addImageSegue" id="igl-n4-ryi"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fuX-2Y-cpQ"/>
@@ -347,6 +397,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q5E-zf-EJS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1937.68115942029" y="93.75"/>
+        </scene>
+        <!--Save Photo-->
+        <scene sceneID="UaW-rw-6hF">
+            <objects>
+                <viewController id="9AL-ig-pzc" customClass="CameraViewController" customModule="FIT3178_Assignment_Bill_Tracking_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jDi-KZ-Rdp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1id-RO-8Zd">
+                                <rect key="frame" x="8" y="96" width="398" height="398"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="1id-RO-8Zd" secondAttribute="height" multiplier="1:1" id="p4l-O8-uzf"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4jo-2Q-EzS">
+                                <rect key="frame" x="10" y="842" width="394" height="30"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <state key="normal" title="Take Photo">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="takePhoto:" destination="9AL-ig-pzc" eventType="touchUpInside" id="lNr-36-VzB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8ey-Gd-oc9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8ey-Gd-oc9" firstAttribute="trailing" secondItem="1id-RO-8Zd" secondAttribute="trailing" constant="8" id="3UG-S8-PEj"/>
+                            <constraint firstItem="8ey-Gd-oc9" firstAttribute="trailing" secondItem="4jo-2Q-EzS" secondAttribute="trailing" constant="10" id="71i-IK-8Dy"/>
+                            <constraint firstItem="4jo-2Q-EzS" firstAttribute="bottom" secondItem="8ey-Gd-oc9" secondAttribute="bottom" constant="10" id="csa-Bp-jAe"/>
+                            <constraint firstItem="1id-RO-8Zd" firstAttribute="leading" secondItem="8ey-Gd-oc9" secondAttribute="leading" constant="8" id="dpt-Ng-ijj"/>
+                            <constraint firstItem="1id-RO-8Zd" firstAttribute="top" secondItem="8ey-Gd-oc9" secondAttribute="top" constant="8" id="eEs-MV-vLu"/>
+                            <constraint firstItem="4jo-2Q-EzS" firstAttribute="leading" secondItem="8ey-Gd-oc9" secondAttribute="leading" constant="10" id="uzd-M8-Vme"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Save Photo" id="Oug-KF-aIk">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="LsK-NU-hef">
+                            <connections>
+                                <action selector="savePhoto:" destination="9AL-ig-pzc" id="lWW-F0-yxZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="1id-RO-8Zd" id="pza-8L-Qgx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Wn-u4-UK6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2792.753623188406" y="104.46428571428571"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wqs-4H-lNh">
@@ -448,10 +549,13 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="nRl-eJ-CZC"/>
+        <segue reference="FLW-aO-xMQ"/>
         <segue reference="vES-k9-lQ7"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

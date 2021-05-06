@@ -64,9 +64,15 @@ class MyBillsMainViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
             case SECTION_UNPAID:
-                return "Unpaid Bills"
+                if unpaidExpenses.count > 0 {
+                    return "Unpaid Bills"
+                }
+                return nil
             case SECTION_PAID:
-                return "Paid Bills"
+                if paidExpenses.count > 0 {
+                    return "Paid Bills"
+                }
+                return nil
             default:
                 return nil
         }

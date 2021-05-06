@@ -13,12 +13,14 @@ class ExpenseDetailsTableViewController: UITableViewController {
     let SECTION_TAG = 2
     let SECTION_DESCRIPTION = 3
     let SECTION_DATE = 4
+    let SECTION_IMAGE = 5
     
     let CELL_NAME = "nameCell"
     let CELL_AMOUNT = "amountCell"
     let CELL_TAG = "tagCell"
     let CELL_DESCRIPTION = "descriptionCell"
     let CELL_DATE = "dateCell"
+    let CELL_IMAGE = "imageCell"
     
     var expense: Expense?
 
@@ -35,10 +37,16 @@ class ExpenseDetailsTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 5
+        return 6
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == SECTION_IMAGE {
+            if expense?.image?.filename != nil {
+                return 1
+            }
+            return 0
+        }
         return 1
     }
 
@@ -68,14 +76,24 @@ class ExpenseDetailsTableViewController: UITableViewController {
             return cell
         }
         
-        // Otherwise, return date cell
-        // Create date formatter
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        
-        // Add formatted date string to cell
-        let cell = tableView.dequeueReusableCell(withIdentifier: CELL_DATE, for: indexPath)
-        cell.textLabel?.text = dateFormatter.string(from: expense!.date!)
+        if indexPath.section == SECTION_DATE {
+            // Create date formatter
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd/MM/yyyy"
+            
+            // Add formatted date string to cell
+            let cell = tableView.dequeueReusableCell(withIdentifier: CELL_DATE, for: indexPath)
+            cell.textLabel?.text = dateFormatter.string(from: expense!.date!)
+            return cell
+        }
+        // Otherwise, configure image cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: CELL_IMAGE, for: indexPath)
+        if let filename = expense?.image?.filename {
+            cell.imageView!.image = loadImageData(filename: filename)
+            cell.textLabel?.text = "View Image"
+            cell.textLabel?.textAlignment = .right
+            cell.textLabel?.textColor = UIColor.lightGray
+        }
         return cell
     }
     
@@ -91,8 +109,13 @@ class ExpenseDetailsTableViewController: UITableViewController {
                 return "Description"
             case SECTION_DATE:
                 return "Date"
+            case SECTION_IMAGE:
+                if expense?.image?.filename != nil {
+                    return "Image"
+                }
+                return nil
             default:
-                return ""
+                return nil
         }
     }
 
@@ -100,6 +123,16 @@ class ExpenseDetailsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return false
+    }
+    
+    func loadImageData(filename: String) -> UIImage? {
+        let paths = FileManager.default.urls(for: .documentDirectory,
+         in: .userDomainMask)
+        let documentsDirectory = paths[0]
+        let imageURL = documentsDirectory.appendingPathComponent(filename)
+        let image = UIImage(contentsOfFile: imageURL.path)
+
+        return image
     }
 
     /*
@@ -138,6 +171,10 @@ class ExpenseDetailsTableViewController: UITableViewController {
         if segue.identifier == "editExpense" {
             let destination = segue.destination as! AddEditExpenseViewController
             destination.expense = expense
+        }
+        else if segue.identifier == "viewImageSegue" {
+            let destination = segue.destination as! ExpenseImageViewController
+            destination.filename = expense?.image?.filename
         }
     }
 }
