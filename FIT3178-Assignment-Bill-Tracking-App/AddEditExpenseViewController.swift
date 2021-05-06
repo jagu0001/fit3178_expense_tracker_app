@@ -85,9 +85,17 @@ class AddEditExpenseViewController: UIViewController, UITextFieldDelegate {
         expense!.date = payDatePicker.date
         
         if paidSwitch.isOn {
+            // Remove from unpaid group if it was there previously
+            databaseController?.removeExpenseFromGroup(expense: expense!, group: databaseController!.unpaidExpenseGroup)
+            
+            // Add to paid group
             databaseController?.addExpenseToGroup(expense: expense!, group: databaseController!.paidExpenseGroup)
         }
         else {
+            // Remove from paid group if it was there previously
+            databaseController?.removeExpenseFromGroup(expense: expense!, group: databaseController!.paidExpenseGroup)
+            
+            // Add to unpaid group
             databaseController?.addExpenseToGroup(expense: expense!, group: databaseController!.unpaidExpenseGroup)
         }
         
