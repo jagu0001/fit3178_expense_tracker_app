@@ -28,7 +28,36 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         controller.sourceType = .photoLibrary
         controller.allowsEditing = false
         controller.delegate = self
-        self.present(controller, animated: true, completion: nil)
+        
+        let actionSheet = UIAlertController(title: nil, message: "Select Option:", preferredStyle: .actionSheet)
+        
+        let cameraAction = UIAlertAction(title: "Camera", style: .default) { action in
+            controller.sourceType = .camera
+            self.present(controller, animated: true, completion: nil)
+        }
+        
+        let libraryAction = UIAlertAction(title: "Photo Library", style: .default) { action in
+            controller.sourceType = .photoLibrary
+            self.present(controller, animated: true, completion: nil)
+        }
+
+        let albumAction = UIAlertAction(title: "Photo Album", style: .default) { action in
+            controller.sourceType = .savedPhotosAlbum
+            self.present(controller, animated: true, completion: nil)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        // Add actions to sheet
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+         actionSheet.addAction(cameraAction)
+        }
+        actionSheet.addAction(libraryAction)
+        actionSheet.addAction(albumAction)
+        actionSheet.addAction(cancelAction)
+        
+        // Present action sheet
+        self.present(actionSheet, animated: true, completion: nil)
     }
     
     @IBAction func savePhoto(_ sender: Any) {
@@ -55,7 +84,6 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         do {
             try data.write(to: imageFile)
             databaseController?.createAddImageToExpense(filename: filename, expense: expense!)
-            databaseController?.saveChildContext()
             navigationController?.popViewController(animated: true)
         }
         catch {
