@@ -14,6 +14,7 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
     
     var listeners = MulticastDelegate<DatabaseListener>()
     var persistentContainer: NSPersistentContainer
+    var childContext: NSManagedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
     
     var allExpensesFetchedResultsController: NSFetchedResultsController<Expense>?
     var paidExpenseGroupFetchedResultsController: NSFetchedResultsController<Expense>?
@@ -67,6 +68,9 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
             }
         }
         
+        // Set child context as a child of main context
+        childContext.parent = persistentContainer.viewContext
+        
         super.init()
     }
     
@@ -80,12 +84,27 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
     
     func cleanup() {
         if persistentContainer.viewContext.hasChanges {
-            do {
-                try persistentContainer.viewContext.save()
-            }
-            catch {
-                fatalError("Failed to save changes to Core Data with error: \(error)")
-            }
+            saveContext(context: persistentContainer.viewContext)
+        }
+    }
+    
+    func saveChildContext() {
+        saveContext(context: childContext)
+    }
+    
+    func refreshChildContext() {
+        // Called when current child context needs to be replaced with a new one
+        // so previous drafts are not saved to main context
+        childContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+        childContext.parent = persistentContainer.viewContext
+    }
+    
+    func saveContext(context: NSManagedObjectContext) {
+        do {
+            try context.save()
+        }
+        catch {
+            fatalError("Failed to save changes to context with error: \(error)")
         }
     }
     
@@ -131,12 +150,16 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
         return group
     }
     
-    func getContextExpense(expense: Expense?) -> Expense {
+    func getChildContextExpense(expense: Expense?) -> Expense {
+        // If passed expense is not nil, get copy of expense data from child context
         if let expense = expense {
-            return persistentContainer.viewContext.object(with: expense.objectID) as! Expense
+            return childContext.object(with: expense.objectID) as! Expense
         }
-        let expense = NSEntityDescription.insertNewObject(forEntityName: "Expense", into: persistentContainer.viewContext) as! Expense
-        return expense
+        
+        // Otherwise, create an empty expense object
+        let childExpense = NSEntityDescription.insertNewObject(forEntityName: "Expense", into: childContext) as! Expense
+        
+        return childExpense
     }
     
     func deleteExpenseGroup(expenseGroup: ExpenseGroup) {
@@ -144,10 +167,12 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
     }
     
     func addExpenseToGroup(expense: Expense, group: ExpenseGroup) {
+        let group = expense.managedObjectContext?.object(with: group.objectID) as! ExpenseGroup
         group.addToExpenses(expense)
     }
     
     func removeExpenseFromGroup(expense: Expense, group: ExpenseGroup) {
+        let group = expense.managedObjectContext?.object(with: group.objectID) as! ExpenseGroup
         group.removeFromExpenses(expense)
     }
     

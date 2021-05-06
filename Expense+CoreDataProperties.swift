@@ -2,7 +2,7 @@
 //  Expense+CoreDataProperties.swift
 //  FIT3178-Assignment-Bill-Tracking-App
 //
-//  Created by user190204 on 5/3/21.
+//  Created by user190204 on 5/6/21.
 //
 //
 
@@ -22,6 +22,7 @@ extension Expense {
     @NSManaged public var name: String?
     @NSManaged public var tag: String?
     @NSManaged public var expenseGroup: NSSet?
+    @NSManaged public var image: ImageMetaData?
 
 }
 

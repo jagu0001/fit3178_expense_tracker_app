@@ -39,7 +39,9 @@ protocol DatabaseProtocol: AnyObject {
     func addExpense(name: String, tag: String, amount: Float, description: String, date: Date) -> Expense
     func deleteExpense(expense: Expense)
     
-    func getContextExpense(expense: Expense?) -> Expense
+    func getChildContextExpense(expense: Expense?) -> Expense
+    func saveChildContext()
+    func refreshChildContext()
     
     func addExpenseGroup(name: String) -> ExpenseGroup
     func deleteExpenseGroup(expenseGroup: ExpenseGroup)

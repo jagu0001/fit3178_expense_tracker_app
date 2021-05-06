@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H524" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H1030" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Expense" representedClassName="Expense" syncable="YES">
         <attribute name="amount" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -7,13 +7,18 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="tag" optional="YES" attributeType="String"/>
         <relationship name="expenseGroup" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExpenseGroup" inverseName="expenses" inverseEntity="ExpenseGroup"/>
+        <relationship name="image" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ImageMetaData"/>
     </entity>
     <entity name="ExpenseGroup" representedClassName="ExpenseGroup" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="expenses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Expense" inverseName="expenseGroup" inverseEntity="Expense"/>
     </entity>
+    <entity name="ImageMetaData" representedClassName="ImageMetaData" syncable="YES">
+        <attribute name="filename" optional="YES" attributeType="String"/>
+    </entity>
     <elements>
-        <element name="Expense" positionX="-63" positionY="-18" width="128" height="133"/>
+        <element name="Expense" positionX="-63" positionY="-18" width="128" height="148"/>
         <element name="ExpenseGroup" positionX="-63" positionY="18" width="128" height="73"/>
+        <element name="ImageMetaData" positionX="-54" positionY="36" width="128" height="58"/>
     </elements>
 </model>

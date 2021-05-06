@@ -31,13 +31,21 @@ class AddEditExpenseViewController: UIViewController, UITextFieldDelegate {
         // Initialize fields if expense is present
         initializeFields()
         
-        // Add button to dismiss keyboard when editing TextView
-        descriptionTextView.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
+        // Initialize expense at child context
+        initializeExpense()
         
         // Assign self as delegate to text fields to dismiss properly
         nameTextField.delegate = self
         amountTextField.delegate = self
         tagTextField.delegate = self
+        
+        // Add button to dismiss keyboard when editing TextView
+        descriptionTextView.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
+        
+        // Add borders to text view
+        descriptionTextView.layer.borderColor = UIColor.lightGray.cgColor
+        descriptionTextView.layer.borderWidth = 0.5
+        descriptionTextView.layer.cornerRadius = 5
     }
     
     @objc func tapDone(sender: Any) {
@@ -59,30 +67,38 @@ class AddEditExpenseViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    func initializeExpense() {
+        expense = databaseController?.getChildContextExpense(expense: expense)
+    }
+    
     @IBAction func saveExpense(_ sender: Any) {
-        let newExpense = databaseController!.getContextExpense(expense: expense)
-        
         guard let name = nameTextField.text, name != "", let amount = amountTextField.text, amount != "", let tag = tagTextField.text, let description = descriptionTextView.text, description != "" else {
             displayMessage(title: "Error", message: "Please do not leave any blank fields")
             return
         }
         
         // Set values for expense class
-        newExpense.name = name
-        newExpense.amount = (amount as NSString).floatValue
-        newExpense.expenseDescription = description
-        newExpense.tag = tag
-        newExpense.date = payDatePicker.date
+        expense!.name = name
+        expense!.amount = (amount as NSString).floatValue
+        expense!.expenseDescription = description
+        expense!.tag = tag
+        expense!.date = payDatePicker.date
         
         if paidSwitch.isOn {
-            databaseController?.addExpenseToGroup(expense: newExpense, group: databaseController!.paidExpenseGroup)
+            databaseController?.addExpenseToGroup(expense: expense!, group: databaseController!.paidExpenseGroup)
         }
         else {
-            databaseController?.addExpenseToGroup(expense: newExpense, group: databaseController!.unpaidExpenseGroup)
+            databaseController?.addExpenseToGroup(expense: expense!, group: databaseController!.unpaidExpenseGroup)
         }
+        
+        // Push child context data to main context
+        databaseController?.saveChildContext()
         
         // Save context
         databaseController?.cleanup()
+        
+        // Refresh child context for next use
+        databaseController?.refreshChildContext()
         
         // Go back to previous view
         navigationController?.popViewController(animated: true)

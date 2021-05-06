@@ -78,7 +78,7 @@ class MyBillsMainViewController: UIViewController, UITableViewDelegate, UITableV
             let expense = paidExpenses[indexPath.row]
             
             paidCell.textLabel?.text = expense.name
-            paidCell.detailTextLabel?.text = "$\(expense.amount)"
+            paidCell.detailTextLabel?.text = String(format: "$%.2f", expense.amount)
             return paidCell
         }
         
@@ -87,7 +87,7 @@ class MyBillsMainViewController: UIViewController, UITableViewDelegate, UITableV
         let expense = unpaidExpenses[indexPath.row]
             
         unpaidCell.textLabel?.text = expense.name
-        unpaidCell.detailTextLabel?.text = "$\(expense.amount)"
+        unpaidCell.detailTextLabel?.text = String(format: "$%.2f", expense.amount)
         return unpaidCell
     }
     

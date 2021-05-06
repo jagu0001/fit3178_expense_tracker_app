@@ -9,14 +9,16 @@
 /* Begin PBXBuildFile section */
 		528F5EE9B0720F6C58D595C9 /* libPods-FIT3178-Assignment-Bill-Tracking-App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB677D11C1B97575C9E74EE9 /* libPods-FIT3178-Assignment-Bill-Tracking-App.a */; };
 		FC37B3F7264051940007A434 /* AddEditExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC37B3F6264051940007A434 /* AddEditExpenseViewController.swift */; };
-		FC43C2DB263F11B9008A167E /* Expense+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC43C2D7263F11B9008A167E /* Expense+CoreDataClass.swift */; };
-		FC43C2DC263F11B9008A167E /* Expense+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC43C2D8263F11B9008A167E /* Expense+CoreDataProperties.swift */; };
 		FC43C2DD263F11B9008A167E /* ExpenseGroup+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC43C2D9263F11B9008A167E /* ExpenseGroup+CoreDataClass.swift */; };
 		FC43C2DE263F11B9008A167E /* ExpenseGroup+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC43C2DA263F11B9008A167E /* ExpenseGroup+CoreDataProperties.swift */; };
 		FC46DF60263DADD700D3D3E5 /* FIT3178-ExpenseApp-DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FC46DF5E263DADD700D3D3E5 /* FIT3178-ExpenseApp-DataModel.xcdatamodeld */; };
 		FC46DF69263DB22B00D3D3E5 /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC46DF68263DB22B00D3D3E5 /* MulticastDelegate.swift */; };
 		FC46DF6C263DB26200D3D3E5 /* DatabaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC46DF6B263DB26200D3D3E5 /* DatabaseProtocol.swift */; };
 		FC46DF6F263DB54700D3D3E5 /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC46DF6E263DB54700D3D3E5 /* CoreDataController.swift */; };
+		FC5D42BD26437E2E00F114DE /* ImageMetaData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D42B926437E2E00F114DE /* ImageMetaData+CoreDataClass.swift */; };
+		FC5D42BE26437E2E00F114DE /* ImageMetaData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D42BA26437E2E00F114DE /* ImageMetaData+CoreDataProperties.swift */; };
+		FC5D42BF26437E2E00F114DE /* Expense+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D42BB26437E2E00F114DE /* Expense+CoreDataClass.swift */; };
+		FC5D42C026437E2E00F114DE /* Expense+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D42BC26437E2E00F114DE /* Expense+CoreDataProperties.swift */; };
 		FC64C44126431E2800CA3B4B /* UIViewController-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC64C44026431E2800CA3B4B /* UIViewController-Extensions.swift */; };
 		FC95906B2641B71D009F5221 /* ExpenseDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95906A2641B71D009F5221 /* ExpenseDetailsTableViewController.swift */; };
 		FC9FE4CD26307CEA00CA8D9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9FE4CC26307CEA00CA8D9A /* AppDelegate.swift */; };
@@ -33,14 +35,16 @@
 		EB677D11C1B97575C9E74EE9 /* libPods-FIT3178-Assignment-Bill-Tracking-App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FIT3178-Assignment-Bill-Tracking-App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEFE8E4F51C760580DA58860 /* Pods-FIT3178-Assignment-Bill-Tracking-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FIT3178-Assignment-Bill-Tracking-App.debug.xcconfig"; path = "Target Support Files/Pods-FIT3178-Assignment-Bill-Tracking-App/Pods-FIT3178-Assignment-Bill-Tracking-App.debug.xcconfig"; sourceTree = "<group>"; };
 		FC37B3F6264051940007A434 /* AddEditExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditExpenseViewController.swift; sourceTree = "<group>"; };
-		FC43C2D7263F11B9008A167E /* Expense+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expense+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		FC43C2D8263F11B9008A167E /* Expense+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expense+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		FC43C2D9263F11B9008A167E /* ExpenseGroup+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExpenseGroup+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		FC43C2DA263F11B9008A167E /* ExpenseGroup+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExpenseGroup+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		FC46DF5F263DADD700D3D3E5 /* FIT3178-ExpenseApp-DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "FIT3178-ExpenseApp-DataModel.xcdatamodel"; sourceTree = "<group>"; };
 		FC46DF68263DB22B00D3D3E5 /* MulticastDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MulticastDelegate.swift; sourceTree = "<group>"; };
 		FC46DF6B263DB26200D3D3E5 /* DatabaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseProtocol.swift; sourceTree = "<group>"; };
 		FC46DF6E263DB54700D3D3E5 /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
+		FC5D42B926437E2E00F114DE /* ImageMetaData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageMetaData+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		FC5D42BA26437E2E00F114DE /* ImageMetaData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageMetaData+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		FC5D42BB26437E2E00F114DE /* Expense+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expense+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		FC5D42BC26437E2E00F114DE /* Expense+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expense+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		FC64C44026431E2800CA3B4B /* UIViewController-Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController-Extensions.swift"; sourceTree = "<group>"; };
 		FC95906A2641B71D009F5221 /* ExpenseDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDetailsTableViewController.swift; sourceTree = "<group>"; };
 		FC9FE4C926307CEA00CA8D9A /* FIT3178-Assignment-Bill-Tracking-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FIT3178-Assignment-Bill-Tracking-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,8 +90,10 @@
 		FC46DF5D263DAD9C00D3D3E5 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
-				FC43C2D7263F11B9008A167E /* Expense+CoreDataClass.swift */,
-				FC43C2D8263F11B9008A167E /* Expense+CoreDataProperties.swift */,
+				FC5D42B926437E2E00F114DE /* ImageMetaData+CoreDataClass.swift */,
+				FC5D42BA26437E2E00F114DE /* ImageMetaData+CoreDataProperties.swift */,
+				FC5D42BB26437E2E00F114DE /* Expense+CoreDataClass.swift */,
+				FC5D42BC26437E2E00F114DE /* Expense+CoreDataProperties.swift */,
 				FC43C2D9263F11B9008A167E /* ExpenseGroup+CoreDataClass.swift */,
 				FC43C2DA263F11B9008A167E /* ExpenseGroup+CoreDataProperties.swift */,
 				FC46DF5E263DADD700D3D3E5 /* FIT3178-ExpenseApp-DataModel.xcdatamodeld */,
@@ -259,18 +265,20 @@
 			files = (
 				FC9FE4D126307CEA00CA8D9A /* ViewController.swift in Sources */,
 				FC46DF60263DADD700D3D3E5 /* FIT3178-ExpenseApp-DataModel.xcdatamodeld in Sources */,
-				FC43C2DB263F11B9008A167E /* Expense+CoreDataClass.swift in Sources */,
+				FC5D42BF26437E2E00F114DE /* Expense+CoreDataClass.swift in Sources */,
 				FC9FE4CD26307CEA00CA8D9A /* AppDelegate.swift in Sources */,
 				FC46DF6C263DB26200D3D3E5 /* DatabaseProtocol.swift in Sources */,
+				FC5D42BD26437E2E00F114DE /* ImageMetaData+CoreDataClass.swift in Sources */,
 				FC37B3F7264051940007A434 /* AddEditExpenseViewController.swift in Sources */,
 				FC46DF6F263DB54700D3D3E5 /* CoreDataController.swift in Sources */,
 				FCED3A4C26372AC7006114F3 /* MyExpensesMainViewController.swift in Sources */,
 				FC43C2DE263F11B9008A167E /* ExpenseGroup+CoreDataProperties.swift in Sources */,
-				FC43C2DC263F11B9008A167E /* Expense+CoreDataProperties.swift in Sources */,
 				FC43C2DD263F11B9008A167E /* ExpenseGroup+CoreDataClass.swift in Sources */,
+				FC5D42BE26437E2E00F114DE /* ImageMetaData+CoreDataProperties.swift in Sources */,
 				FC95906B2641B71D009F5221 /* ExpenseDetailsTableViewController.swift in Sources */,
 				FC9FE4CF26307CEA00CA8D9A /* SceneDelegate.swift in Sources */,
 				FC46DF69263DB22B00D3D3E5 /* MulticastDelegate.swift in Sources */,
+				FC5D42C026437E2E00F114DE /* Expense+CoreDataProperties.swift in Sources */,
 				FC64C44126431E2800CA3B4B /* UIViewController-Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
