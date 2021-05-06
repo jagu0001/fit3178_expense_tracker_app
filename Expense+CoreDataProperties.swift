@@ -21,6 +21,8 @@ extension Expense {
     @NSManaged public var expenseDescription: String?
     @NSManaged public var name: String?
     @NSManaged public var tag: String?
+    @NSManaged public var isPaid: Bool
+    @NSManaged public var isNotify: Bool
     @NSManaged public var expenseGroup: NSSet?
     @NSManaged public var image: ImageMetaData?
 

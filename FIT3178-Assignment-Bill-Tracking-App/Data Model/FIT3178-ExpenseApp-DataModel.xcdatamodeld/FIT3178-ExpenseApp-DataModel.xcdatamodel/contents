@@ -4,6 +4,8 @@
         <attribute name="amount" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="expenseDescription" optional="YES" attributeType="String"/>
+        <attribute name="isNotify" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isPaid" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="tag" optional="YES" attributeType="String"/>
         <relationship name="expenseGroup" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExpenseGroup" inverseName="expenses" inverseEntity="ExpenseGroup"/>
@@ -17,7 +19,7 @@
         <attribute name="filename" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Expense" positionX="-63" positionY="-18" width="128" height="148"/>
+        <element name="Expense" positionX="-63" positionY="-18" width="128" height="178"/>
         <element name="ExpenseGroup" positionX="-63" positionY="18" width="128" height="73"/>
         <element name="ImageMetaData" positionX="-54" positionY="36" width="128" height="58"/>
     </elements>

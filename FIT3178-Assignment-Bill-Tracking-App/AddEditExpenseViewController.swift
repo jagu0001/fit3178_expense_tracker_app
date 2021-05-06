@@ -64,6 +64,8 @@ class AddEditExpenseViewController: UIViewController, UITextFieldDelegate {
             tagTextField.text = expense.tag
             descriptionTextView.text = expense.expenseDescription
             payDatePicker.date = expense.date!
+            paidSwitch.isOn = expense.isPaid
+            remindSwitch.isOn = expense.isNotify
         }
     }
     
@@ -90,6 +92,8 @@ class AddEditExpenseViewController: UIViewController, UITextFieldDelegate {
             
             // Add to paid group
             databaseController?.addExpenseToGroup(expense: expense!, group: databaseController!.paidExpenseGroup)
+            
+            expense!.isPaid = true
         }
         else {
             // Remove from paid group if it was there previously
@@ -97,7 +101,11 @@ class AddEditExpenseViewController: UIViewController, UITextFieldDelegate {
             
             // Add to unpaid group
             databaseController?.addExpenseToGroup(expense: expense!, group: databaseController!.unpaidExpenseGroup)
+            
+            expense!.isPaid = false
         }
+        
+        expense!.isNotify = remindSwitch.isOn
         
         // Push child context data to main context
         databaseController?.saveChildContext()
