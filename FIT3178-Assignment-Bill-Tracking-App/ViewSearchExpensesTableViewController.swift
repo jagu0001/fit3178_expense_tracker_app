@@ -82,6 +82,7 @@ class ViewSearchExpensesTableViewController: UITableViewController, UISearchResu
             
             paidCell.textLabel?.text = expense.name
             paidCell.detailTextLabel?.text = String(format: "$%.2f\nDate paid: %@", expense.amount, dateFormatter.string(from: expense.date!))
+            paidCell.backgroundColor = UIColor(named: "PaidGreen")
             return paidCell
         }
         else {
@@ -93,6 +94,10 @@ class ViewSearchExpensesTableViewController: UITableViewController, UISearchResu
             
             unpaidCell.textLabel?.text = expense.name
             unpaidCell.detailTextLabel?.text = String(format: "$%.2f\nDue date: %@", expense.amount, dateFormatter.string(from: expense.date!))
+            
+            if expense.date! > Date() {
+                unpaidCell.backgroundColor = UIColor(named: "WarningLate")
+            }
             return unpaidCell
         }
     }
