@@ -116,8 +116,8 @@ class AddEditExpenseViewController: UIViewController, UITextFieldDelegate {
         // Refresh child context for next use
         databaseController?.refreshChildContext()
         
-        // Go back to previous view
-        navigationController?.popViewController(animated: true)
+        // Go back to root view
+        self.dismiss(animated: true, completion: nil)
     }
 
     // MARK: - Navigation

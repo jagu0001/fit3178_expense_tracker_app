@@ -7,15 +7,18 @@
 
 import UIKit
 
-class ViewSearchExpensesTableViewController: UITableViewController, DatabaseListener {
+class ViewSearchExpensesTableViewController: UITableViewController, UISearchResultsUpdating, DatabaseListener {
     let SECTION_UNPAID = 0
     let SECTION_PAID = 1
     
-    let CELL_UNPAID = "cellUnpaid"
-    let CELL_PAID = "cellPaid"
+    let CELL_UNPAID = "unpaidCell"
+    let CELL_PAID = "paidCell"
     
     var paidExpenses: [Expense] = []
     var unpaidExpenses: [Expense] = []
+    
+    var filteredPaidExpenses: [Expense] = []
+    var filteredUnpaidExpenses: [Expense] = []
     
     var listenerType: ListenerType = .all
     weak var databaseController: DatabaseProtocol?
@@ -26,6 +29,16 @@ class ViewSearchExpensesTableViewController: UITableViewController, DatabaseList
         // Set up database controller
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         databaseController = appDelegate?.databaseController
+        
+        // Set up search bar
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Expenses"
+        navigationItem.searchController = searchController
+
+        // This view controller decides how the search controller is presented
+        definesPresentationContext = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,32 +61,51 @@ class ViewSearchExpensesTableViewController: UITableViewController, DatabaseList
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
             case SECTION_UNPAID:
-                return unpaidExpenses.count
+                return filteredUnpaidExpenses.count
             case SECTION_PAID:
-                return paidExpenses.count
+                return filteredPaidExpenses.count
             default:
                 return 0
         }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let paidCell = tableView.dequeueReusableCell(withIdentifier: CELL_PAID, for: indexPath)
-        let expense = paidExpenses[indexPath.row]
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
         
-        paidCell.textLabel?.text = expense.name
-        paidCell.detailTextLabel?.text = String(format: "$%.2f", expense.amount)
-        return paidCell
+        if indexPath.section == SECTION_PAID {
+            let paidCell = tableView.dequeueReusableCell(withIdentifier: CELL_PAID, for: indexPath)
+            let expense = filteredPaidExpenses[indexPath.row]
+            
+            // Set cell to allow multiple lines for details
+            paidCell.detailTextLabel?.numberOfLines = 0
+            
+            paidCell.textLabel?.text = expense.name
+            paidCell.detailTextLabel?.text = String(format: "$%.2f\nDate paid: %@", expense.amount, dateFormatter.string(from: expense.date!))
+            return paidCell
+        }
+        else {
+            let unpaidCell = tableView.dequeueReusableCell(withIdentifier: CELL_UNPAID, for: indexPath)
+            let expense = filteredUnpaidExpenses[indexPath.row]
+            
+            // Set cell to allow multiple lines for details
+            unpaidCell.detailTextLabel?.numberOfLines = 0
+            
+            unpaidCell.textLabel?.text = expense.name
+            unpaidCell.detailTextLabel?.text = String(format: "$%.2f\nDue date: %@", expense.amount, dateFormatter.string(from: expense.date!))
+            return unpaidCell
+        }
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
             case SECTION_UNPAID:
-                if unpaidExpenses.count > 0 {
+                if filteredUnpaidExpenses.count > 0 {
                     return "Unpaid Bills"
                 }
                 return nil
             case SECTION_PAID:
-                if paidExpenses.count > 0 {
+                if filteredPaidExpenses.count > 0 {
                     return "Paid Bills"
                 }
                 return nil
@@ -83,25 +115,44 @@ class ViewSearchExpensesTableViewController: UITableViewController, DatabaseList
     }
     
 
-    /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
 
 
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             if indexPath.section == SECTION_PAID {
-                databaseController?.deleteExpense(expense: paidExpenses[indexPath.row])
+                databaseController?.deleteExpense(expense: filteredPaidExpenses[indexPath.row])
             }
             else if indexPath.section == SECTION_UNPAID {
-                databaseController?.deleteExpense(expense: unpaidExpenses[indexPath.row])
+                databaseController?.deleteExpense(expense: filteredUnpaidExpenses[indexPath.row])
             }
         }
+    }
+    
+    // MARK: - SearchResultsUpdating Protocol Methods
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let searchText = searchController.searchBar.text?.lowercased() else {
+            return
+        }
+        
+        if searchText.count > 0 {
+            filteredPaidExpenses = paidExpenses.filter({ (expense: Expense) -> Bool in
+                return (expense.name?.lowercased().contains(searchText) ?? false)
+            })
+            filteredUnpaidExpenses = unpaidExpenses.filter({ (expense: Expense) -> Bool in
+                return (expense.name?.lowercased().contains(searchText) ?? false)
+            })
+        }
+        else {
+            filteredPaidExpenses = paidExpenses
+            filteredUnpaidExpenses = unpaidExpenses
+        }
+        tableView.reloadData()
     }
     
     // MARK: - DatabaseListener Protocol Methods
@@ -111,12 +162,14 @@ class ViewSearchExpensesTableViewController: UITableViewController, DatabaseList
     
     func onPaidExpenseGroupChange(change: DatabaseChange, expenses: [Expense]) {
         paidExpenses = expenses
+        updateSearchResults(for: navigationItem.searchController!)
         tableView.reloadData()
         
     }
     
     func onUnpaidExpenseGroupChange(change: DatabaseChange, expenses: [Expense]) {
         unpaidExpenses = expenses
+        updateSearchResults(for: navigationItem.searchController!)
         tableView.reloadData()
     }
 
