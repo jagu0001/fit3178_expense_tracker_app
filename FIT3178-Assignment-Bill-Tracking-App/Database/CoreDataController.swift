@@ -185,8 +185,8 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
     func fetchAllExpenses() -> [Expense] {
         if allExpensesFetchedResultsController == nil {
             let request: NSFetchRequest<Expense> = Expense.fetchRequest()
-            let nameSortDescriptor = NSSortDescriptor(key: "name", ascending: true)
-            request.sortDescriptors = [nameSortDescriptor]
+            let dateSortDescriptor = NSSortDescriptor(key: "date", ascending: true)
+            request.sortDescriptors = [dateSortDescriptor]
             
             // Initialize Fetched Results Controller
             allExpensesFetchedResultsController = NSFetchedResultsController<Expense>(fetchRequest: request, managedObjectContext: persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
@@ -211,9 +211,9 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
     func fetchPaidExpenses() -> [Expense] {
         if paidExpenseGroupFetchedResultsController == nil {
             let fetchRequest: NSFetchRequest<Expense> = Expense.fetchRequest()
-            let nameSortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+            let dateSortDescriptor = NSSortDescriptor(key: "date", ascending: false)
             let predicate = NSPredicate(format: "ANY expenseGroup.name == %@", PAID_EXPENSE_GROUP_NAME)
-            fetchRequest.sortDescriptors = [nameSortDescriptor]
+            fetchRequest.sortDescriptors = [dateSortDescriptor]
             fetchRequest.predicate = predicate
             
             // Initialize Fetched Results Controller
@@ -239,9 +239,9 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
     func fetchUnpaidExpenses() -> [Expense] {
         if unpaidExpenseGroupFetchedResultsController == nil {
             let fetchRequest: NSFetchRequest<Expense> = Expense.fetchRequest()
-            let nameSortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+            let dateSortDescriptor = NSSortDescriptor(key: "date", ascending: true)
             let predicate = NSPredicate(format: "ANY expenseGroup.name == %@", UNPAID_EXPENSE_GROUP_NAME)
-            fetchRequest.sortDescriptors = [nameSortDescriptor]
+            fetchRequest.sortDescriptors = [dateSortDescriptor]
             fetchRequest.predicate = predicate
             
             // Initialize Fetched Results Controller
