@@ -117,7 +117,13 @@ class AddEditExpenseViewController: UIViewController, UITextFieldDelegate {
         databaseController?.refreshChildContext()
         
         // Go back to root view
-        self.dismiss(animated: true, completion: nil)
+        // Check whether to pop or dismiss
+        if !isModalInPresentation {
+            navigationController?.popViewController(animated: true)
+        }
+        else {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 
     // MARK: - Navigation

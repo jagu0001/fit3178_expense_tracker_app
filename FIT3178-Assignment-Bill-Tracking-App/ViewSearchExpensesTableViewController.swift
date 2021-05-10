@@ -95,8 +95,15 @@ class ViewSearchExpensesTableViewController: UITableViewController, UISearchResu
             unpaidCell.textLabel?.text = expense.name
             unpaidCell.detailTextLabel?.text = String(format: "$%.2f\nDue date: %@", expense.amount, dateFormatter.string(from: expense.date!))
             
-            if expense.date! > Date() {
+            let dueSoon = Calendar.current.date(byAdding: .day, value: -3, to: expense.date!)
+            
+            // Set cell color to red if expense is already due
+            // Set cell color to yellow if expense is almost due
+            if Date() > expense.date! {
                 unpaidCell.backgroundColor = UIColor(named: "WarningLate")
+            }
+            else if Date() >= dueSoon! {
+                unpaidCell.backgroundColor = UIColor(named: "WarningYellow")
             }
             return unpaidCell
         }
