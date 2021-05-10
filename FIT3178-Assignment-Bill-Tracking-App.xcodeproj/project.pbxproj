@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		528F5EE9B0720F6C58D595C9 /* libPods-FIT3178-Assignment-Bill-Tracking-App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB677D11C1B97575C9E74EE9 /* libPods-FIT3178-Assignment-Bill-Tracking-App.a */; };
+		FC071D9D2648CE75007AFC41 /* ViewSearchExpensesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC071D9C2648CE75007AFC41 /* ViewSearchExpensesTableViewController.swift */; };
 		FC37B3F7264051940007A434 /* AddEditExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC37B3F6264051940007A434 /* AddEditExpenseViewController.swift */; };
 		FC43C2DD263F11B9008A167E /* ExpenseGroup+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC43C2D9263F11B9008A167E /* ExpenseGroup+CoreDataClass.swift */; };
 		FC43C2DE263F11B9008A167E /* ExpenseGroup+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC43C2DA263F11B9008A167E /* ExpenseGroup+CoreDataProperties.swift */; };
@@ -36,6 +37,7 @@
 		9B864705DBB522F02CD4487D /* Pods-FIT3178-Assignment-Bill-Tracking-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FIT3178-Assignment-Bill-Tracking-App.release.xcconfig"; path = "Target Support Files/Pods-FIT3178-Assignment-Bill-Tracking-App/Pods-FIT3178-Assignment-Bill-Tracking-App.release.xcconfig"; sourceTree = "<group>"; };
 		EB677D11C1B97575C9E74EE9 /* libPods-FIT3178-Assignment-Bill-Tracking-App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FIT3178-Assignment-Bill-Tracking-App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEFE8E4F51C760580DA58860 /* Pods-FIT3178-Assignment-Bill-Tracking-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FIT3178-Assignment-Bill-Tracking-App.debug.xcconfig"; path = "Target Support Files/Pods-FIT3178-Assignment-Bill-Tracking-App/Pods-FIT3178-Assignment-Bill-Tracking-App.debug.xcconfig"; sourceTree = "<group>"; };
+		FC071D9C2648CE75007AFC41 /* ViewSearchExpensesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSearchExpensesTableViewController.swift; sourceTree = "<group>"; };
 		FC37B3F6264051940007A434 /* AddEditExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditExpenseViewController.swift; sourceTree = "<group>"; };
 		FC43C2D9263F11B9008A167E /* ExpenseGroup+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExpenseGroup+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		FC43C2DA263F11B9008A167E /* ExpenseGroup+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExpenseGroup+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
@@ -151,6 +153,7 @@
 				FC64C44026431E2800CA3B4B /* UIViewController-Extensions.swift */,
 				FC5D42C42643908B00F114DE /* CameraViewController.swift */,
 				FC5D42CB2643A15100F114DE /* ExpenseImageViewController.swift */,
+				FC071D9C2648CE75007AFC41 /* ViewSearchExpensesTableViewController.swift */,
 			);
 			path = "FIT3178-Assignment-Bill-Tracking-App";
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				FC95906B2641B71D009F5221 /* ExpenseDetailsTableViewController.swift in Sources */,
 				FC9FE4CF26307CEA00CA8D9A /* SceneDelegate.swift in Sources */,
 				FC46DF69263DB22B00D3D3E5 /* MulticastDelegate.swift in Sources */,
+				FC071D9D2648CE75007AFC41 /* ViewSearchExpensesTableViewController.swift in Sources */,
 				FC64C44126431E2800CA3B4B /* UIViewController-Extensions.swift in Sources */,
 				FC5D42C52643908B00F114DE /* CameraViewController.swift in Sources */,
 			);
