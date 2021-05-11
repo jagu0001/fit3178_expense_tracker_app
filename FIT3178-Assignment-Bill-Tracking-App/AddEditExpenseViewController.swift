@@ -8,18 +8,19 @@
 import UIKit
 import MessageUI
 
-class AddEditExpenseViewController: UIViewController, UITextFieldDelegate {
+class AddEditExpenseViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var amountTextField: UITextField!
-    @IBOutlet weak var tagTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var paidSwitch: UISwitch!
     @IBOutlet weak var remindSwitch: UISwitch!
     @IBOutlet weak var payDatePicker: UIDatePicker!
+    @IBOutlet weak var tagPicker: UIPickerView!
     
     weak var databaseController: DatabaseProtocol?
     var expense: Expense?
+    var tagList = ["Food", "Entertainment", "Utility", "Transport", "Other"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +38,6 @@ class AddEditExpenseViewController: UIViewController, UITextFieldDelegate {
         // Assign self as delegate to text fields to dismiss properly
         nameTextField.delegate = self
         amountTextField.delegate = self
-        tagTextField.delegate = self
         
         // Add button to dismiss keyboard when editing TextView
         descriptionTextView.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
@@ -46,8 +46,13 @@ class AddEditExpenseViewController: UIViewController, UITextFieldDelegate {
         descriptionTextView.layer.borderColor = UIColor.lightGray.cgColor
         descriptionTextView.layer.borderWidth = 0.5
         descriptionTextView.layer.cornerRadius = 5
+        
+        // Assign self as delegate and data source to picker view
+        tagPicker.delegate = self
+        tagPicker.dataSource = self
     }
     
+
     @objc func tapDone(sender: Any) {
         self.view.endEditing(true)
     }
@@ -61,7 +66,6 @@ class AddEditExpenseViewController: UIViewController, UITextFieldDelegate {
         if let expense = expense {
             nameTextField.text = expense.name
             amountTextField.text = expense.amount.description
-            tagTextField.text = expense.tag
             descriptionTextView.text = expense.expenseDescription
             payDatePicker.date = expense.date!
             paidSwitch.isOn = expense.isPaid
@@ -74,7 +78,7 @@ class AddEditExpenseViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func saveExpense(_ sender: Any) {
-        guard let name = nameTextField.text, name != "", let amount = amountTextField.text, amount != "", let tag = tagTextField.text, let description = descriptionTextView.text, description != "" else {
+        guard let name = nameTextField.text, name != "", let amount = amountTextField.text, amount != "", let description = descriptionTextView.text, description != "" else {
             displayMessage(title: "Error", message: "Please do not leave any blank fields")
             return
         }
@@ -83,7 +87,6 @@ class AddEditExpenseViewController: UIViewController, UITextFieldDelegate {
         expense!.name = name
         expense!.amount = (amount as NSString).floatValue
         expense!.expenseDescription = description
-        expense!.tag = tag
         expense!.date = payDatePicker.date
         
         if paidSwitch.isOn {
@@ -124,6 +127,20 @@ class AddEditExpenseViewController: UIViewController, UITextFieldDelegate {
         else {
             self.dismiss(animated: true, completion: nil)
         }
+    }
+    
+    // MARK: - Picker View Methods
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return tagList.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        self.view.endEditing(true)
+        return tagList[row]
     }
 
     // MARK: - Navigation
