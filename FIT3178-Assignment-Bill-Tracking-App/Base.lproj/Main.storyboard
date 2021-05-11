@@ -476,7 +476,7 @@
         <!--Graphs-->
         <scene sceneID="Dtl-VL-kac">
             <objects>
-                <viewController id="59G-GC-Max" sceneMemberID="viewController">
+                <viewController id="59G-GC-Max" customClass="ChartDataViewController" customModule="FIT3178_Assignment_Bill_Tracking_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jUt-t6-oOH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
