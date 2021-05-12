@@ -302,7 +302,6 @@
         <!--Add New Expense-->
         <scene sceneID="jUZ-KC-FK1">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="q5E-zf-EJS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="Sjb-4u-6C4" customClass="AddEditExpenseViewController" customModule="FIT3178_Assignment_Bill_Tracking_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Asy-EV-48Y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -426,6 +425,7 @@
                         <outlet property="tagPicker" destination="323-cP-EeX" id="efS-h7-oQf"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q5E-zf-EJS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3157.971014492754" y="103.79464285714285"/>
         </scene>
@@ -444,7 +444,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4jo-2Q-EzS">
-                                <rect key="frame" x="10" y="793" width="394" height="30"/>
+                                <rect key="frame" x="10" y="773" width="394" height="30"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <state key="normal" title="Take Photo">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -459,7 +459,7 @@
                         <constraints>
                             <constraint firstItem="8ey-Gd-oc9" firstAttribute="trailing" secondItem="1id-RO-8Zd" secondAttribute="trailing" constant="8" id="3UG-S8-PEj"/>
                             <constraint firstItem="8ey-Gd-oc9" firstAttribute="trailing" secondItem="4jo-2Q-EzS" secondAttribute="trailing" constant="10" id="71i-IK-8Dy"/>
-                            <constraint firstItem="4jo-2Q-EzS" firstAttribute="bottom" secondItem="8ey-Gd-oc9" secondAttribute="bottom" constant="10" id="csa-Bp-jAe"/>
+                            <constraint firstItem="8ey-Gd-oc9" firstAttribute="bottom" secondItem="4jo-2Q-EzS" secondAttribute="bottom" constant="10" id="c4e-dB-9Iu"/>
                             <constraint firstItem="1id-RO-8Zd" firstAttribute="leading" secondItem="8ey-Gd-oc9" secondAttribute="leading" constant="8" id="dpt-Ng-ijj"/>
                             <constraint firstItem="1id-RO-8Zd" firstAttribute="top" secondItem="8ey-Gd-oc9" secondAttribute="top" constant="8" id="eEs-MV-vLu"/>
                             <constraint firstItem="4jo-2Q-EzS" firstAttribute="leading" secondItem="8ey-Gd-oc9" secondAttribute="leading" constant="10" id="uzd-M8-Vme"/>
@@ -478,7 +478,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Wn-u4-UK6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6200.0000000000009" y="103.79464285714285"/>
+            <point key="canvasLocation" x="4588" y="103"/>
         </scene>
         <!--Graphs-->
         <scene sceneID="Dtl-VL-kac">

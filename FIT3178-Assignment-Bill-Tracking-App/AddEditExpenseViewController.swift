@@ -70,6 +70,10 @@ class AddEditExpenseViewController: UIViewController, UITextFieldDelegate, UIPic
             payDatePicker.date = expense.date!
             paidSwitch.isOn = expense.isPaid
             remindSwitch.isOn = expense.isNotify
+            
+            if let pickerViewIndex = tagList.firstIndex(of: expense.tag!) {
+                tagPicker.selectRow(pickerViewIndex, inComponent: 0, animated: true)
+            }
         }
     }
     
@@ -88,6 +92,7 @@ class AddEditExpenseViewController: UIViewController, UITextFieldDelegate, UIPic
         expense!.amount = (amount as NSString).floatValue
         expense!.expenseDescription = description
         expense!.date = payDatePicker.date
+        expense!.tag = tagList[tagPicker.selectedRow(inComponent: 0)]
         
         if paidSwitch.isOn {
             // Remove from unpaid group if it was there previously
@@ -119,14 +124,8 @@ class AddEditExpenseViewController: UIViewController, UITextFieldDelegate, UIPic
         // Refresh child context for next use
         databaseController?.refreshChildContext()
         
-        // Go back to root view
-        // Check whether to pop or dismiss
-        if !isModalInPresentation {
-            navigationController?.popViewController(animated: true)
-        }
-        else {
-            self.dismiss(animated: true, completion: nil)
-        }
+        // Go back to previous view
+        navigationController?.popViewController(animated: true)
     }
     
     // MARK: - Picker View Methods
