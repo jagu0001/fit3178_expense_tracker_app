@@ -10,7 +10,10 @@ import CoreLocation
 
 class ChartDataViewController: UIViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
+    var cityName: String?
     var data: UrbanAreaData?
+    
+    @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var foodLabel: UILabel!
     @IBOutlet weak var transportLabel: UILabel!
     
@@ -75,6 +78,7 @@ class ChartDataViewController: UIViewController, CLLocationManagerDelegate {
                             }
                             
                             DispatchQueue.main.async {
+                                self.cityLabel.text = "City: \(self.cityName!)"
                                 self.foodLabel.text = "Monthly food cost: $\((self.data?.mealCost)!)"
                                 self.transportLabel.text = "Monthly transport cost: $\((self.data?.publicTransportCost)!)"
                             }
@@ -102,7 +106,7 @@ class ChartDataViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
             CLGeocoder().reverseGeocodeLocation(location) { (locality, error) in
-                //print(locality!.first)
+                self.cityName = locality!.first?.locality
             }
             location.fetchCity() { (city, error) in
                 if let error = error {

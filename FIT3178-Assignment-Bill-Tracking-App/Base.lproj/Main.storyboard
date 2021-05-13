@@ -20,52 +20,12 @@
                     </tabBar>
                     <connections>
                         <segue destination="IZo-V8-Dgt" kind="relationship" relationship="viewControllers" id="ocR-7J-28c"/>
-                        <segue destination="IWB-aQ-w3X" kind="relationship" relationship="viewControllers" id="dPb-aU-bn4"/>
                         <segue destination="59G-GC-Max" kind="relationship" relationship="viewControllers" id="UrQ-M8-AZt"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dKQ-wq-dtq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-57" y="104"/>
-        </scene>
-        <!--My Expenses-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="MyBillsMainViewController" customModule="FIT3178_Assignment_Bill_Tracking_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ym-uu-Thw">
-                                <rect key="frame" x="20" y="108" width="374" height="250"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="71X-ON-ddx"/>
-                                </constraints>
-                            </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rHe-y9-GhR">
-                                <rect key="frame" x="100" y="408" width="214" height="30"/>
-                                <state key="normal" title="Add New Expense"/>
-                                <connections>
-                                    <segue destination="Sjb-4u-6C4" kind="show" id="gBi-59-REZ"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0Ym-uu-Thw" secondAttribute="trailing" constant="20" id="0Pb-aV-T7p"/>
-                            <constraint firstItem="rHe-y9-GhR" firstAttribute="top" secondItem="0Ym-uu-Thw" secondAttribute="bottom" constant="50" id="Fml-pT-xxT"/>
-                            <constraint firstItem="0Ym-uu-Thw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="HjK-I9-Af7"/>
-                            <constraint firstItem="rHe-y9-GhR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="UQL-Xa-LaV"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rHe-y9-GhR" secondAttribute="trailing" constant="100" id="XaT-Or-XeN"/>
-                            <constraint firstItem="0Ym-uu-Thw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="mth-S4-2oT"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="My Expenses" id="2ax-Ja-zwO"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1968" y="104"/>
         </scene>
         <!--View Search Expenses Table View Controller-->
         <scene sceneID="AXJ-BZ-uDz">
@@ -136,7 +96,13 @@
                             <outlet property="delegate" destination="Eyl-kd-CYb" id="6fd-gT-ucQ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="6tB-5E-22Z"/>
+                    <navigationItem key="navigationItem" id="6tB-5E-22Z">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="fRk-Ca-bh2">
+                            <connections>
+                                <segue destination="Sjb-4u-6C4" kind="show" id="F0b-bk-dsZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lnn-6U-k2m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -354,9 +320,9 @@
                                     <segue destination="9AL-ig-pzc" kind="show" identifier="addImageSegue" id="igl-n4-ryi"/>
                                 </connections>
                             </button>
-                            <pickerView alpha="0.80000000000000004" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="323-cP-EeX">
+                            <pickerView contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="323-cP-EeX">
                                 <rect key="frame" x="0.0" y="240.5" width="414" height="216"/>
-                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tag" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s7k-EP-yIS">
                                 <rect key="frame" x="20" y="216" width="26.5" height="19.5"/>
@@ -488,14 +454,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWf-wZ-nf4">
-                                <rect key="frame" x="20" y="64" width="42" height="49"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWf-wZ-nf4">
+                                <rect key="frame" x="20" y="64" width="41.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBf-40-H1k">
-                                <rect key="frame" x="20" y="104.5" width="42" height="21"/>
+                                <rect key="frame" x="20" y="104.5" width="41.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KxZ-ym-9PX">
+                                <rect key="frame" x="20" y="145" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -505,15 +477,18 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="oBf-40-H1k" firstAttribute="leading" secondItem="RDO-yf-6z6" secondAttribute="leading" constant="20" id="DZU-v5-EbX"/>
+                            <constraint firstItem="KxZ-ym-9PX" firstAttribute="top" secondItem="oBf-40-H1k" secondAttribute="bottom" constant="20" id="E89-n5-ZVJ"/>
                             <constraint firstItem="iWf-wZ-nf4" firstAttribute="leading" secondItem="RDO-yf-6z6" secondAttribute="leading" constant="20" id="EuH-lz-kMm"/>
+                            <constraint firstItem="oBf-40-H1k" firstAttribute="top" secondItem="iWf-wZ-nf4" secondAttribute="bottom" constant="20" id="Hgs-uH-0cI"/>
+                            <constraint firstItem="KxZ-ym-9PX" firstAttribute="leading" secondItem="RDO-yf-6z6" secondAttribute="leading" constant="20" id="iKK-sY-AWE"/>
                             <constraint firstItem="iWf-wZ-nf4" firstAttribute="top" secondItem="RDO-yf-6z6" secondAttribute="top" constant="20" id="jsc-Xc-Fsz"/>
-                            <constraint firstItem="oBf-40-H1k" firstAttribute="top" secondItem="iWf-wZ-nf4" secondAttribute="bottom" constant="20" id="kPD-Dj-PDu"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Statistics" image="chart.pie.fill" catalog="system" id="3Pe-Sf-9UJ"/>
                     <connections>
-                        <outlet property="foodLabel" destination="iWf-wZ-nf4" id="kw2-Za-bMh"/>
-                        <outlet property="transportLabel" destination="oBf-40-H1k" id="eKj-e7-JId"/>
+                        <outlet property="cityLabel" destination="iWf-wZ-nf4" id="CNN-b4-7n4"/>
+                        <outlet property="foodLabel" destination="oBf-40-H1k" id="0DJ-oM-k4L"/>
+                        <outlet property="transportLabel" destination="KxZ-ym-9PX" id="B5j-Et-ynm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iKi-S5-JnN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -578,34 +553,14 @@
             </objects>
             <point key="canvasLocation" x="189.85507246376812" y="807.58928571428567"/>
         </scene>
-        <!--Add Expenses-->
-        <scene sceneID="oM9-aa-8oL">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IWB-aQ-w3X" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Add Expenses" image="plus" catalog="system" id="b09-5H-mWS"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="q9H-gn-iuz">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="8SU-9f-B3Y"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="v0r-uY-IAk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1057" y="104"/>
-        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gBi-59-REZ"/>
+        <segue reference="F0b-bk-dsZ"/>
         <segue reference="UwO-WS-Lq2"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="chart.pie.fill" catalog="system" width="128" height="121"/>
         <image name="list.dash" catalog="system" width="128" height="85"/>
-        <image name="plus" catalog="system" width="128" height="113"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -615,8 +570,8 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
