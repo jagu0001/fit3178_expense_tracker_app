@@ -43,6 +43,8 @@ class ViewSearchExpensesTableViewController: UITableViewController, UISearchResu
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        // Hide navigation bar from tabbarcontroller
+        self.tabBarController?.navigationController?.navigationBar.isHidden = true
         databaseController?.addListener(listener: self)
     }
     
@@ -50,7 +52,7 @@ class ViewSearchExpensesTableViewController: UITableViewController, UISearchResu
         super.viewWillDisappear(animated)
         databaseController?.removeListener(listener: self)
     }
-
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -133,7 +135,10 @@ class ViewSearchExpensesTableViewController: UITableViewController, UISearchResu
         return true
     }
 
-
+    @IBAction func signOut(_ sender: Any) {
+        print("here")
+    }
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {

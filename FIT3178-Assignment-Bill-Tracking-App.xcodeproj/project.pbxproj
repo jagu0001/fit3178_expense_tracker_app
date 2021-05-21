@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,7 +22,13 @@
 		FC5D42CC2643A15100F114DE /* ExpenseImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D42CB2643A15100F114DE /* ExpenseImageViewController.swift */; };
 		FC5D42DB2643AE1B00F114DE /* Expense+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D42D92643AE1B00F114DE /* Expense+CoreDataClass.swift */; };
 		FC5D42DC2643AE1B00F114DE /* Expense+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D42DA2643AE1B00F114DE /* Expense+CoreDataProperties.swift */; };
+		FC5FF1F22656DF1900ABF4F4 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FC5FF1F12656DF1900ABF4F4 /* FirebaseAuth */; };
+		FC5FF1F42656DF1900ABF4F4 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = FC5FF1F32656DF1900ABF4F4 /* FirebaseFirestore */; };
+		FC5FF1F62656DF1900ABF4F4 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = FC5FF1F52656DF1900ABF4F4 /* FirebaseFirestoreSwift-Beta */; };
+		FC5FF1F92656E31B00ABF4F4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC5FF1F82656E31B00ABF4F4 /* GoogleService-Info.plist */; };
 		FC64C44126431E2800CA3B4B /* UIViewController-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC64C44026431E2800CA3B4B /* UIViewController-Extensions.swift */; };
+		FC78C0872657F9BC00A29744 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78C0862657F9BC00A29744 /* SignUpViewController.swift */; };
+		FC78C08E265815E000A29744 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78C08D265815E000A29744 /* SettingsViewController.swift */; };
 		FC95906B2641B71D009F5221 /* ExpenseDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95906A2641B71D009F5221 /* ExpenseDetailsTableViewController.swift */; };
 		FC9FE4CD26307CEA00CA8D9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9FE4CC26307CEA00CA8D9A /* AppDelegate.swift */; };
 		FC9FE4CF26307CEA00CA8D9A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9FE4CE26307CEA00CA8D9A /* SceneDelegate.swift */; };
@@ -30,6 +36,7 @@
 		FC9FE4D426307CEA00CA8D9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC9FE4D226307CEA00CA8D9A /* Main.storyboard */; };
 		FC9FE4D626307CED00CA8D9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC9FE4D526307CED00CA8D9A /* Assets.xcassets */; };
 		FC9FE4D926307CED00CA8D9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC9FE4D726307CED00CA8D9A /* LaunchScreen.storyboard */; };
+		FCBB3F262656EC8F002F0ED3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBB3F252656EC8F002F0ED3 /* LoginViewController.swift */; };
 		FCE73178264AA74400D7D188 /* UrbanArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE73177264AA74400D7D188 /* UrbanArea.swift */; };
 		FCE73194264AACDA00D7D188 /* UrbanAreaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE73193264AACDA00D7D188 /* UrbanAreaData.swift */; };
 		FCE731A0264AB9EE00D7D188 /* ChartDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE7319F264AB9EE00D7D188 /* ChartDataViewController.swift */; };
@@ -55,7 +62,10 @@
 		FC5D42CB2643A15100F114DE /* ExpenseImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseImageViewController.swift; sourceTree = "<group>"; };
 		FC5D42D92643AE1B00F114DE /* Expense+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expense+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		FC5D42DA2643AE1B00F114DE /* Expense+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expense+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		FC5FF1F82656E31B00ABF4F4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FC64C44026431E2800CA3B4B /* UIViewController-Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController-Extensions.swift"; sourceTree = "<group>"; };
+		FC78C0862657F9BC00A29744 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		FC78C08D265815E000A29744 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FC95906A2641B71D009F5221 /* ExpenseDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDetailsTableViewController.swift; sourceTree = "<group>"; };
 		FC9FE4C926307CEA00CA8D9A /* FIT3178-Assignment-Bill-Tracking-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FIT3178-Assignment-Bill-Tracking-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC9FE4CC26307CEA00CA8D9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +75,7 @@
 		FC9FE4D526307CED00CA8D9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC9FE4D826307CED00CA8D9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC9FE4DA26307CED00CA8D9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCBB3F252656EC8F002F0ED3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FCE73177264AA74400D7D188 /* UrbanArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrbanArea.swift; sourceTree = "<group>"; };
 		FCE73193264AACDA00D7D188 /* UrbanAreaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrbanAreaData.swift; sourceTree = "<group>"; };
 		FCE7319F264AB9EE00D7D188 /* ChartDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDataViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +89,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				528F5EE9B0720F6C58D595C9 /* libPods-FIT3178-Assignment-Bill-Tracking-App.a in Frameworks */,
+				FC5FF1F62656DF1900ABF4F4 /* FirebaseFirestoreSwift-Beta in Frameworks */,
+				FC5FF1F22656DF1900ABF4F4 /* FirebaseAuth in Frameworks */,
+				FC5FF1F42656DF1900ABF4F4 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +160,7 @@
 		FC9FE4CB26307CEA00CA8D9A /* FIT3178-Assignment-Bill-Tracking-App */ = {
 			isa = PBXGroup;
 			children = (
+				FC5FF1F82656E31B00ABF4F4 /* GoogleService-Info.plist */,
 				FC46DF67263DB20D00D3D3E5 /* Database */,
 				FC46DF5D263DAD9C00D3D3E5 /* Data Model */,
 				FC9FE4CC26307CEA00CA8D9A /* AppDelegate.swift */,
@@ -166,6 +181,9 @@
 				FCE73193264AACDA00D7D188 /* UrbanAreaData.swift */,
 				FCE7319F264AB9EE00D7D188 /* ChartDataViewController.swift */,
 				FCF9F062264CD381002D8279 /* CityData.swift */,
+				FCBB3F252656EC8F002F0ED3 /* LoginViewController.swift */,
+				FC78C0862657F9BC00A29744 /* SignUpViewController.swift */,
+				FC78C08D265815E000A29744 /* SettingsViewController.swift */,
 			);
 			path = "FIT3178-Assignment-Bill-Tracking-App";
 			sourceTree = "<group>";
@@ -181,13 +199,17 @@
 				FC9FE4C526307CEA00CA8D9A /* Sources */,
 				FC9FE4C626307CEA00CA8D9A /* Frameworks */,
 				FC9FE4C726307CEA00CA8D9A /* Resources */,
-				524631A3FEBB8E6E31E2E1E4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "FIT3178-Assignment-Bill-Tracking-App";
+			packageProductDependencies = (
+				FC5FF1F12656DF1900ABF4F4 /* FirebaseAuth */,
+				FC5FF1F32656DF1900ABF4F4 /* FirebaseFirestore */,
+				FC5FF1F52656DF1900ABF4F4 /* FirebaseFirestoreSwift-Beta */,
+			);
 			productName = "FIT3178-Assignment-Bill-Tracking-App";
 			productReference = FC9FE4C926307CEA00CA8D9A /* FIT3178-Assignment-Bill-Tracking-App.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +237,9 @@
 				Base,
 			);
 			mainGroup = FC9FE4C026307CEA00CA8D9A;
+			packageReferences = (
+				FC5FF1F02656DF1900ABF4F4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = FC9FE4CA26307CEA00CA8D9A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -230,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC9FE4D926307CED00CA8D9A /* LaunchScreen.storyboard in Resources */,
+				FC5FF1F92656E31B00ABF4F4 /* GoogleService-Info.plist in Resources */,
 				FC9FE4D626307CED00CA8D9A /* Assets.xcassets in Resources */,
 				FC9FE4D426307CEA00CA8D9A /* Main.storyboard in Resources */,
 			);
@@ -238,23 +264,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		524631A3FEBB8E6E31E2E1E4 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FIT3178-Assignment-Bill-Tracking-App/Pods-FIT3178-Assignment-Bill-Tracking-App-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FIT3178-Assignment-Bill-Tracking-App/Pods-FIT3178-Assignment-Bill-Tracking-App-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FIT3178-Assignment-Bill-Tracking-App/Pods-FIT3178-Assignment-Bill-Tracking-App-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C04BA4897895A6BD62896E3E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -297,6 +306,7 @@
 				FC43C2DE263F11B9008A167E /* ExpenseGroup+CoreDataProperties.swift in Sources */,
 				FC43C2DD263F11B9008A167E /* ExpenseGroup+CoreDataClass.swift in Sources */,
 				FCF9F063264CD381002D8279 /* CityData.swift in Sources */,
+				FCBB3F262656EC8F002F0ED3 /* LoginViewController.swift in Sources */,
 				FCE731A0264AB9EE00D7D188 /* ChartDataViewController.swift in Sources */,
 				FC5D42DC2643AE1B00F114DE /* Expense+CoreDataProperties.swift in Sources */,
 				FC5D42DB2643AE1B00F114DE /* Expense+CoreDataClass.swift in Sources */,
@@ -307,7 +317,9 @@
 				FC46DF69263DB22B00D3D3E5 /* MulticastDelegate.swift in Sources */,
 				FC071D9D2648CE75007AFC41 /* ViewSearchExpensesTableViewController.swift in Sources */,
 				FC64C44126431E2800CA3B4B /* UIViewController-Extensions.swift in Sources */,
+				FC78C0872657F9BC00A29744 /* SignUpViewController.swift in Sources */,
 				FC5D42C52643908B00F114DE /* CameraViewController.swift in Sources */,
+				FC78C08E265815E000A29744 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +468,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "FIT3178-Assignment-Bill-Tracking-App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -475,6 +488,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "FIT3178-Assignment-Bill-Tracking-App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -509,6 +523,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FC5FF1F02656DF1900ABF4F4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FC5FF1F12656DF1900ABF4F4 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC5FF1F02656DF1900ABF4F4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		FC5FF1F32656DF1900ABF4F4 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC5FF1F02656DF1900ABF4F4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		FC5FF1F52656DF1900ABF4F4 /* FirebaseFirestoreSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC5FF1F02656DF1900ABF4F4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreSwift-Beta";
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		FC46DF5E263DADD700D3D3E5 /* FIT3178-ExpenseApp-DataModel.xcdatamodeld */ = {
