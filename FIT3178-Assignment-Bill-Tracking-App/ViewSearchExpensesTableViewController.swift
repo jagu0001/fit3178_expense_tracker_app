@@ -83,7 +83,7 @@ class ViewSearchExpensesTableViewController: UITableViewController, UISearchResu
             paidCell.detailTextLabel?.numberOfLines = 0
             
             paidCell.textLabel?.text = expense.name
-            paidCell.detailTextLabel?.text = String(format: "$%.2f\nDate paid: %@", expense.amount, dateFormatter.string(from: expense.date!))
+            paidCell.detailTextLabel?.text = String(format: "$%.2f\nDate paid: %@\nTag: %@", expense.amount, dateFormatter.string(from: expense.date!), expense.tag!)
             paidCell.backgroundColor = UIColor(named: "PaidGreen")
             return paidCell
         }
@@ -95,7 +95,7 @@ class ViewSearchExpensesTableViewController: UITableViewController, UISearchResu
             unpaidCell.detailTextLabel?.numberOfLines = 0
             
             unpaidCell.textLabel?.text = expense.name
-            unpaidCell.detailTextLabel?.text = String(format: "$%.2f\nDue date: %@", expense.amount, dateFormatter.string(from: expense.date!))
+            unpaidCell.detailTextLabel?.text = String(format: "$%.2f\nDue date: %@\nTag: %@", expense.amount, dateFormatter.string(from: expense.date!), expense.tag!)
             
             let dueSoon = Calendar.current.date(byAdding: .day, value: -3, to: expense.date!)
             
@@ -159,10 +159,10 @@ class ViewSearchExpensesTableViewController: UITableViewController, UISearchResu
         
         if searchText.count > 0 {
             filteredPaidExpenses = paidExpenses.filter({ (expense: Expense) -> Bool in
-                return (expense.name?.lowercased().contains(searchText) ?? false)
+                return ((expense.name?.lowercased().contains(searchText)) ?? false) || ((expense.tag?.lowercased().contains(searchText)) ?? false)
             })
             filteredUnpaidExpenses = unpaidExpenses.filter({ (expense: Expense) -> Bool in
-                return (expense.name?.lowercased().contains(searchText) ?? false)
+                return (expense.name?.lowercased().contains(searchText) ?? false) || ((expense.tag?.lowercased().contains(searchText)) ?? false)
             })
         }
         else {
