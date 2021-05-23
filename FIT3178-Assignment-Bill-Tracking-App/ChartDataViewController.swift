@@ -78,7 +78,9 @@ class ChartDataViewController: UIViewController, CLLocationManagerDelegate {
                             }
                             
                             DispatchQueue.main.async {
-                                self.cityLabel.text = "City: \(self.cityName!)"
+                                if let cityName = self.cityName {
+                                    self.cityLabel.text = "City: \(cityName)"
+                                }
                                 self.foodLabel.text = "Monthly food cost: $\((self.data?.mealCost)!)"
                                 self.transportLabel.text = "Monthly transport cost: $\((self.data?.publicTransportCost)!)"
                             }

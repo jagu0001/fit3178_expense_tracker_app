@@ -235,8 +235,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="IZo-V8-Dgt" kind="relationship" relationship="viewControllers" id="ocR-7J-28c"/>
-                        <segue destination="59G-GC-Max" kind="relationship" relationship="viewControllers" id="UrQ-M8-AZt"/>
                         <segue destination="qT2-hD-8bK" kind="relationship" relationship="viewControllers" id="JkX-45-la7"/>
+                        <segue destination="04q-ei-nTA" kind="relationship" relationship="viewControllers" id="H84-gB-RDX"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dKQ-wq-dtq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -609,7 +609,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q5E-zf-EJS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5888.4057971014499" y="103.79464285714285"/>
+            <point key="canvasLocation" x="6798.5507246376819" y="103.79464285714285"/>
         </scene>
         <!--Save Photo-->
         <scene sceneID="UaW-rw-6hF">
@@ -660,7 +660,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Wn-u4-UK6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7317.3913043478269" y="102.45535714285714"/>
+            <point key="canvasLocation" x="8227.536231884058" y="102.45535714285714"/>
         </scene>
         <!--Statistics-->
         <scene sceneID="Dtl-VL-kac">
@@ -710,46 +710,57 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iKi-S5-JnN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3046" y="80"/>
+            <point key="canvasLocation" x="4671.0144927536239" y="79.6875"/>
         </scene>
-        <!--Settings-->
-        <scene sceneID="tz8-k7-Kdc">
+        <!--Chart View Controller-->
+        <scene sceneID="iRl-Y9-d3o">
             <objects>
-                <viewController id="lwk-TU-fUT" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="gW7-3c-n1e">
+                <viewController id="hIR-Vf-LPP" customClass="ChartViewController" customModule="FIT3178_Assignment_Bill_Tracking_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wz8-9i-Ogz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Email Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEQ-7P-8Ze">
-                                <rect key="frame" x="20" y="64" width="374" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rul-z5-XYH" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="144" width="414" height="399"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OMn-VQ-1HX">
+                                <rect key="frame" x="20" y="583" width="374" height="30"/>
+                                <state key="normal" title="Compare to Local Data"/>
+                                <connections>
+                                    <segue destination="59G-GC-Max" kind="show" id="W9O-ij-Aak"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Spendings This Month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ipq-SK-xqM">
+                                <rect key="frame" x="20" y="98" width="374" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" name="WelcomeGreen"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name@example.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9HX-jX-pab">
-                                <rect key="frame" x="20" y="105" width="374" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="9x5-0O-wS8"/>
+                        <viewLayoutGuide key="safeArea" id="Rzu-6g-GVW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="dEQ-7P-8Ze" firstAttribute="leading" secondItem="9x5-0O-wS8" secondAttribute="leading" constant="20" id="0i7-aN-NeU"/>
-                            <constraint firstItem="9HX-jX-pab" firstAttribute="top" secondItem="dEQ-7P-8Ze" secondAttribute="bottom" constant="20" id="6yG-B6-y6i"/>
-                            <constraint firstItem="9x5-0O-wS8" firstAttribute="trailing" secondItem="9HX-jX-pab" secondAttribute="trailing" constant="20" id="8mR-d3-Cge"/>
-                            <constraint firstItem="dEQ-7P-8Ze" firstAttribute="top" secondItem="9x5-0O-wS8" secondAttribute="top" constant="20" id="HY0-vF-uqV"/>
-                            <constraint firstItem="9x5-0O-wS8" firstAttribute="trailing" secondItem="dEQ-7P-8Ze" secondAttribute="trailing" constant="20" id="n2d-ah-jgy"/>
-                            <constraint firstItem="9HX-jX-pab" firstAttribute="leading" secondItem="9x5-0O-wS8" secondAttribute="leading" constant="20" id="xlE-bU-Lrn"/>
+                            <constraint firstItem="Rzu-6g-GVW" firstAttribute="trailing" secondItem="Ipq-SK-xqM" secondAttribute="trailing" constant="20" id="58e-9S-cAO"/>
+                            <constraint firstItem="Ipq-SK-xqM" firstAttribute="top" secondItem="Rzu-6g-GVW" secondAttribute="top" constant="10" id="G34-pE-eKL"/>
+                            <constraint firstItem="Ipq-SK-xqM" firstAttribute="leading" secondItem="Rzu-6g-GVW" secondAttribute="leading" constant="20" id="Joh-Bm-pjQ"/>
+                            <constraint firstItem="rul-z5-XYH" firstAttribute="leading" secondItem="Rzu-6g-GVW" secondAttribute="leading" id="YUn-pV-4ZR"/>
+                            <constraint firstItem="Rzu-6g-GVW" firstAttribute="bottom" secondItem="OMn-VQ-1HX" secondAttribute="bottom" constant="200" id="av7-ce-IEn"/>
+                            <constraint firstItem="OMn-VQ-1HX" firstAttribute="leading" secondItem="Rzu-6g-GVW" secondAttribute="leading" constant="20" id="bCb-Uu-QBS"/>
+                            <constraint firstItem="Rzu-6g-GVW" firstAttribute="trailing" secondItem="OMn-VQ-1HX" secondAttribute="trailing" constant="20" id="h6D-OA-aVj"/>
+                            <constraint firstItem="rul-z5-XYH" firstAttribute="top" secondItem="Ipq-SK-xqM" secondAttribute="bottom" constant="10" id="iAq-f9-jW1"/>
+                            <constraint firstItem="Rzu-6g-GVW" firstAttribute="trailing" secondItem="rul-z5-XYH" secondAttribute="trailing" id="qn6-2m-swy"/>
+                            <constraint firstItem="OMn-VQ-1HX" firstAttribute="top" secondItem="rul-z5-XYH" secondAttribute="bottom" constant="40" id="uGn-MA-sxV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Settings" id="dAN-cH-FLz">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="rir-zI-oTL"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="gku-zI-ZAS"/>
+                    <connections>
+                        <outlet property="chartView" destination="rul-z5-XYH" id="Bq9-bQ-als"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MD5-GJ-0hr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GwO-cG-OhE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3808.6956521739135" y="-526.33928571428567"/>
+            <point key="canvasLocation" x="3842.0289855072465" y="79.6875"/>
         </scene>
         <!--Expense Information-->
         <scene sceneID="riB-Qe-mdX">
@@ -884,6 +895,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ql9-Ok-277" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1100" y="807.58928571428567"/>
+        </scene>
+        <!--Statistics-->
+        <scene sceneID="zhi-2s-UXt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="04q-ei-nTA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Statistics" image="chart.pie.fill" catalog="system" id="l4F-C9-KII"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sZ6-AT-tTb">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hIR-Vf-LPP" kind="relationship" relationship="rootViewController" id="a7E-xZ-TLk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RZv-FI-jiI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2931.8840579710145" y="79.6875"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
