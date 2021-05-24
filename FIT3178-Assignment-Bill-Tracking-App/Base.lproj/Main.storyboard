@@ -665,47 +665,39 @@
         <!--Statistics-->
         <scene sceneID="Dtl-VL-kac">
             <objects>
-                <viewController id="59G-GC-Max" customClass="ChartDataViewController" customModule="FIT3178_Assignment_Bill_Tracking_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="59G-GC-Max" customClass="LocalDataViewController" customModule="FIT3178_Assignment_Bill_Tracking_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jUt-t6-oOH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWf-wZ-nf4">
-                                <rect key="frame" x="20" y="108" width="41.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Enable Location Services" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MSa-Qa-WF0">
+                                <rect key="frame" x="10" y="98" width="394" height="25.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" systemColor="systemOrangeColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBf-40-H1k">
-                                <rect key="frame" x="20" y="148.5" width="41.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KxZ-ym-9PX">
-                                <rect key="frame" x="20" y="189" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tYV-dD-0ch" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="133.5" width="414" height="379.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RDO-yf-6z6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="oBf-40-H1k" firstAttribute="leading" secondItem="RDO-yf-6z6" secondAttribute="leading" constant="20" id="DZU-v5-EbX"/>
-                            <constraint firstItem="KxZ-ym-9PX" firstAttribute="top" secondItem="oBf-40-H1k" secondAttribute="bottom" constant="20" id="E89-n5-ZVJ"/>
-                            <constraint firstItem="iWf-wZ-nf4" firstAttribute="leading" secondItem="RDO-yf-6z6" secondAttribute="leading" constant="20" id="EuH-lz-kMm"/>
-                            <constraint firstItem="oBf-40-H1k" firstAttribute="top" secondItem="iWf-wZ-nf4" secondAttribute="bottom" constant="20" id="Hgs-uH-0cI"/>
-                            <constraint firstItem="KxZ-ym-9PX" firstAttribute="leading" secondItem="RDO-yf-6z6" secondAttribute="leading" constant="20" id="iKK-sY-AWE"/>
-                            <constraint firstItem="iWf-wZ-nf4" firstAttribute="top" secondItem="RDO-yf-6z6" secondAttribute="top" constant="20" id="jsc-Xc-Fsz"/>
+                            <constraint firstItem="tYV-dD-0ch" firstAttribute="top" secondItem="MSa-Qa-WF0" secondAttribute="bottom" constant="10" id="7z5-rk-GzP"/>
+                            <constraint firstItem="RDO-yf-6z6" firstAttribute="trailing" secondItem="MSa-Qa-WF0" secondAttribute="trailing" constant="10" id="HMd-g3-9mt"/>
+                            <constraint firstItem="RDO-yf-6z6" firstAttribute="bottom" secondItem="tYV-dD-0ch" secondAttribute="bottom" constant="300" id="KHF-Di-TqE"/>
+                            <constraint firstItem="MSa-Qa-WF0" firstAttribute="top" secondItem="RDO-yf-6z6" secondAttribute="top" constant="10" id="UGC-ho-fFl"/>
+                            <constraint firstItem="RDO-yf-6z6" firstAttribute="trailing" secondItem="tYV-dD-0ch" secondAttribute="trailing" id="VN8-Le-feg"/>
+                            <constraint firstItem="MSa-Qa-WF0" firstAttribute="leading" secondItem="RDO-yf-6z6" secondAttribute="leading" constant="10" id="ZVx-37-dus"/>
+                            <constraint firstItem="tYV-dD-0ch" firstAttribute="leading" secondItem="RDO-yf-6z6" secondAttribute="leading" id="wcx-fE-UfG"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Statistics" image="chart.pie.fill" catalog="system" id="3Pe-Sf-9UJ"/>
                     <navigationItem key="navigationItem" id="glE-sH-ghd"/>
                     <connections>
-                        <outlet property="cityLabel" destination="iWf-wZ-nf4" id="CNN-b4-7n4"/>
-                        <outlet property="foodLabel" destination="oBf-40-H1k" id="0DJ-oM-k4L"/>
-                        <outlet property="transportLabel" destination="KxZ-ym-9PX" id="B5j-Et-ynm"/>
+                        <outlet property="barChartView" destination="tYV-dD-0ch" id="Ypd-UH-4Ci"/>
+                        <outlet property="cityLabel" destination="MSa-Qa-WF0" id="Lbj-fR-WCQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iKi-S5-JnN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -721,19 +713,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rul-z5-XYH" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="144" width="414" height="399"/>
+                                <rect key="frame" x="0.0" y="141.5" width="414" height="401.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OMn-VQ-1HX">
                                 <rect key="frame" x="20" y="583" width="374" height="30"/>
                                 <state key="normal" title="Compare to Local Data"/>
                                 <connections>
-                                    <segue destination="59G-GC-Max" kind="show" id="W9O-ij-Aak"/>
+                                    <segue destination="59G-GC-Max" kind="show" identifier="localDataSegue" id="W9O-ij-Aak"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Spendings This Month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ipq-SK-xqM">
-                                <rect key="frame" x="20" y="98" width="374" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <rect key="frame" x="5" y="98" width="389" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <color key="textColor" name="WelcomeGreen"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -743,7 +735,7 @@
                         <constraints>
                             <constraint firstItem="Rzu-6g-GVW" firstAttribute="trailing" secondItem="Ipq-SK-xqM" secondAttribute="trailing" constant="20" id="58e-9S-cAO"/>
                             <constraint firstItem="Ipq-SK-xqM" firstAttribute="top" secondItem="Rzu-6g-GVW" secondAttribute="top" constant="10" id="G34-pE-eKL"/>
-                            <constraint firstItem="Ipq-SK-xqM" firstAttribute="leading" secondItem="Rzu-6g-GVW" secondAttribute="leading" constant="20" id="Joh-Bm-pjQ"/>
+                            <constraint firstItem="Ipq-SK-xqM" firstAttribute="leading" secondItem="Rzu-6g-GVW" secondAttribute="leading" constant="5" id="RTm-EI-DPI"/>
                             <constraint firstItem="rul-z5-XYH" firstAttribute="leading" secondItem="Rzu-6g-GVW" secondAttribute="leading" id="YUn-pV-4ZR"/>
                             <constraint firstItem="Rzu-6g-GVW" firstAttribute="bottom" secondItem="OMn-VQ-1HX" secondAttribute="bottom" constant="200" id="av7-ce-IEn"/>
                             <constraint firstItem="OMn-VQ-1HX" firstAttribute="leading" secondItem="Rzu-6g-GVW" secondAttribute="leading" constant="20" id="bCb-Uu-QBS"/>
@@ -944,6 +936,9 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

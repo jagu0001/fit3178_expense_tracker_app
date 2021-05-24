@@ -10,6 +10,8 @@ import UIKit
 class UrbanAreaData: NSObject, Decodable {
     var publicTransportCost: Float?
     var mealCost: Float?
+    var fitnessCost: Float?
+    var movieCost: Float?
     
     private enum RootKeys: String, CodingKey {
         case data
@@ -36,6 +38,12 @@ class UrbanAreaData: NSObject, Decodable {
             }
             else if data.label == "Lunch" {
                 mealCost = data.currency_dollar_value
+            }
+            else if data.label == "Monthly fitness club membership" {
+                fitnessCost = data.currency_dollar_value
+            }
+            else if data.label == "Movie ticket" {
+                movieCost = data.currency_dollar_value
             }
         }
     }

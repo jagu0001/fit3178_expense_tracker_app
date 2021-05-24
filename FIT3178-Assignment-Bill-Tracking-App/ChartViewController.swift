@@ -13,6 +13,8 @@ class ChartViewController: UIViewController, DatabaseListener {
     weak var databaseController: DatabaseProtocol?
     @IBOutlet weak var chartView: PieChartView!
     
+    var tagTotals: ([String : Float])?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Set up database controller
@@ -42,29 +44,17 @@ class ChartViewController: UIViewController, DatabaseListener {
         
         // 2. Set ChartDataSet
         let pieChartDataSet = PieChartDataSet(entries: dataEntries, label: nil)
-        pieChartDataSet.colors = colorsOfCharts(numbersOfColor: dataPoints.count)
+        pieChartDataSet.colors = ChartColorTemplates.colorful()
         
         // 3. Set ChartData
         let pieChartData = PieChartData(dataSet: pieChartDataSet)
         let format = NumberFormatter()
-        format.numberStyle = .none
+        format.numberStyle = .currency
         let formatter = DefaultValueFormatter(formatter: format)
         pieChartData.setValueFormatter(formatter)
         
         // 4. Assign it to the chart’s data
         chartView.data = pieChartData
-    }
-    
-    private func colorsOfCharts(numbersOfColor: Int) -> [UIColor] {
-        var colors: [UIColor] = []
-        for _ in 0..<numbersOfColor {
-            let red = Double(arc4random_uniform(256))
-            let green = Double(arc4random_uniform(256))
-            let blue = Double(arc4random_uniform(256))
-            let color = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
-            colors.append(color)
-        }
-        return colors
     }
     
     func calculateTotalExpenseTags(expenses: [Expense]) -> [String : Float] {
@@ -78,6 +68,7 @@ class ChartViewController: UIViewController, DatabaseListener {
                 tagTotals[expense.tag!] = expense.amount
             }
         }
+        self.tagTotals = tagTotals
         return tagTotals
     }
     
@@ -104,14 +95,16 @@ class ChartViewController: UIViewController, DatabaseListener {
         
     }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "localDataSegue" {
+            if let tagTotals = self.tagTotals {
+                let destination = segue.destination as! LocalDataViewController
+                destination.totalExpenseData = tagTotals
+            }
+        }
     }
-    */
 
 }

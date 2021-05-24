@@ -40,7 +40,7 @@
 		FCBB3F262656EC8F002F0ED3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBB3F252656EC8F002F0ED3 /* LoginViewController.swift */; };
 		FCE73178264AA74400D7D188 /* UrbanArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE73177264AA74400D7D188 /* UrbanArea.swift */; };
 		FCE73194264AACDA00D7D188 /* UrbanAreaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE73193264AACDA00D7D188 /* UrbanAreaData.swift */; };
-		FCE731A0264AB9EE00D7D188 /* ChartDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE7319F264AB9EE00D7D188 /* ChartDataViewController.swift */; };
+		FCE731A0264AB9EE00D7D188 /* LocalDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE7319F264AB9EE00D7D188 /* LocalDataViewController.swift */; };
 		FCED3A4C26372AC7006114F3 /* MyExpensesMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCED3A4B26372AC7006114F3 /* MyExpensesMainViewController.swift */; };
 		FCF9F063264CD381002D8279 /* CityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF9F062264CD381002D8279 /* CityData.swift */; };
 /* End PBXBuildFile section */
@@ -80,7 +80,7 @@
 		FCBB3F252656EC8F002F0ED3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FCE73177264AA74400D7D188 /* UrbanArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrbanArea.swift; sourceTree = "<group>"; };
 		FCE73193264AACDA00D7D188 /* UrbanAreaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrbanAreaData.swift; sourceTree = "<group>"; };
-		FCE7319F264AB9EE00D7D188 /* ChartDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDataViewController.swift; sourceTree = "<group>"; };
+		FCE7319F264AB9EE00D7D188 /* LocalDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataViewController.swift; sourceTree = "<group>"; };
 		FCED3A4B26372AC7006114F3 /* MyExpensesMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExpensesMainViewController.swift; sourceTree = "<group>"; };
 		FCF9F062264CD381002D8279 /* CityData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -181,7 +181,7 @@
 				FC071D9C2648CE75007AFC41 /* ViewSearchExpensesTableViewController.swift */,
 				FCE73177264AA74400D7D188 /* UrbanArea.swift */,
 				FCE73193264AACDA00D7D188 /* UrbanAreaData.swift */,
-				FCE7319F264AB9EE00D7D188 /* ChartDataViewController.swift */,
+				FCE7319F264AB9EE00D7D188 /* LocalDataViewController.swift */,
 				FCF9F062264CD381002D8279 /* CityData.swift */,
 				FCBB3F252656EC8F002F0ED3 /* LoginViewController.swift */,
 				FC78C0862657F9BC00A29744 /* SignUpViewController.swift */,
@@ -311,7 +311,7 @@
 				FC43C2DD263F11B9008A167E /* ExpenseGroup+CoreDataClass.swift in Sources */,
 				FCF9F063264CD381002D8279 /* CityData.swift in Sources */,
 				FCBB3F262656EC8F002F0ED3 /* LoginViewController.swift in Sources */,
-				FCE731A0264AB9EE00D7D188 /* ChartDataViewController.swift in Sources */,
+				FCE731A0264AB9EE00D7D188 /* LocalDataViewController.swift in Sources */,
 				FC5D42DC2643AE1B00F114DE /* Expense+CoreDataProperties.swift in Sources */,
 				FC5D42DB2643AE1B00F114DE /* Expense+CoreDataClass.swift in Sources */,
 				FC5D42BE26437E2E00F114DE /* ImageMetaData+CoreDataProperties.swift in Sources */,

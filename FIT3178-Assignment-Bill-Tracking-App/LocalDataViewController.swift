@@ -1,5 +1,5 @@
 //
-//  ChartDataViewController.swift
+//  LocalDataViewController.swift
 //  FIT3178-Assignment-Bill-Tracking-App
 //
 //  Created by user190204 on 5/11/21.
@@ -7,15 +7,16 @@
 
 import UIKit
 import CoreLocation
+import Charts
 
-class ChartDataViewController: UIViewController, CLLocationManagerDelegate {
+class LocalDataViewController: UIViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     var cityName: String?
     var data: UrbanAreaData?
+    var totalExpenseData: ([String : Float])?
     
     @IBOutlet weak var cityLabel: UILabel!
-    @IBOutlet weak var foodLabel: UILabel!
-    @IBOutlet weak var transportLabel: UILabel!
+    @IBOutlet weak var barChartView: BarChartView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,8 @@ class ChartDataViewController: UIViewController, CLLocationManagerDelegate {
         else {
             locationManager.requestLocation()
         }
+        
+        barChartView.noDataText = "No data for current location"
     }
     
     func requestData(latitude: String, longitude: String) {
@@ -79,10 +82,9 @@ class ChartDataViewController: UIViewController, CLLocationManagerDelegate {
                             
                             DispatchQueue.main.async {
                                 if let cityName = self.cityName {
-                                    self.cityLabel.text = "City: \(cityName)"
+                                    self.cityLabel.text = "Monthly Living Costs in \(cityName)"
                                 }
-                                self.foodLabel.text = "Monthly food cost: $\((self.data?.mealCost)!)"
-                                self.transportLabel.text = "Monthly transport cost: $\((self.data?.publicTransportCost)!)"
+                                self.drawBarChart()
                             }
                         }
                         catch let err {
@@ -129,6 +131,69 @@ class ChartDataViewController: UIViewController, CLLocationManagerDelegate {
         if CLLocationManager.locationServicesEnabled() {
             
         }
+    }
+    
+    // MARK: - Bar Chart Functions
+    func drawBarChart() {
+        let tags = ["Food", "Transport", "Movies", "Fitness"]
+        let localCosts = [Double((self.data?.mealCost!)! * 2 * 30), Double((self.data?.publicTransportCost)!), Double((self.data?.movieCost)!), Double((self.data?.fitnessCost)!)]
+        var expenses: [Double] = []
+        
+        for tag in tags {
+            if totalExpenseData!.keys.contains(tag) {
+                expenses.append(Double(totalExpenseData![tag]!))
+            }
+            else {
+                expenses.append(0)
+            }
+        }
+        configureChart(labels: tags, expenseData: expenses, localCostData: localCosts)
+    }
+    
+    
+    func configureChart(labels: [String], expenseData: [Double], localCostData: [Double]) {
+        var expenseDataEntries: [BarChartDataEntry] = []
+        var localCostDataEntries: [BarChartDataEntry] = []
+
+        for i in 0..<labels.count {
+            let expenseDataEntry = BarChartDataEntry(x: Double(i) , y: expenseData[i])
+            expenseDataEntries.append(expenseDataEntry)
+
+            let localCostDataEntry = BarChartDataEntry(x: Double(i) , y: localCostData[i])
+               localCostDataEntries.append(localCostDataEntry)
+        }
+
+        let expenseChartDataSet = BarChartDataSet(entries: expenseDataEntries, label: "My Expenses")
+        let localCostChartDataSet = BarChartDataSet(entries: localCostDataEntries, label: "Costs in \(self.cityName!)")
+
+        let dataSets: [BarChartDataSet] = [expenseChartDataSet, localCostChartDataSet]
+        expenseChartDataSet.colors = [UIColor(red: 34/255, green: 126/255, blue: 230/255, alpha: 1)]
+        let chartData = BarChartData(dataSets: dataSets)
+        
+        // Format x axis
+        let xAxis = barChartView.xAxis
+        xAxis.labelPosition = .bottom
+        xAxis.valueFormatter = IndexAxisValueFormatter(values: labels)
+        xAxis.granularity = 1
+        xAxis.centerAxisLabelsEnabled = true
+        xAxis.axisMinimum = 0
+        xAxis.axisMaximum = Double(labels.count)
+            
+        // Group bars
+        let groupSpace = 0.3
+        let barSpace = 0.05
+        let barWidth = 0.3
+        
+        chartData.barWidth = barWidth;
+        chartData.groupBars(fromX: 0, groupSpace: groupSpace, barSpace: barSpace)
+        
+        barChartView.notifyDataSetChanged()
+        barChartView.data = chartData
+        
+        //barChartView.backgroundColor = UIColor(red: 189/255, green: 195/255, blue: 199/255, alpha: 1)
+
+        // Animate chart appearance
+        barChartView.animate(xAxisDuration: 1.5, yAxisDuration: 1.5, easingOption: .linear)
     }
     
 

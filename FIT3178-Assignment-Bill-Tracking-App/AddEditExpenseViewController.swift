@@ -20,7 +20,7 @@ class AddEditExpenseViewController: UIViewController, UITextFieldDelegate, UIPic
     
     weak var databaseController: DatabaseProtocol?
     var expense: Expense?
-    var tagList = ["Food", "Entertainment", "Utility", "Transport", "Other"]
+    var tagList = ["Food", "Entertainment", "Utility", "Transport", "Movies", "Fitness", "Other"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
