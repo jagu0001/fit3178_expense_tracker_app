@@ -9,6 +9,12 @@ import UIKit
 import MessageUI
 
 class AddEditExpenseViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    let appDelegate = {
+       return UIApplication.shared.delegate as! AppDelegate
+    }()
+    
+    let NOTIFICATION_IDENTIFIER = "edu.monash.fit3178.Expense-Tracker-App"
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var amountTextField: UITextField!
@@ -51,7 +57,6 @@ class AddEditExpenseViewController: UIViewController, UITextFieldDelegate, UIPic
         tagPicker.delegate = self
         tagPicker.dataSource = self
     }
-    
 
     @objc func tapDone(sender: Any) {
         self.view.endEditing(true)
@@ -115,6 +120,11 @@ class AddEditExpenseViewController: UIViewController, UITextFieldDelegate, UIPic
         
         expense!.isNotify = remindSwitch.isOn
         
+        // If reminder is set, send notification at a later date
+        if remindSwitch.isOn {
+            self.sendNotification(expense: expense!)
+        }
+        
         // Push child context data to main context
         databaseController?.saveChildContext()
         
@@ -140,6 +150,29 @@ class AddEditExpenseViewController: UIViewController, UITextFieldDelegate, UIPic
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         self.view.endEditing(true)
         return tagList[row]
+    }
+    
+    
+    // MARK: - Send Notification Method
+    func sendNotification(expense: Expense) {
+        guard appDelegate.notificationsEnabled else {
+            print("Notifications disabled")
+            return
+        }
+        
+        let content = UNMutableNotificationContent()
+        
+        content.title = "Payment Reminder"
+        content.body = "Reminder to pay \(expense.name!) for $\(expense.amount) tomorrow"
+        
+        let triggerDate = Calendar.current.date(byAdding: .day, value: -1, to: expense.date!)
+        let calendarTriggerDate = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: triggerDate!)
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: calendarTriggerDate, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: NOTIFICATION_IDENTIFIER, content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
 
     // MARK: - Navigation
