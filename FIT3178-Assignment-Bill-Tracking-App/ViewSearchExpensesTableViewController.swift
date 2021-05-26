@@ -107,6 +107,9 @@ class ViewSearchExpensesTableViewController: UITableViewController, UISearchResu
             else if Date() >= dueSoon! {
                 unpaidCell.backgroundColor = UIColor(named: "WarningYellow")
             }
+            else {
+                unpaidCell.backgroundColor = UIColor(named: "ExpenseGray")
+            }
             return unpaidCell
         }
     }

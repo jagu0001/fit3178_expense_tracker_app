@@ -75,7 +75,12 @@ class ChartViewController: UIViewController, DatabaseListener {
     // MARK: - DatabaseListener Protocol Methods
     
     func onExpenseChange(change: DatabaseChange, expenses: [Expense]) {
-        let expenseTagData = calculateTotalExpenseTags(expenses: expenses)
+        // Filter expenses for only this month
+        let monthExpenses = expenses.filter {
+            return Calendar.current.component(.month, from: $0.date!) == Calendar.current.component(.month, from: Date())
+        }
+        
+        let expenseTagData = calculateTotalExpenseTags(expenses: monthExpenses)
         var tagPoints: [String] = []
         var tagValues: [Double] = []
         
