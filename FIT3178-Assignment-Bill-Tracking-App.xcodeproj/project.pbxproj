@@ -28,6 +28,7 @@
 		FC5FF1F62656DF1900ABF4F4 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = FC5FF1F52656DF1900ABF4F4 /* FirebaseFirestoreSwift-Beta */; };
 		FC5FF1F92656E31B00ABF4F4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC5FF1F82656E31B00ABF4F4 /* GoogleService-Info.plist */; };
 		FC64C44126431E2800CA3B4B /* UIViewController-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC64C44026431E2800CA3B4B /* UIViewController-Extensions.swift */; };
+		FC6A27FD265EB30D001AE26D /* ExportCSVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6A27FC265EB30D001AE26D /* ExportCSVViewController.swift */; };
 		FC78C0872657F9BC00A29744 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78C0862657F9BC00A29744 /* SignUpViewController.swift */; };
 		FC78C08E265815E000A29744 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78C08D265815E000A29744 /* SettingsViewController.swift */; };
 		FC95906B2641B71D009F5221 /* ExpenseDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC95906A2641B71D009F5221 /* ExpenseDetailsTableViewController.swift */; };
@@ -66,6 +67,7 @@
 		FC5D42DA2643AE1B00F114DE /* Expense+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expense+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		FC5FF1F82656E31B00ABF4F4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FC64C44026431E2800CA3B4B /* UIViewController-Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController-Extensions.swift"; sourceTree = "<group>"; };
+		FC6A27FC265EB30D001AE26D /* ExportCSVViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportCSVViewController.swift; sourceTree = "<group>"; };
 		FC78C0862657F9BC00A29744 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		FC78C08D265815E000A29744 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FC95906A2641B71D009F5221 /* ExpenseDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDetailsTableViewController.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				FC78C0862657F9BC00A29744 /* SignUpViewController.swift */,
 				FC78C08D265815E000A29744 /* SettingsViewController.swift */,
 				FC18B426265994F40042B3C2 /* ChartViewController.swift */,
+				FC6A27FC265EB30D001AE26D /* ExportCSVViewController.swift */,
 			);
 			path = "FIT3178-Assignment-Bill-Tracking-App";
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				FC46DF6C263DB26200D3D3E5 /* DatabaseProtocol.swift in Sources */,
 				FCE73194264AACDA00D7D188 /* UrbanAreaData.swift in Sources */,
 				FC5D42BD26437E2E00F114DE /* ImageMetaData+CoreDataClass.swift in Sources */,
+				FC6A27FD265EB30D001AE26D /* ExportCSVViewController.swift in Sources */,
 				FC37B3F7264051940007A434 /* AddEditExpenseViewController.swift in Sources */,
 				FCE73178264AA74400D7D188 /* UrbanArea.swift in Sources */,
 				FC46DF6F263DB54700D3D3E5 /* CoreDataController.swift in Sources */,

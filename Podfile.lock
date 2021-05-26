@@ -2,17 +2,21 @@ PODS:
   - Charts (3.6.0):
     - Charts/Core (= 3.6.0)
   - Charts/Core (3.6.0)
+  - SwiftCSVExport (2.6.0)
 
 DEPENDENCIES:
   - Charts
+  - SwiftCSVExport (= 2.6.0)
 
 SPEC REPOS:
   trunk:
     - Charts
+    - SwiftCSVExport
 
 SPEC CHECKSUMS:
   Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
+  SwiftCSVExport: d9db3fb80484115028792f8d539445e3fb2c0ecb
 
-PODFILE CHECKSUM: 7012690996fb681d755cb32aa611dc05a8588c5d
+PODFILE CHECKSUM: f44bb631d367a7b219d4aab5b9527ce4dcbcc9df
 
 COCOAPODS: 1.10.1

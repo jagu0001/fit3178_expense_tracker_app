@@ -704,6 +704,87 @@
             </objects>
             <point key="canvasLocation" x="4671.0144927536239" y="79.6875"/>
         </scene>
+        <!--Export to CSV-->
+        <scene sceneID="1Zp-QN-cF9">
+            <objects>
+                <viewController id="Avf-F2-GMM" customClass="ExportCSVViewController" customModule="FIT3178_Assignment_Bill_Tracking_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Uhg-JP-VH3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" verticalHuggingPriority="253" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="MeD-0J-i4o">
+                                <rect key="frame" x="0.0" y="143.5" width="414" height="216"/>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
+                                    <!--1970-01-01 11:00:00 +0000-->
+                                </date>
+                                <date key="maximumDate" timeIntervalSinceReferenceDate="1167562800">
+                                    <!--2037-12-31 11:00:00 +0000-->
+                                </date>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Date:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0SS-5J-BeB">
+                                <rect key="frame" x="10" y="108" width="394" height="25.5"/>
+                                <color key="backgroundColor" name="PastelGreen"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" name="WelcomeGreen"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Date:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ax8-2a-RQ9">
+                                <rect key="frame" x="10" y="369.5" width="394" height="25.5"/>
+                                <color key="backgroundColor" name="PastelRed"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" systemColor="systemPinkColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="3ey-hE-NpT">
+                                <rect key="frame" x="0.0" y="405" width="414" height="216"/>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
+                                    <!--1970-01-01 11:00:00 +0000-->
+                                </date>
+                                <date key="maximumDate" timeIntervalSinceReferenceDate="1167562800">
+                                    <!--2037-12-31 11:00:00 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WxG-F7-AqI">
+                                <rect key="frame" x="10" y="763" width="394" height="30"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <state key="normal" title="Export!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="exportCSV:" destination="Avf-F2-GMM" eventType="touchUpInside" id="OTH-8g-MEg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="F9H-zP-sZ5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0SS-5J-BeB" firstAttribute="leading" secondItem="F9H-zP-sZ5" secondAttribute="leading" constant="10" id="2XE-C1-YlS"/>
+                            <constraint firstItem="F9H-zP-sZ5" firstAttribute="trailing" secondItem="ax8-2a-RQ9" secondAttribute="trailing" constant="10" id="9Ly-Sn-hC6"/>
+                            <constraint firstItem="F9H-zP-sZ5" firstAttribute="bottom" secondItem="WxG-F7-AqI" secondAttribute="bottom" constant="20" id="9o3-VI-SOF"/>
+                            <constraint firstItem="ax8-2a-RQ9" firstAttribute="top" secondItem="MeD-0J-i4o" secondAttribute="bottom" constant="10" id="DXy-7w-Rhw"/>
+                            <constraint firstItem="3ey-hE-NpT" firstAttribute="top" secondItem="ax8-2a-RQ9" secondAttribute="bottom" constant="10" id="F9H-5d-Apb"/>
+                            <constraint firstItem="3ey-hE-NpT" firstAttribute="leading" secondItem="Uhg-JP-VH3" secondAttribute="leading" id="Hvt-ou-F5h"/>
+                            <constraint firstItem="MeD-0J-i4o" firstAttribute="leading" secondItem="F9H-zP-sZ5" secondAttribute="leading" id="Nh6-LZ-gW3"/>
+                            <constraint firstItem="F9H-zP-sZ5" firstAttribute="trailing" secondItem="3ey-hE-NpT" secondAttribute="trailing" id="Ok3-fS-dox"/>
+                            <constraint firstItem="F9H-zP-sZ5" firstAttribute="trailing" secondItem="0SS-5J-BeB" secondAttribute="trailing" constant="10" id="QsO-Bq-nPo"/>
+                            <constraint firstItem="ax8-2a-RQ9" firstAttribute="leading" secondItem="F9H-zP-sZ5" secondAttribute="leading" constant="10" id="UYh-h6-9uC"/>
+                            <constraint firstItem="WxG-F7-AqI" firstAttribute="leading" secondItem="F9H-zP-sZ5" secondAttribute="leading" constant="10" id="i7J-gV-Ru8"/>
+                            <constraint firstItem="0SS-5J-BeB" firstAttribute="top" secondItem="F9H-zP-sZ5" secondAttribute="top" constant="20" id="nHX-Xb-hia"/>
+                            <constraint firstItem="F9H-zP-sZ5" firstAttribute="trailing" secondItem="WxG-F7-AqI" secondAttribute="trailing" constant="10" id="t7K-L4-z9S"/>
+                            <constraint firstAttribute="trailing" secondItem="MeD-0J-i4o" secondAttribute="trailing" id="w3c-n7-obm"/>
+                            <constraint firstItem="MeD-0J-i4o" firstAttribute="top" secondItem="0SS-5J-BeB" secondAttribute="bottom" constant="10" id="wsp-x7-E4h"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Export to CSV" id="uQX-NH-LUQ"/>
+                    <connections>
+                        <outlet property="endDate" destination="3ey-hE-NpT" id="rZw-0O-8xg"/>
+                        <outlet property="startDate" destination="MeD-0J-i4o" id="GLz-Ui-2Lv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Nf-rJ-avR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3840.579710144928" y="-595.3125"/>
+        </scene>
         <!--Chart View Controller-->
         <scene sceneID="iRl-Y9-d3o">
             <objects>
@@ -729,14 +810,24 @@
                                 <color key="textColor" name="WelcomeGreen"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6gb-zY-Bvf">
+                                <rect key="frame" x="20" y="633" width="374" height="30"/>
+                                <state key="normal" title="Export to CSV"/>
+                                <connections>
+                                    <segue destination="Avf-F2-GMM" kind="show" identifier="exportCSVSegue" id="jJg-La-Kd4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Rzu-6g-GVW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Rzu-6g-GVW" firstAttribute="trailing" secondItem="Ipq-SK-xqM" secondAttribute="trailing" constant="20" id="58e-9S-cAO"/>
+                            <constraint firstItem="6gb-zY-Bvf" firstAttribute="top" secondItem="OMn-VQ-1HX" secondAttribute="bottom" constant="20" id="5Vu-hI-UNd"/>
+                            <constraint firstItem="6gb-zY-Bvf" firstAttribute="leading" secondItem="Rzu-6g-GVW" secondAttribute="leading" constant="20" id="FiM-YD-Rut"/>
                             <constraint firstItem="Ipq-SK-xqM" firstAttribute="top" secondItem="Rzu-6g-GVW" secondAttribute="top" constant="10" id="G34-pE-eKL"/>
                             <constraint firstItem="Ipq-SK-xqM" firstAttribute="leading" secondItem="Rzu-6g-GVW" secondAttribute="leading" constant="5" id="RTm-EI-DPI"/>
                             <constraint firstItem="rul-z5-XYH" firstAttribute="leading" secondItem="Rzu-6g-GVW" secondAttribute="leading" id="YUn-pV-4ZR"/>
+                            <constraint firstItem="Rzu-6g-GVW" firstAttribute="trailing" secondItem="6gb-zY-Bvf" secondAttribute="trailing" constant="20" id="Znt-or-dlP"/>
                             <constraint firstItem="Rzu-6g-GVW" firstAttribute="bottom" secondItem="OMn-VQ-1HX" secondAttribute="bottom" constant="200" id="av7-ce-IEn"/>
                             <constraint firstItem="OMn-VQ-1HX" firstAttribute="leading" secondItem="Rzu-6g-GVW" secondAttribute="leading" constant="20" id="bCb-Uu-QBS"/>
                             <constraint firstItem="Rzu-6g-GVW" firstAttribute="trailing" secondItem="OMn-VQ-1HX" secondAttribute="trailing" constant="20" id="h6D-OA-aVj"/>
@@ -919,6 +1010,12 @@
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="PastelGreen">
+            <color red="0.71195650100708008" green="0.99999994039535522" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="PastelRed">
+            <color red="1" green="0.69565218687057495" blue="0.69565218687057495" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="TextfieldBlue">
             <color red="0.76099997758865356" green="0.9779999852180481" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -939,6 +1036,9 @@
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

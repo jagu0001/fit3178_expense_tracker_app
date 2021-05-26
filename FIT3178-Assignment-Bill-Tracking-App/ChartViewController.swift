@@ -13,6 +13,7 @@ class ChartViewController: UIViewController, DatabaseListener {
     weak var databaseController: DatabaseProtocol?
     @IBOutlet weak var chartView: PieChartView!
     
+    var allExpenses: [Expense]?
     var tagTotals: ([String : Float])?
     
     override func viewDidLoad() {
@@ -75,6 +76,9 @@ class ChartViewController: UIViewController, DatabaseListener {
     // MARK: - DatabaseListener Protocol Methods
     
     func onExpenseChange(change: DatabaseChange, expenses: [Expense]) {
+        // Set allExpenses attribute
+        allExpenses = expenses
+        
         // Filter expenses for only this month
         let monthExpenses = expenses.filter {
             return Calendar.current.component(.month, from: $0.date!) == Calendar.current.component(.month, from: Date())
@@ -93,11 +97,11 @@ class ChartViewController: UIViewController, DatabaseListener {
     }
     
     func onPaidExpenseGroupChange(change: DatabaseChange, expenses: [Expense]) {
-        
+        // Do nothing
     }
     
     func onUnpaidExpenseGroupChange(change: DatabaseChange, expenses: [Expense]) {
-        
+        // Do nothing
     }
 
     // MARK: - Navigation
@@ -108,6 +112,12 @@ class ChartViewController: UIViewController, DatabaseListener {
             if let tagTotals = self.tagTotals {
                 let destination = segue.destination as! LocalDataViewController
                 destination.totalExpenseData = tagTotals
+            }
+        }
+        else if segue.identifier == "exportCSVSegue" {
+            if let allExpenses = self.allExpenses {
+                let destination = segue.destination as! ExportCSVViewController
+                destination.allExpenses = allExpenses
             }
         }
     }
