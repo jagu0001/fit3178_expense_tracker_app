@@ -91,7 +91,7 @@ class AddEditExpenseViewController: UIViewController, UITextFieldDelegate, UIPic
             displayMessage(title: "Error", message: "Please do not leave any blank fields")
             return
         }
-        
+
         // Set values for expense class
         expense!.name = name
         expense!.amount = (amount as NSString).floatValue

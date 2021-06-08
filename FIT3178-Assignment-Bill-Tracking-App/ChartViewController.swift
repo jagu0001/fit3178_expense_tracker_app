@@ -78,7 +78,7 @@ class ChartViewController: UIViewController, DatabaseListener {
     func onExpenseChange(change: DatabaseChange, expenses: [Expense]) {
         // Set allExpenses attribute
         allExpenses = expenses
-        
+
         // Filter expenses for only this month
         let monthExpenses = expenses.filter {
             return Calendar.current.component(.month, from: $0.date!) == Calendar.current.component(.month, from: Date())

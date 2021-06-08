@@ -39,6 +39,9 @@
 		FC9FE4D626307CED00CA8D9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC9FE4D526307CED00CA8D9A /* Assets.xcassets */; };
 		FC9FE4D926307CED00CA8D9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC9FE4D726307CED00CA8D9A /* LaunchScreen.storyboard */; };
 		FCBB3F262656EC8F002F0ED3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBB3F252656EC8F002F0ED3 /* LoginViewController.swift */; };
+		FCDCC519266D3B0A0045D939 /* LocationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCC518266D3B0A0045D939 /* LocationsTableViewController.swift */; };
+		FCDCC51C266D3C550045D939 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCC51B266D3C550045D939 /* MapViewController.swift */; };
+		FCDCC51F266D3E6C0045D939 /* LocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCC51E266D3E6C0045D939 /* LocationAnnotation.swift */; };
 		FCE73178264AA74400D7D188 /* UrbanArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE73177264AA74400D7D188 /* UrbanArea.swift */; };
 		FCE73194264AACDA00D7D188 /* UrbanAreaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE73193264AACDA00D7D188 /* UrbanAreaData.swift */; };
 		FCE731A0264AB9EE00D7D188 /* LocalDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE7319F264AB9EE00D7D188 /* LocalDataViewController.swift */; };
@@ -80,6 +83,9 @@
 		FC9FE4D826307CED00CA8D9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC9FE4DA26307CED00CA8D9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCBB3F252656EC8F002F0ED3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FCDCC518266D3B0A0045D939 /* LocationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsTableViewController.swift; sourceTree = "<group>"; };
+		FCDCC51B266D3C550045D939 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		FCDCC51E266D3E6C0045D939 /* LocationAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAnnotation.swift; sourceTree = "<group>"; };
 		FCE73177264AA74400D7D188 /* UrbanArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrbanArea.swift; sourceTree = "<group>"; };
 		FCE73193264AACDA00D7D188 /* UrbanAreaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrbanAreaData.swift; sourceTree = "<group>"; };
 		FCE7319F264AB9EE00D7D188 /* LocalDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +196,9 @@
 				FC78C08D265815E000A29744 /* SettingsViewController.swift */,
 				FC18B426265994F40042B3C2 /* ChartViewController.swift */,
 				FC6A27FC265EB30D001AE26D /* ExportCSVViewController.swift */,
+				FCDCC518266D3B0A0045D939 /* LocationsTableViewController.swift */,
+				FCDCC51B266D3C550045D939 /* MapViewController.swift */,
+				FCDCC51E266D3E6C0045D939 /* LocationAnnotation.swift */,
 			);
 			path = "FIT3178-Assignment-Bill-Tracking-App";
 			sourceTree = "<group>";
@@ -299,12 +308,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCDCC51C266D3C550045D939 /* MapViewController.swift in Sources */,
 				FC9FE4D126307CEA00CA8D9A /* ViewController.swift in Sources */,
 				FC18B427265994F40042B3C2 /* ChartViewController.swift in Sources */,
 				FC46DF60263DADD700D3D3E5 /* FIT3178-ExpenseApp-DataModel.xcdatamodeld in Sources */,
 				FC9FE4CD26307CEA00CA8D9A /* AppDelegate.swift in Sources */,
 				FC46DF6C263DB26200D3D3E5 /* DatabaseProtocol.swift in Sources */,
 				FCE73194264AACDA00D7D188 /* UrbanAreaData.swift in Sources */,
+				FCDCC51F266D3E6C0045D939 /* LocationAnnotation.swift in Sources */,
 				FC5D42BD26437E2E00F114DE /* ImageMetaData+CoreDataClass.swift in Sources */,
 				FC6A27FD265EB30D001AE26D /* ExportCSVViewController.swift in Sources */,
 				FC37B3F7264051940007A434 /* AddEditExpenseViewController.swift in Sources */,
@@ -319,6 +330,7 @@
 				FC5D42DC2643AE1B00F114DE /* Expense+CoreDataProperties.swift in Sources */,
 				FC5D42DB2643AE1B00F114DE /* Expense+CoreDataClass.swift in Sources */,
 				FC5D42BE26437E2E00F114DE /* ImageMetaData+CoreDataProperties.swift in Sources */,
+				FCDCC519266D3B0A0045D939 /* LocationsTableViewController.swift in Sources */,
 				FC5D42CC2643A15100F114DE /* ExpenseImageViewController.swift in Sources */,
 				FC95906B2641B71D009F5221 /* ExpenseDetailsTableViewController.swift in Sources */,
 				FC9FE4CF26307CEA00CA8D9A /* SceneDelegate.swift in Sources */,
