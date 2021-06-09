@@ -9,6 +9,10 @@ import UIKit
 
 class LocationsTableViewController: UITableViewController {
     let CELL_LOCATION = "locationCell"
+    let CELL_INFO = "infoCell"
+    
+    let SECTION_LOCATION = 0
+    let SECTION_INFO = 1
     
     weak var mapViewController: MapViewController?
     var locationList = [LocationAnnotation]()
@@ -20,16 +24,29 @@ class LocationsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return locationList.count
+        switch section {
+            case SECTION_LOCATION:
+                return locationList.count
+            case SECTION_INFO:
+                return locationList.count == 0 ? 1 : 0
+            default:
+                return 0
+        }
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // Info cell
+        if indexPath.section == SECTION_INFO {
+            let cell = tableView.dequeueReusableCell(withIdentifier: CELL_INFO, for: indexPath)
+            cell.textLabel?.text = "Please tap the + button to save ATM locations"
+            return cell
+        }
+        
+        // Location cell
         let cell = tableView.dequeueReusableCell(withIdentifier: CELL_LOCATION, for: indexPath)
         let location = locationList[indexPath.row]
         cell.textLabel?.text = location.title
@@ -39,8 +56,7 @@ class LocationsTableViewController: UITableViewController {
 
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+        return indexPath.section == SECTION_LOCATION
     }
 
     // Override to support editing the table view.

@@ -35,7 +35,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     // MARK: - Custom Annotation
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        let identifier = "aaa"
+        let identifier = "atmLocations"
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
         
         if annotationView == nil {
