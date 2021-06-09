@@ -15,6 +15,7 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        passwordTextField.isSecureTextEntry = true
     }
     
     override func viewWillAppear(_ animated: Bool) {

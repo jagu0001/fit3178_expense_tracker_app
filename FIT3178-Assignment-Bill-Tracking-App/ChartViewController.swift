@@ -120,6 +120,12 @@ class ChartViewController: UIViewController, DatabaseListener {
                 destination.allExpenses = allExpenses
             }
         }
+        else if segue.identifier == "exportPDFSegue" {
+            if let allExpenses = self.allExpenses {
+                let destination = segue.destination as! ExportPDFViewController
+                destination.allExpenses = allExpenses
+            }
+        }
     }
 
 }

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		528F5EE9B0720F6C58D595C9 /* libPods-FIT3178-Assignment-Bill-Tracking-App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB677D11C1B97575C9E74EE9 /* libPods-FIT3178-Assignment-Bill-Tracking-App.a */; };
+		DCDC8B06E3431CB006724A8A /* Pods_FIT3178_Assignment_Bill_Tracking_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727B7E0F3C3C14FB08D7A87E /* Pods_FIT3178_Assignment_Bill_Tracking_App.framework */; };
 		FC071D9D2648CE75007AFC41 /* ViewSearchExpensesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC071D9C2648CE75007AFC41 /* ViewSearchExpensesTableViewController.swift */; };
 		FC18B427265994F40042B3C2 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC18B426265994F40042B3C2 /* ChartViewController.swift */; };
 		FC37B3F7264051940007A434 /* AddEditExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC37B3F6264051940007A434 /* AddEditExpenseViewController.swift */; };
@@ -17,15 +17,16 @@
 		FC46DF69263DB22B00D3D3E5 /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC46DF68263DB22B00D3D3E5 /* MulticastDelegate.swift */; };
 		FC46DF6C263DB26200D3D3E5 /* DatabaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC46DF6B263DB26200D3D3E5 /* DatabaseProtocol.swift */; };
 		FC46DF6F263DB54700D3D3E5 /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC46DF6E263DB54700D3D3E5 /* CoreDataController.swift */; };
+		FC5A72A9266FD38E00BF9F23 /* ExportPDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5A72A8266FD38E00BF9F23 /* ExportPDFViewController.swift */; };
 		FC5D42BD26437E2E00F114DE /* ImageMetaData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D42B926437E2E00F114DE /* ImageMetaData+CoreDataClass.swift */; };
 		FC5D42BE26437E2E00F114DE /* ImageMetaData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D42BA26437E2E00F114DE /* ImageMetaData+CoreDataProperties.swift */; };
 		FC5D42C52643908B00F114DE /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D42C42643908B00F114DE /* CameraViewController.swift */; };
 		FC5D42CC2643A15100F114DE /* ExpenseImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D42CB2643A15100F114DE /* ExpenseImageViewController.swift */; };
 		FC5D42DB2643AE1B00F114DE /* Expense+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D42D92643AE1B00F114DE /* Expense+CoreDataClass.swift */; };
 		FC5D42DC2643AE1B00F114DE /* Expense+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D42DA2643AE1B00F114DE /* Expense+CoreDataProperties.swift */; };
-		FC5FF1F22656DF1900ABF4F4 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FC5FF1F12656DF1900ABF4F4 /* FirebaseAuth */; };
-		FC5FF1F42656DF1900ABF4F4 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = FC5FF1F32656DF1900ABF4F4 /* FirebaseFirestore */; };
-		FC5FF1F62656DF1900ABF4F4 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = FC5FF1F52656DF1900ABF4F4 /* FirebaseFirestoreSwift-Beta */; };
+		FC5FF1F22656DF1900ABF4F4 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = FC5FF1F12656DF1900ABF4F4 /* SwiftPackageProductDependency */; };
+		FC5FF1F42656DF1900ABF4F4 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = FC5FF1F32656DF1900ABF4F4 /* SwiftPackageProductDependency */; };
+		FC5FF1F62656DF1900ABF4F4 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = FC5FF1F52656DF1900ABF4F4 /* SwiftPackageProductDependency */; };
 		FC5FF1F92656E31B00ABF4F4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC5FF1F82656E31B00ABF4F4 /* GoogleService-Info.plist */; };
 		FC64C44126431E2800CA3B4B /* UIViewController-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC64C44026431E2800CA3B4B /* UIViewController-Extensions.swift */; };
 		FC6A27FD265EB30D001AE26D /* ExportCSVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6A27FC265EB30D001AE26D /* ExportCSVViewController.swift */; };
@@ -50,8 +51,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		727B7E0F3C3C14FB08D7A87E /* Pods_FIT3178_Assignment_Bill_Tracking_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FIT3178_Assignment_Bill_Tracking_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B864705DBB522F02CD4487D /* Pods-FIT3178-Assignment-Bill-Tracking-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FIT3178-Assignment-Bill-Tracking-App.release.xcconfig"; path = "Target Support Files/Pods-FIT3178-Assignment-Bill-Tracking-App/Pods-FIT3178-Assignment-Bill-Tracking-App.release.xcconfig"; sourceTree = "<group>"; };
-		EB677D11C1B97575C9E74EE9 /* libPods-FIT3178-Assignment-Bill-Tracking-App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FIT3178-Assignment-Bill-Tracking-App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEFE8E4F51C760580DA58860 /* Pods-FIT3178-Assignment-Bill-Tracking-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FIT3178-Assignment-Bill-Tracking-App.debug.xcconfig"; path = "Target Support Files/Pods-FIT3178-Assignment-Bill-Tracking-App/Pods-FIT3178-Assignment-Bill-Tracking-App.debug.xcconfig"; sourceTree = "<group>"; };
 		FC071D9C2648CE75007AFC41 /* ViewSearchExpensesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSearchExpensesTableViewController.swift; sourceTree = "<group>"; };
 		FC18B426265994F40042B3C2 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +63,7 @@
 		FC46DF68263DB22B00D3D3E5 /* MulticastDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MulticastDelegate.swift; sourceTree = "<group>"; };
 		FC46DF6B263DB26200D3D3E5 /* DatabaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseProtocol.swift; sourceTree = "<group>"; };
 		FC46DF6E263DB54700D3D3E5 /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
+		FC5A72A8266FD38E00BF9F23 /* ExportPDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportPDFViewController.swift; sourceTree = "<group>"; };
 		FC5D42B926437E2E00F114DE /* ImageMetaData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageMetaData+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		FC5D42BA26437E2E00F114DE /* ImageMetaData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageMetaData+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		FC5D42C42643908B00F114DE /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
@@ -98,10 +100,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				528F5EE9B0720F6C58D595C9 /* libPods-FIT3178-Assignment-Bill-Tracking-App.a in Frameworks */,
-				FC5FF1F62656DF1900ABF4F4 /* FirebaseFirestoreSwift-Beta in Frameworks */,
-				FC5FF1F22656DF1900ABF4F4 /* FirebaseAuth in Frameworks */,
-				FC5FF1F42656DF1900ABF4F4 /* FirebaseFirestore in Frameworks */,
+				FC5FF1F62656DF1900ABF4F4 /* BuildFile in Frameworks */,
+				FC5FF1F22656DF1900ABF4F4 /* BuildFile in Frameworks */,
+				FC5FF1F42656DF1900ABF4F4 /* BuildFile in Frameworks */,
+				DCDC8B06E3431CB006724A8A /* Pods_FIT3178_Assignment_Bill_Tracking_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,7 +122,7 @@
 		BB9A7A9004B1C75AC8F27429 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EB677D11C1B97575C9E74EE9 /* libPods-FIT3178-Assignment-Bill-Tracking-App.a */,
+				727B7E0F3C3C14FB08D7A87E /* Pods_FIT3178_Assignment_Bill_Tracking_App.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -199,6 +201,7 @@
 				FCDCC518266D3B0A0045D939 /* LocationsTableViewController.swift */,
 				FCDCC51B266D3C550045D939 /* MapViewController.swift */,
 				FCDCC51E266D3E6C0045D939 /* LocationAnnotation.swift */,
+				FC5A72A8266FD38E00BF9F23 /* ExportPDFViewController.swift */,
 			);
 			path = "FIT3178-Assignment-Bill-Tracking-App";
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 				FC9FE4C526307CEA00CA8D9A /* Sources */,
 				FC9FE4C626307CEA00CA8D9A /* Frameworks */,
 				FC9FE4C726307CEA00CA8D9A /* Resources */,
+				9F0C9D364DCD7AD362F4D232 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -221,9 +225,9 @@
 			);
 			name = "FIT3178-Assignment-Bill-Tracking-App";
 			packageProductDependencies = (
-				FC5FF1F12656DF1900ABF4F4 /* FirebaseAuth */,
-				FC5FF1F32656DF1900ABF4F4 /* FirebaseFirestore */,
-				FC5FF1F52656DF1900ABF4F4 /* FirebaseFirestoreSwift-Beta */,
+				FC5FF1F12656DF1900ABF4F4 /* SwiftPackageProductDependency */,
+				FC5FF1F32656DF1900ABF4F4 /* SwiftPackageProductDependency */,
+				FC5FF1F52656DF1900ABF4F4 /* SwiftPackageProductDependency */,
 			);
 			productName = "FIT3178-Assignment-Bill-Tracking-App";
 			productReference = FC9FE4C926307CEA00CA8D9A /* FIT3178-Assignment-Bill-Tracking-App.app */;
@@ -253,7 +257,7 @@
 			);
 			mainGroup = FC9FE4C026307CEA00CA8D9A;
 			packageReferences = (
-				FC5FF1F02656DF1900ABF4F4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				FC5FF1F02656DF1900ABF4F4 /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = FC9FE4CA26307CEA00CA8D9A /* Products */;
 			projectDirPath = "";
@@ -279,6 +283,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		9F0C9D364DCD7AD362F4D232 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FIT3178-Assignment-Bill-Tracking-App/Pods-FIT3178-Assignment-Bill-Tracking-App-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FIT3178-Assignment-Bill-Tracking-App/Pods-FIT3178-Assignment-Bill-Tracking-App-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FIT3178-Assignment-Bill-Tracking-App/Pods-FIT3178-Assignment-Bill-Tracking-App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C04BA4897895A6BD62896E3E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -335,6 +356,7 @@
 				FC95906B2641B71D009F5221 /* ExpenseDetailsTableViewController.swift in Sources */,
 				FC9FE4CF26307CEA00CA8D9A /* SceneDelegate.swift in Sources */,
 				FC46DF69263DB22B00D3D3E5 /* MulticastDelegate.swift in Sources */,
+				FC5A72A9266FD38E00BF9F23 /* ExportPDFViewController.swift in Sources */,
 				FC071D9D2648CE75007AFC41 /* ViewSearchExpensesTableViewController.swift in Sources */,
 				FC64C44126431E2800CA3B4B /* UIViewController-Extensions.swift in Sources */,
 				FC78C0872657F9BC00A29744 /* SignUpViewController.swift in Sources */,
@@ -545,7 +567,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FC5FF1F02656DF1900ABF4F4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		FC5FF1F02656DF1900ABF4F4 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
@@ -556,19 +578,19 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FC5FF1F12656DF1900ABF4F4 /* FirebaseAuth */ = {
+		FC5FF1F12656DF1900ABF4F4 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FC5FF1F02656DF1900ABF4F4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = FC5FF1F02656DF1900ABF4F4 /* RemoteSwiftPackageReference */;
 			productName = FirebaseAuth;
 		};
-		FC5FF1F32656DF1900ABF4F4 /* FirebaseFirestore */ = {
+		FC5FF1F32656DF1900ABF4F4 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FC5FF1F02656DF1900ABF4F4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = FC5FF1F02656DF1900ABF4F4 /* RemoteSwiftPackageReference */;
 			productName = FirebaseFirestore;
 		};
-		FC5FF1F52656DF1900ABF4F4 /* FirebaseFirestoreSwift-Beta */ = {
+		FC5FF1F52656DF1900ABF4F4 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FC5FF1F02656DF1900ABF4F4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = FC5FF1F02656DF1900ABF4F4 /* RemoteSwiftPackageReference */;
 			productName = "FirebaseFirestoreSwift-Beta";
 		};
 /* End XCSwiftPackageProductDependency section */

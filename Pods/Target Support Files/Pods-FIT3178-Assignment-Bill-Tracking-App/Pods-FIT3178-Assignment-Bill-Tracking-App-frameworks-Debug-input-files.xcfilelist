@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-FIT3178-Assignment-Bill-Tracking-App/Pods-FIT3178-Assignment-Bill-Tracking-App-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Charts/Charts.framework
+${BUILT_PRODUCTS_DIR}/SimplePDF/SimplePDF.framework
+${BUILT_PRODUCTS_DIR}/SwiftCSVExport/SwiftCSVExport.framework

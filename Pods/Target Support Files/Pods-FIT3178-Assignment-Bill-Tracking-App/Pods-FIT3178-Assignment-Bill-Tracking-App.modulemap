@@ -1,4 +1,4 @@
-module Pods_FIT3178_Assignment_Bill_Tracking_App {
+framework module Pods_FIT3178_Assignment_Bill_Tracking_App {
   umbrella header "Pods-FIT3178-Assignment-Bill-Tracking-App-umbrella.h"
 
   export *

@@ -1,4 +1,4 @@
-module SwiftCSVExport {
+framework module SwiftCSVExport {
   umbrella header "SwiftCSVExport-umbrella.h"
 
   export *

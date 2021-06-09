@@ -787,6 +787,88 @@
             </objects>
             <point key="canvasLocation" x="4671.0144927536239" y="79.6875"/>
         </scene>
+        <!--Export to PDF-->
+        <scene sceneID="ZUA-Mg-4G2">
+            <objects>
+                <viewController id="5fh-f5-amw" customClass="ExportPDFViewController" customModule="FIT3178_Assignment_Bill_Tracking_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cqY-Ri-VZZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Date:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H9G-nD-oyh">
+                                <rect key="frame" x="10" y="108" width="394" height="25.5"/>
+                                <color key="backgroundColor" name="PastelGreen"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" name="WelcomeGreen"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" verticalHuggingPriority="253" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="zE3-sc-E5J">
+                                <rect key="frame" x="0.0" y="143.5" width="414" height="216"/>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
+                                    <!--1970-01-01 11:00:00 +0000-->
+                                </date>
+                                <date key="maximumDate" timeIntervalSinceReferenceDate="1167562800">
+                                    <!--2037-12-31 11:00:00 +0000-->
+                                </date>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Date:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTv-v8-O8M">
+                                <rect key="frame" x="10" y="369.5" width="394" height="25.5"/>
+                                <color key="backgroundColor" name="PastelRed"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" systemColor="systemPinkColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="0pK-mt-fkV">
+                                <rect key="frame" x="10" y="405" width="394" height="216"/>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
+                                    <!--1970-01-01 11:00:00 +0000-->
+                                </date>
+                                <date key="maximumDate" timeIntervalSinceReferenceDate="1167562800">
+                                    <!--2037-12-31 11:00:00 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ida-Ho-Ql3">
+                                <rect key="frame" x="10" y="763" width="394" height="30"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <state key="normal" title="Export!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="exportCSV:" destination="Avf-F2-GMM" eventType="touchUpInside" id="u97-HQ-ukQ"/>
+                                    <action selector="exportPDF:" destination="5fh-f5-amw" eventType="touchUpInside" id="IdF-wA-CQl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ody-ZU-TLC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ody-ZU-TLC" firstAttribute="trailing" secondItem="FTv-v8-O8M" secondAttribute="trailing" constant="10" id="8Y0-Bc-L01"/>
+                            <constraint firstItem="Ody-ZU-TLC" firstAttribute="trailing" secondItem="Ida-Ho-Ql3" secondAttribute="trailing" constant="10" id="8yw-4D-k2c"/>
+                            <constraint firstItem="Ody-ZU-TLC" firstAttribute="trailing" secondItem="H9G-nD-oyh" secondAttribute="trailing" constant="10" id="9tl-3t-7wS"/>
+                            <constraint firstItem="Ody-ZU-TLC" firstAttribute="bottom" secondItem="Ida-Ho-Ql3" secondAttribute="bottom" constant="20" id="FsB-cX-MAP"/>
+                            <constraint firstItem="Ida-Ho-Ql3" firstAttribute="leading" secondItem="Ody-ZU-TLC" secondAttribute="leading" constant="10" id="IfU-lx-5Q7"/>
+                            <constraint firstItem="zE3-sc-E5J" firstAttribute="trailing" secondItem="Ody-ZU-TLC" secondAttribute="trailing" id="LmU-W4-Pev"/>
+                            <constraint firstItem="FTv-v8-O8M" firstAttribute="top" secondItem="zE3-sc-E5J" secondAttribute="bottom" constant="10" id="OlQ-6u-sPO"/>
+                            <constraint firstItem="0pK-mt-fkV" firstAttribute="top" secondItem="FTv-v8-O8M" secondAttribute="bottom" constant="10" id="QXh-zC-IKl"/>
+                            <constraint firstItem="Ody-ZU-TLC" firstAttribute="trailing" secondItem="0pK-mt-fkV" secondAttribute="trailing" constant="10" id="RS3-lG-feC"/>
+                            <constraint firstItem="zE3-sc-E5J" firstAttribute="top" secondItem="H9G-nD-oyh" secondAttribute="bottom" constant="10" id="XcS-6c-jgQ"/>
+                            <constraint firstItem="zE3-sc-E5J" firstAttribute="leading" secondItem="Ody-ZU-TLC" secondAttribute="leading" id="afO-Q4-obQ"/>
+                            <constraint firstItem="H9G-nD-oyh" firstAttribute="leading" secondItem="Ody-ZU-TLC" secondAttribute="leading" constant="10" id="kXA-Ld-sCM"/>
+                            <constraint firstItem="FTv-v8-O8M" firstAttribute="leading" secondItem="Ody-ZU-TLC" secondAttribute="leading" constant="10" id="qIo-1g-nuR"/>
+                            <constraint firstItem="0pK-mt-fkV" firstAttribute="leading" secondItem="Ody-ZU-TLC" secondAttribute="leading" constant="10" id="v9R-BC-T1N"/>
+                            <constraint firstItem="H9G-nD-oyh" firstAttribute="top" secondItem="Ody-ZU-TLC" secondAttribute="top" constant="20" id="zgK-e0-vQu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Export to PDF" id="Ivv-xk-bgc"/>
+                    <connections>
+                        <outlet property="endDate" destination="0pK-mt-fkV" id="Pus-zZ-HNj"/>
+                        <outlet property="startDate" destination="zE3-sc-E5J" id="hnp-mm-4z2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jvm-xs-QRM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3816" y="-595"/>
+        </scene>
         <!--Export to CSV-->
         <scene sceneID="1Zp-QN-cF9">
             <objects>
@@ -846,15 +928,15 @@
                             <constraint firstItem="F9H-zP-sZ5" firstAttribute="bottom" secondItem="WxG-F7-AqI" secondAttribute="bottom" constant="20" id="9o3-VI-SOF"/>
                             <constraint firstItem="ax8-2a-RQ9" firstAttribute="top" secondItem="MeD-0J-i4o" secondAttribute="bottom" constant="10" id="DXy-7w-Rhw"/>
                             <constraint firstItem="3ey-hE-NpT" firstAttribute="top" secondItem="ax8-2a-RQ9" secondAttribute="bottom" constant="10" id="F9H-5d-Apb"/>
-                            <constraint firstItem="3ey-hE-NpT" firstAttribute="leading" secondItem="Uhg-JP-VH3" secondAttribute="leading" id="Hvt-ou-F5h"/>
                             <constraint firstItem="MeD-0J-i4o" firstAttribute="leading" secondItem="F9H-zP-sZ5" secondAttribute="leading" id="Nh6-LZ-gW3"/>
                             <constraint firstItem="F9H-zP-sZ5" firstAttribute="trailing" secondItem="3ey-hE-NpT" secondAttribute="trailing" id="Ok3-fS-dox"/>
                             <constraint firstItem="F9H-zP-sZ5" firstAttribute="trailing" secondItem="0SS-5J-BeB" secondAttribute="trailing" constant="10" id="QsO-Bq-nPo"/>
                             <constraint firstItem="ax8-2a-RQ9" firstAttribute="leading" secondItem="F9H-zP-sZ5" secondAttribute="leading" constant="10" id="UYh-h6-9uC"/>
+                            <constraint firstItem="F9H-zP-sZ5" firstAttribute="trailing" secondItem="MeD-0J-i4o" secondAttribute="trailing" id="aXn-uy-vef"/>
                             <constraint firstItem="WxG-F7-AqI" firstAttribute="leading" secondItem="F9H-zP-sZ5" secondAttribute="leading" constant="10" id="i7J-gV-Ru8"/>
+                            <constraint firstItem="3ey-hE-NpT" firstAttribute="leading" secondItem="F9H-zP-sZ5" secondAttribute="leading" id="ksr-YS-4nP"/>
                             <constraint firstItem="0SS-5J-BeB" firstAttribute="top" secondItem="F9H-zP-sZ5" secondAttribute="top" constant="20" id="nHX-Xb-hia"/>
                             <constraint firstItem="F9H-zP-sZ5" firstAttribute="trailing" secondItem="WxG-F7-AqI" secondAttribute="trailing" constant="10" id="t7K-L4-z9S"/>
-                            <constraint firstAttribute="trailing" secondItem="MeD-0J-i4o" secondAttribute="trailing" id="w3c-n7-obm"/>
                             <constraint firstItem="MeD-0J-i4o" firstAttribute="top" secondItem="0SS-5J-BeB" secondAttribute="bottom" constant="10" id="wsp-x7-E4h"/>
                         </constraints>
                     </view>
@@ -900,6 +982,13 @@
                                     <segue destination="Avf-F2-GMM" kind="show" identifier="exportCSVSegue" id="jJg-La-Kd4"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xgf-as-eIp">
+                                <rect key="frame" x="20" y="683" width="374" height="30"/>
+                                <state key="normal" title="Export to PDF"/>
+                                <connections>
+                                    <segue destination="5fh-f5-amw" kind="show" identifier="exportPDFSegue" id="g9M-f4-YR1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Rzu-6g-GVW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -909,14 +998,17 @@
                             <constraint firstItem="6gb-zY-Bvf" firstAttribute="leading" secondItem="Rzu-6g-GVW" secondAttribute="leading" constant="20" id="FiM-YD-Rut"/>
                             <constraint firstItem="Ipq-SK-xqM" firstAttribute="top" secondItem="Rzu-6g-GVW" secondAttribute="top" constant="10" id="G34-pE-eKL"/>
                             <constraint firstItem="Ipq-SK-xqM" firstAttribute="leading" secondItem="Rzu-6g-GVW" secondAttribute="leading" constant="5" id="RTm-EI-DPI"/>
+                            <constraint firstItem="xgf-as-eIp" firstAttribute="leading" secondItem="Rzu-6g-GVW" secondAttribute="leading" constant="20" id="WzC-Aj-N6F"/>
                             <constraint firstItem="rul-z5-XYH" firstAttribute="leading" secondItem="Rzu-6g-GVW" secondAttribute="leading" id="YUn-pV-4ZR"/>
                             <constraint firstItem="Rzu-6g-GVW" firstAttribute="trailing" secondItem="6gb-zY-Bvf" secondAttribute="trailing" constant="20" id="Znt-or-dlP"/>
                             <constraint firstItem="Rzu-6g-GVW" firstAttribute="bottom" secondItem="OMn-VQ-1HX" secondAttribute="bottom" constant="200" id="av7-ce-IEn"/>
                             <constraint firstItem="OMn-VQ-1HX" firstAttribute="leading" secondItem="Rzu-6g-GVW" secondAttribute="leading" constant="20" id="bCb-Uu-QBS"/>
+                            <constraint firstItem="Rzu-6g-GVW" firstAttribute="trailing" secondItem="xgf-as-eIp" secondAttribute="trailing" constant="20" id="fwW-gA-l9g"/>
                             <constraint firstItem="Rzu-6g-GVW" firstAttribute="trailing" secondItem="OMn-VQ-1HX" secondAttribute="trailing" constant="20" id="h6D-OA-aVj"/>
                             <constraint firstItem="rul-z5-XYH" firstAttribute="top" secondItem="Ipq-SK-xqM" secondAttribute="bottom" constant="10" id="iAq-f9-jW1"/>
                             <constraint firstItem="Rzu-6g-GVW" firstAttribute="trailing" secondItem="rul-z5-XYH" secondAttribute="trailing" id="qn6-2m-swy"/>
                             <constraint firstItem="OMn-VQ-1HX" firstAttribute="top" secondItem="rul-z5-XYH" secondAttribute="bottom" constant="40" id="uGn-MA-sxV"/>
+                            <constraint firstItem="xgf-as-eIp" firstAttribute="top" secondItem="6gb-zY-Bvf" secondAttribute="bottom" constant="20" id="x2f-B3-grD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gku-zI-ZAS"/>

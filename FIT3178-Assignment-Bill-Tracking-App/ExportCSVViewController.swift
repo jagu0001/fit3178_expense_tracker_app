@@ -55,7 +55,7 @@ class ExportCSVViewController: UIViewController {
         let export = CSVExport.export(writeCSVObj)
         
         if export.result.isSuccess {
-            displayMessage(title: "Success!", message: "File saved to \(export.filePath!)")
+            displayMessage(title: "Success!", message: "File has been saved to \(export.filePath!)")
         }
         else {
             displayMessage(title: "Error", message: "Error in exporting data: \(export.message)")
