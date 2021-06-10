@@ -39,7 +39,7 @@
                                 <rect key="frame" x="20" y="313" width="374" height="34"/>
                                 <color key="backgroundColor" name="TextfieldBlue"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CAq-Rs-7Ga">
                                 <rect key="frame" x="20" y="397" width="374" height="30"/>
@@ -193,7 +193,7 @@
             </objects>
             <point key="canvasLocation" x="492.75362318840581" y="79.6875"/>
         </scene>
-        <!--Locations Table View Controller-->
+        <!--Saved ATM Locations-->
         <scene sceneID="9kV-ec-EpD">
             <objects>
                 <tableViewController id="j8g-3X-BMu" customClass="LocationsTableViewController" customModule="FIT3178_Assignment_Bill_Tracking_App" customModuleProvider="target" sceneMemberID="viewController">
@@ -225,6 +225,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="iUM-DX-a74" kind="show" identifier="focusSegue" id="ynE-Wc-6OZ"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="infoCell" textLabel="8DW-xJ-ohk" style="IBUITableViewCellStyleDefault" id="eVp-tg-Hop" customClass="Lo">
                                 <rect key="frame" x="20" y="111" width="374" height="43.5"/>
@@ -249,7 +252,7 @@
                             <outlet property="delegate" destination="j8g-3X-BMu" id="PMf-YI-N9a"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="58K-5q-w7A">
+                    <navigationItem key="navigationItem" title="Saved ATM Locations" id="58K-5q-w7A">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="G0q-6a-JJE">
                             <connections>
                                 <segue destination="iUM-DX-a74" kind="show" id="T8v-Sj-rsS"/>
@@ -292,6 +295,111 @@
             </objects>
             <point key="canvasLocation" x="1793" y="-1313"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="m1u-TB-etR">
+            <objects>
+                <viewController id="nRl-c5-u8g" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g5c-Gs-s8m">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6d-fL-AP8">
+                                <rect key="frame" x="20" y="108" width="374" height="734"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="About">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" metaFont="miniSystem"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+Created by: Jason Agustino
+
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.36528497409326421" green="0.36528497409326421" blue="0.36528497409326421" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" metaFont="miniSystem"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Acknowledgements">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" metaFont="miniSystem"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+Portions of this software may utilize the following copyrighted material, the use of which is hereby acknowledged.
+
+
+Google Inc. - (Firebase)
+
+
+Nutchapon Rewik - (SimplePDF)
+The MIT License (MIT)
+
+Copyright (c) 2016 Nutchaphon Rewik
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+Vignesh - (SwiftCSVExport)
+MIT License
+
+Copyright (c) 2017 Vignesh
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+Daniel Cohen Gindi and Philipp Jahoda (Charts)
+
+Copyright 2016-2019 Daniel Cohen Gindi &amp; Philipp Jahoda
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.36528497409326421" green="0.36528497409326421" blue="0.36528497409326421" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" metaFont="miniSystem"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Lkz-zb-DEv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Y6d-fL-AP8" firstAttribute="top" secondItem="Lkz-zb-DEv" secondAttribute="top" constant="20" id="B7A-QD-iec"/>
+                            <constraint firstItem="Y6d-fL-AP8" firstAttribute="leading" secondItem="Lkz-zb-DEv" secondAttribute="leading" constant="20" id="bkf-70-One"/>
+                            <constraint firstItem="Lkz-zb-DEv" firstAttribute="bottom" secondItem="Y6d-fL-AP8" secondAttribute="bottom" constant="20" id="qhs-G8-onf"/>
+                            <constraint firstItem="Lkz-zb-DEv" firstAttribute="trailing" secondItem="Y6d-fL-AP8" secondAttribute="trailing" constant="20" id="vEm-gV-95V"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="3By-u8-fpp"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="as3-km-8tb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2909" y="-1325"/>
+        </scene>
         <!--Settings-->
         <scene sceneID="Lxx-ke-JDs">
             <objects>
@@ -307,12 +415,22 @@
                                     <action selector="signOut:" destination="qT2-hD-8bK" eventType="touchUpInside" id="Fsa-Kk-k5z"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jvi-9z-WPU">
+                                <rect key="frame" x="20" y="158" width="374" height="30"/>
+                                <state key="normal" title="About"/>
+                                <connections>
+                                    <segue destination="nRl-c5-u8g" kind="show" id="tj6-XP-0es"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dUJ-B3-20m"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="jvi-9z-WPU" firstAttribute="top" secondItem="ZAu-QF-u4R" secondAttribute="bottom" constant="20" id="EDL-lh-9Va"/>
+                            <constraint firstItem="dUJ-B3-20m" firstAttribute="trailing" secondItem="jvi-9z-WPU" secondAttribute="trailing" constant="20" id="TN3-jZ-tvx"/>
                             <constraint firstItem="dUJ-B3-20m" firstAttribute="trailing" secondItem="ZAu-QF-u4R" secondAttribute="trailing" constant="20" id="cpG-Tr-DhH"/>
                             <constraint firstItem="ZAu-QF-u4R" firstAttribute="top" secondItem="dUJ-B3-20m" secondAttribute="top" constant="20" id="hHC-m7-5Dz"/>
+                            <constraint firstItem="jvi-9z-WPU" firstAttribute="leading" secondItem="dUJ-B3-20m" secondAttribute="leading" constant="20" id="jAC-S2-wmh"/>
                             <constraint firstItem="ZAu-QF-u4R" firstAttribute="leading" secondItem="dUJ-B3-20m" secondAttribute="leading" constant="20" id="rEE-jl-iN2"/>
                         </constraints>
                     </view>
@@ -589,7 +707,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="752" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Biller Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RCE-3H-kKi">
+                            <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="752" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Expense Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RCE-3H-kKi">
                                 <rect key="frame" x="20" y="108" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -1213,6 +1331,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="F0b-bk-dsZ"/>
         <segue reference="UwO-WS-Lq2"/>
+        <segue reference="ynE-Wc-6OZ"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="chart.pie.fill" catalog="system" width="128" height="121"/>

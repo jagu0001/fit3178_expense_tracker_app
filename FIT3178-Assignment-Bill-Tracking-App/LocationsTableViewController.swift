@@ -7,7 +7,10 @@
 
 import UIKit
 
-class LocationsTableViewController: UITableViewController {
+class LocationsTableViewController: UITableViewController, DatabaseListener {
+    var listenerType: ListenerType = .mapAnnotation
+    weak var databaseController: DatabaseProtocol?
+    
     let CELL_LOCATION = "locationCell"
     let CELL_INFO = "infoCell"
     
@@ -15,10 +18,24 @@ class LocationsTableViewController: UITableViewController {
     let SECTION_INFO = 1
     
     weak var mapViewController: MapViewController?
-    var locationList = [LocationAnnotation]()
+    var annotationList = [MapAnnotation]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Set up database controller
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        databaseController = appDelegate?.databaseController
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        databaseController?.addListener(listener: self)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        databaseController?.removeListener(listener: self)
     }
 
     // MARK: - Table view data source
@@ -30,9 +47,9 @@ class LocationsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
             case SECTION_LOCATION:
-                return locationList.count
+                return annotationList.count
             case SECTION_INFO:
-                return locationList.count == 0 ? 1 : 0
+                return annotationList.count == 0 ? 1 : 0
             default:
                 return 0
         }
@@ -43,14 +60,16 @@ class LocationsTableViewController: UITableViewController {
         if indexPath.section == SECTION_INFO {
             let cell = tableView.dequeueReusableCell(withIdentifier: CELL_INFO, for: indexPath)
             cell.textLabel?.text = "Please tap the + button to save ATM locations"
+            cell.backgroundColor = UIColor(named: "PastelGreen")
             return cell
         }
         
         // Location cell
         let cell = tableView.dequeueReusableCell(withIdentifier: CELL_LOCATION, for: indexPath)
-        let location = locationList[indexPath.row]
+        let location = annotationList[indexPath.row]
         cell.textLabel?.text = location.title
-        cell.detailTextLabel?.text = "Lat: \(location.coordinate.latitude), Lon: \(location.coordinate.longitude)"
+        cell.detailTextLabel?.text = location.subtitle
+        cell.backgroundColor = UIColor(named: "ExpenseGray")
         return cell
     }
 
@@ -62,15 +81,12 @@ class LocationsTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            mapViewController?.mapView.removeAnnotation(locationList[indexPath.row])
-            locationList.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            databaseController?.deleteAnnotation(annotation: annotationList[indexPath.row])
         }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        mapViewController?.focusOn(annotation: locationList[indexPath.row])
-        splitViewController?.show(.secondary)
+
     }
 
     /*
@@ -87,15 +103,40 @@ class LocationsTableViewController: UITableViewController {
         return true
     }
     */
+    
+    // MARK: - Database Listener Protocol Methods
+    func onExpenseChange(change: DatabaseChange, expenses: [Expense]) {
+        // Do nothing
+    }
+    
+    func onPaidExpenseGroupChange(change: DatabaseChange, expenses: [Expense]) {
+        // Do nothing
+    }
+    
+    func onUnpaidExpenseGroupChange(change: DatabaseChange, expenses: [Expense]) {
+        // Do nothing
+    }
+    
+    func onMapAnnotationChange(change: DatabaseChange, annotations: [MapAnnotation]) {
+        annotationList = annotations
+        tableView.reloadData()
+    }
+    
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "focusSegue" {
+            let destination = segue.destination as! MapViewController
+            let indexPath = tableView.indexPathForSelectedRow
+            let annotationInfo = annotationList[indexPath!.row]
+            let annotation = LocationAnnotation(title: annotationInfo.title!, subtitle: annotationInfo.subtitle!, lat: annotationInfo.latitude, lon: annotationInfo.longitude)
+            
+            destination.focusLocation = annotation
+        }
     }
-    */
+    
 
 }

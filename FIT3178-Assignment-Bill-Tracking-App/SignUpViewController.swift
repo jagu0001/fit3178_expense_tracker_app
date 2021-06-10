@@ -8,7 +8,7 @@
 import UIKit
 import FirebaseAuth
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UITextFieldDelegate {
     var authHandle: AuthStateDidChangeListenerHandle?
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -16,6 +16,10 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         passwordTextField.isSecureTextEntry = true
+        
+        // Set textfields delegate as self to dismiss properly
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,6 +35,15 @@ class SignUpViewController: UIViewController {
         super.viewWillDisappear(true)
         guard let authHandle = authHandle else { return }
         Auth.auth().removeStateDidChangeListener(authHandle)
+    }
+    
+    @objc func tapDone(sender: Any) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     @IBAction func registerAccount(_ sender: Any) {

@@ -8,6 +8,9 @@
 import UIKit
 import SwiftCSVExport
 
+// This class uses the SwiftCSVExport library to export files to CSV
+// Full documentation can be found at: https://github.com/vigneshuvi/SwiftCSVExport
+
 class ExportCSVViewController: UIViewController {
     @IBOutlet weak var startDate: UIDatePicker!
     @IBOutlet weak var endDate: UIDatePicker!

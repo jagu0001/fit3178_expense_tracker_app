@@ -9,6 +9,9 @@ import UIKit
 import CoreLocation
 import Charts
 
+// This class uses the Teleport API to obtain monthly living costs for each region
+// Full documentation can be found at: https://developers.teleport.org/api/reference/
+
 class LocalDataViewController: UIViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     var cityName: String?
@@ -164,7 +167,11 @@ class LocalDataViewController: UIViewController, CLLocationManagerDelegate {
         }
 
         let expenseChartDataSet = BarChartDataSet(entries: expenseDataEntries, label: "My Expenses")
-        let localCostChartDataSet = BarChartDataSet(entries: localCostDataEntries, label: "Costs in \(self.cityName!)")
+        var localCostChartDataSet = BarChartDataSet(entries: localCostDataEntries, label: "Regular Costs")
+        
+        if let cityName = self.cityName {
+            localCostChartDataSet = BarChartDataSet(entries: localCostDataEntries, label: "Costs in \(cityName)")
+        }
 
         let dataSets: [BarChartDataSet] = [expenseChartDataSet, localCostChartDataSet]
         expenseChartDataSet.colors = [UIColor(red: 34/255, green: 126/255, blue: 230/255, alpha: 1)]

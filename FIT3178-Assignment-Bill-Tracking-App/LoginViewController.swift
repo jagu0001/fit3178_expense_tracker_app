@@ -8,7 +8,7 @@
 import UIKit
 import FirebaseAuth
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     var authHandle: AuthStateDidChangeListenerHandle?
 
     @IBOutlet weak var emailTextField: UITextField!
@@ -21,6 +21,10 @@ class LoginViewController: UIViewController {
             guard user != nil else { return }
             self.performSegue(withIdentifier: "loginSegue", sender: nil)
         }
+        
+        // Set textfields delegate to self to dismiss properly
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -34,6 +38,15 @@ class LoginViewController: UIViewController {
         passwordTextField.isSecureTextEntry = true
 
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func tapDone(sender: Any) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     @IBAction func loginAccount(_ sender: Any) {

@@ -19,6 +19,7 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
     var allExpensesFetchedResultsController: NSFetchedResultsController<Expense>?
     var paidExpenseGroupFetchedResultsController: NSFetchedResultsController<Expense>?
     var unpaidExpenseGroupFetchedResultsController: NSFetchedResultsController<Expense>?
+    var mapAnnotationsFetchedResultsController: NSFetchedResultsController<MapAnnotation>?
     
     lazy var paidExpenseGroup: ExpenseGroup = {
         var expenseGroups = [ExpenseGroup]()
@@ -73,15 +74,7 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
         
         super.init()
     }
-    
-    func testAddExpense() {
-        let expense1 = self.addExpense(name: "Test Paid Expense", tag: "Food", amount: 20.5, description: "This is a test expense", date: Date())
-        addExpenseToGroup(expense: expense1, group: paidExpenseGroup)
-        
-        let expense2 = self.addExpense(name: "Test Paid Expense 2", tag: "Drink", amount: 11.2, description: "This is a second test expense", date: Date())
-        addExpenseToGroup(expense: expense2, group: paidExpenseGroup)
-    }
-    
+
     func cleanup() {
         if persistentContainer.viewContext.hasChanges {
             saveContext(context: persistentContainer.viewContext)
@@ -122,6 +115,9 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
         if listener.listenerType == .unpaidGroup || listener.listenerType == .all {
             listener.onUnpaidExpenseGroupChange(change: .update, expenses: fetchUnpaidExpenses())
         }
+        if listener.listenerType == .mapAnnotation || listener.listenerType == .all {
+            listener.onMapAnnotationChange(change: .update, annotations: fetchMapAnnotations())
+        }
     }
     
     func removeListener(listener: DatabaseListener) {
@@ -142,6 +138,28 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
     
     func deleteExpense(expense: Expense) {
         persistentContainer.viewContext.delete(expense)
+    }
+    
+    func addAnnotation(latitude: Double, longitude: Double, title: String, subtitle: String) -> Bool {
+        // Check if same location has been added
+        // Return true if location is unique
+        let annotations = fetchMapAnnotations()
+        for annotation in annotations {
+            if annotation.latitude == latitude && annotation.longitude == longitude {
+                return false
+            }
+        }
+        let newAnnotation = NSEntityDescription.insertNewObject(forEntityName: "MapAnnotation", into: persistentContainer.viewContext) as! MapAnnotation
+        newAnnotation.latitude = latitude
+        newAnnotation.longitude = longitude
+        newAnnotation.title = title
+        newAnnotation.subtitle = subtitle
+        
+        return true
+    }
+    
+    func deleteAnnotation(annotation: MapAnnotation) {
+        persistentContainer.viewContext.delete(annotation)
     }
     
     func addExpenseGroup(name: String) -> ExpenseGroup {
@@ -264,6 +282,32 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
         return expenses
     }
     
+    func fetchMapAnnotations() -> [MapAnnotation] {
+        if mapAnnotationsFetchedResultsController == nil {
+            let request: NSFetchRequest<MapAnnotation> = MapAnnotation.fetchRequest()
+            let titleSortDescriptor = NSSortDescriptor(key: "title", ascending: true)
+            request.sortDescriptors = [titleSortDescriptor]
+            
+            // Initialize Fetched Results Controller
+            mapAnnotationsFetchedResultsController = NSFetchedResultsController<MapAnnotation>(fetchRequest: request, managedObjectContext: persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+            
+            // Set this class to be the results delegate
+            mapAnnotationsFetchedResultsController?.delegate = self
+            
+            do {
+                try mapAnnotationsFetchedResultsController?.performFetch()
+            }
+            catch {
+                print("Fetch request failed: \(error)")
+            }
+        }
+        
+        if let mapAnnotations = mapAnnotationsFetchedResultsController?.fetchedObjects {
+            return mapAnnotations
+        }
+        return [MapAnnotation]()
+    }
+    
     // MARK: - Fetched Results Controller Protocol Methods
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         if controller == allExpensesFetchedResultsController {
@@ -284,6 +328,13 @@ class CoreDataController: NSObject, DatabaseProtocol, NSFetchedResultsController
             listeners.invoke() { listener in
                 if listener.listenerType == .unpaidGroup || listener.listenerType == .all {
                     listener.onUnpaidExpenseGroupChange(change: .update, expenses: fetchUnpaidExpenses())
+                }
+            }
+        }
+        else if controller == mapAnnotationsFetchedResultsController {
+            listeners.invoke() { listener in
+                if listener.listenerType == .mapAnnotation || listener.listenerType == .all {
+                    listener.onMapAnnotationChange(change: .update, annotations: fetchMapAnnotations())
                 }
             }
         }

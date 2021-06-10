@@ -8,6 +8,9 @@
 import UIKit
 import SimplePDF
 
+// This class uses the SimplePDF library to create the PDF files
+// Full documentation can be found at: https://github.com/ishaq/SimplePDF
+
 class ExportPDFViewController: UIViewController {
 
     @IBOutlet weak var startDate: UIDatePicker!

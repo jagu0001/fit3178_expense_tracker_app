@@ -137,10 +137,6 @@ class ViewSearchExpensesTableViewController: UITableViewController, UISearchResu
         // Return false if you do not want the specified item to be editable.
         return true
     }
-
-    @IBAction func signOut(_ sender: Any) {
-        print("here")
-    }
     
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -161,11 +157,15 @@ class ViewSearchExpensesTableViewController: UITableViewController, UISearchResu
         }
         
         if searchText.count > 0 {
+            // Search and filter data by name, tag and date
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd MMMM yyyy"
+            
             filteredPaidExpenses = paidExpenses.filter({ (expense: Expense) -> Bool in
-                return ((expense.name?.lowercased().contains(searchText)) ?? false) || ((expense.tag?.lowercased().contains(searchText)) ?? false)
+                return ((expense.name?.lowercased().contains(searchText)) ?? false) || ((expense.tag?.lowercased().contains(searchText)) ?? false) || ((dateFormatter.string(from: expense.date!).lowercased().contains(searchText)))
             })
             filteredUnpaidExpenses = unpaidExpenses.filter({ (expense: Expense) -> Bool in
-                return (expense.name?.lowercased().contains(searchText) ?? false) || ((expense.tag?.lowercased().contains(searchText)) ?? false)
+                return (expense.name?.lowercased().contains(searchText) ?? false) || ((expense.tag?.lowercased().contains(searchText)) ?? false) || ((dateFormatter.string(from: expense.date!).lowercased().contains(searchText)))
             })
         }
         else {
@@ -191,6 +191,10 @@ class ViewSearchExpensesTableViewController: UITableViewController, UISearchResu
         unpaidExpenses = expenses
         updateSearchResults(for: navigationItem.searchController!)
         tableView.reloadData()
+    }
+    
+    func onMapAnnotationChange(change: DatabaseChange, annotations: [MapAnnotation]) {
+        // Do nothing
     }
 
     // MARK: - Navigation

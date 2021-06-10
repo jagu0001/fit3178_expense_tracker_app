@@ -24,9 +24,9 @@
 		FC5D42CC2643A15100F114DE /* ExpenseImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D42CB2643A15100F114DE /* ExpenseImageViewController.swift */; };
 		FC5D42DB2643AE1B00F114DE /* Expense+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D42D92643AE1B00F114DE /* Expense+CoreDataClass.swift */; };
 		FC5D42DC2643AE1B00F114DE /* Expense+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D42DA2643AE1B00F114DE /* Expense+CoreDataProperties.swift */; };
-		FC5FF1F22656DF1900ABF4F4 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = FC5FF1F12656DF1900ABF4F4 /* SwiftPackageProductDependency */; };
-		FC5FF1F42656DF1900ABF4F4 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = FC5FF1F32656DF1900ABF4F4 /* SwiftPackageProductDependency */; };
-		FC5FF1F62656DF1900ABF4F4 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = FC5FF1F52656DF1900ABF4F4 /* SwiftPackageProductDependency */; };
+		FC5FF1F22656DF1900ABF4F4 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FC5FF1F12656DF1900ABF4F4 /* FirebaseAuth */; };
+		FC5FF1F42656DF1900ABF4F4 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = FC5FF1F32656DF1900ABF4F4 /* FirebaseFirestore */; };
+		FC5FF1F62656DF1900ABF4F4 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = FC5FF1F52656DF1900ABF4F4 /* FirebaseFirestoreSwift-Beta */; };
 		FC5FF1F92656E31B00ABF4F4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC5FF1F82656E31B00ABF4F4 /* GoogleService-Info.plist */; };
 		FC64C44126431E2800CA3B4B /* UIViewController-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC64C44026431E2800CA3B4B /* UIViewController-Extensions.swift */; };
 		FC6A27FD265EB30D001AE26D /* ExportCSVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6A27FC265EB30D001AE26D /* ExportCSVViewController.swift */; };
@@ -40,13 +40,14 @@
 		FC9FE4D626307CED00CA8D9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC9FE4D526307CED00CA8D9A /* Assets.xcassets */; };
 		FC9FE4D926307CED00CA8D9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC9FE4D726307CED00CA8D9A /* LaunchScreen.storyboard */; };
 		FCBB3F262656EC8F002F0ED3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBB3F252656EC8F002F0ED3 /* LoginViewController.swift */; };
+		FCD241602671748200603D75 /* MapAnnotation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD2415E2671748200603D75 /* MapAnnotation+CoreDataClass.swift */; };
+		FCD241612671748200603D75 /* MapAnnotation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD2415F2671748200603D75 /* MapAnnotation+CoreDataProperties.swift */; };
 		FCDCC519266D3B0A0045D939 /* LocationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCC518266D3B0A0045D939 /* LocationsTableViewController.swift */; };
 		FCDCC51C266D3C550045D939 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCC51B266D3C550045D939 /* MapViewController.swift */; };
 		FCDCC51F266D3E6C0045D939 /* LocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCC51E266D3E6C0045D939 /* LocationAnnotation.swift */; };
 		FCE73178264AA74400D7D188 /* UrbanArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE73177264AA74400D7D188 /* UrbanArea.swift */; };
 		FCE73194264AACDA00D7D188 /* UrbanAreaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE73193264AACDA00D7D188 /* UrbanAreaData.swift */; };
 		FCE731A0264AB9EE00D7D188 /* LocalDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE7319F264AB9EE00D7D188 /* LocalDataViewController.swift */; };
-		FCED3A4C26372AC7006114F3 /* MyExpensesMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCED3A4B26372AC7006114F3 /* MyExpensesMainViewController.swift */; };
 		FCF9F063264CD381002D8279 /* CityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF9F062264CD381002D8279 /* CityData.swift */; };
 /* End PBXBuildFile section */
 
@@ -85,13 +86,14 @@
 		FC9FE4D826307CED00CA8D9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC9FE4DA26307CED00CA8D9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCBB3F252656EC8F002F0ED3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FCD2415E2671748200603D75 /* MapAnnotation+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapAnnotation+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		FCD2415F2671748200603D75 /* MapAnnotation+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapAnnotation+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		FCDCC518266D3B0A0045D939 /* LocationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsTableViewController.swift; sourceTree = "<group>"; };
 		FCDCC51B266D3C550045D939 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		FCDCC51E266D3E6C0045D939 /* LocationAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAnnotation.swift; sourceTree = "<group>"; };
 		FCE73177264AA74400D7D188 /* UrbanArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrbanArea.swift; sourceTree = "<group>"; };
 		FCE73193264AACDA00D7D188 /* UrbanAreaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrbanAreaData.swift; sourceTree = "<group>"; };
 		FCE7319F264AB9EE00D7D188 /* LocalDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataViewController.swift; sourceTree = "<group>"; };
-		FCED3A4B26372AC7006114F3 /* MyExpensesMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExpensesMainViewController.swift; sourceTree = "<group>"; };
 		FCF9F062264CD381002D8279 /* CityData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,9 +102,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC5FF1F62656DF1900ABF4F4 /* BuildFile in Frameworks */,
-				FC5FF1F22656DF1900ABF4F4 /* BuildFile in Frameworks */,
-				FC5FF1F42656DF1900ABF4F4 /* BuildFile in Frameworks */,
+				FC5FF1F62656DF1900ABF4F4 /* FirebaseFirestoreSwift-Beta in Frameworks */,
+				FC5FF1F22656DF1900ABF4F4 /* FirebaseAuth in Frameworks */,
+				FC5FF1F42656DF1900ABF4F4 /* FirebaseFirestore in Frameworks */,
 				DCDC8B06E3431CB006724A8A /* Pods_FIT3178_Assignment_Bill_Tracking_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -130,6 +132,8 @@
 		FC46DF5D263DAD9C00D3D3E5 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
+				FCD2415E2671748200603D75 /* MapAnnotation+CoreDataClass.swift */,
+				FCD2415F2671748200603D75 /* MapAnnotation+CoreDataProperties.swift */,
 				FC5D42D92643AE1B00F114DE /* Expense+CoreDataClass.swift */,
 				FC5D42DA2643AE1B00F114DE /* Expense+CoreDataProperties.swift */,
 				FC5D42B926437E2E00F114DE /* ImageMetaData+CoreDataClass.swift */,
@@ -182,7 +186,6 @@
 				FC9FE4D526307CED00CA8D9A /* Assets.xcassets */,
 				FC9FE4D726307CED00CA8D9A /* LaunchScreen.storyboard */,
 				FC9FE4DA26307CED00CA8D9A /* Info.plist */,
-				FCED3A4B26372AC7006114F3 /* MyExpensesMainViewController.swift */,
 				FC37B3F6264051940007A434 /* AddEditExpenseViewController.swift */,
 				FC95906A2641B71D009F5221 /* ExpenseDetailsTableViewController.swift */,
 				FC64C44026431E2800CA3B4B /* UIViewController-Extensions.swift */,
@@ -225,9 +228,9 @@
 			);
 			name = "FIT3178-Assignment-Bill-Tracking-App";
 			packageProductDependencies = (
-				FC5FF1F12656DF1900ABF4F4 /* SwiftPackageProductDependency */,
-				FC5FF1F32656DF1900ABF4F4 /* SwiftPackageProductDependency */,
-				FC5FF1F52656DF1900ABF4F4 /* SwiftPackageProductDependency */,
+				FC5FF1F12656DF1900ABF4F4 /* FirebaseAuth */,
+				FC5FF1F32656DF1900ABF4F4 /* FirebaseFirestore */,
+				FC5FF1F52656DF1900ABF4F4 /* FirebaseFirestoreSwift-Beta */,
 			);
 			productName = "FIT3178-Assignment-Bill-Tracking-App";
 			productReference = FC9FE4C926307CEA00CA8D9A /* FIT3178-Assignment-Bill-Tracking-App.app */;
@@ -257,7 +260,7 @@
 			);
 			mainGroup = FC9FE4C026307CEA00CA8D9A;
 			packageReferences = (
-				FC5FF1F02656DF1900ABF4F4 /* RemoteSwiftPackageReference */,
+				FC5FF1F02656DF1900ABF4F4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = FC9FE4CA26307CEA00CA8D9A /* Products */;
 			projectDirPath = "";
@@ -332,6 +335,7 @@
 				FCDCC51C266D3C550045D939 /* MapViewController.swift in Sources */,
 				FC9FE4D126307CEA00CA8D9A /* ViewController.swift in Sources */,
 				FC18B427265994F40042B3C2 /* ChartViewController.swift in Sources */,
+				FCD241602671748200603D75 /* MapAnnotation+CoreDataClass.swift in Sources */,
 				FC46DF60263DADD700D3D3E5 /* FIT3178-ExpenseApp-DataModel.xcdatamodeld in Sources */,
 				FC9FE4CD26307CEA00CA8D9A /* AppDelegate.swift in Sources */,
 				FC46DF6C263DB26200D3D3E5 /* DatabaseProtocol.swift in Sources */,
@@ -342,7 +346,6 @@
 				FC37B3F7264051940007A434 /* AddEditExpenseViewController.swift in Sources */,
 				FCE73178264AA74400D7D188 /* UrbanArea.swift in Sources */,
 				FC46DF6F263DB54700D3D3E5 /* CoreDataController.swift in Sources */,
-				FCED3A4C26372AC7006114F3 /* MyExpensesMainViewController.swift in Sources */,
 				FC43C2DE263F11B9008A167E /* ExpenseGroup+CoreDataProperties.swift in Sources */,
 				FC43C2DD263F11B9008A167E /* ExpenseGroup+CoreDataClass.swift in Sources */,
 				FCF9F063264CD381002D8279 /* CityData.swift in Sources */,
@@ -354,6 +357,7 @@
 				FCDCC519266D3B0A0045D939 /* LocationsTableViewController.swift in Sources */,
 				FC5D42CC2643A15100F114DE /* ExpenseImageViewController.swift in Sources */,
 				FC95906B2641B71D009F5221 /* ExpenseDetailsTableViewController.swift in Sources */,
+				FCD241612671748200603D75 /* MapAnnotation+CoreDataProperties.swift in Sources */,
 				FC9FE4CF26307CEA00CA8D9A /* SceneDelegate.swift in Sources */,
 				FC46DF69263DB22B00D3D3E5 /* MulticastDelegate.swift in Sources */,
 				FC5A72A9266FD38E00BF9F23 /* ExportPDFViewController.swift in Sources */,
@@ -567,7 +571,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FC5FF1F02656DF1900ABF4F4 /* RemoteSwiftPackageReference */ = {
+		FC5FF1F02656DF1900ABF4F4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
@@ -578,19 +582,19 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FC5FF1F12656DF1900ABF4F4 /* SwiftPackageProductDependency */ = {
+		FC5FF1F12656DF1900ABF4F4 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FC5FF1F02656DF1900ABF4F4 /* RemoteSwiftPackageReference */;
+			package = FC5FF1F02656DF1900ABF4F4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
 		};
-		FC5FF1F32656DF1900ABF4F4 /* SwiftPackageProductDependency */ = {
+		FC5FF1F32656DF1900ABF4F4 /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FC5FF1F02656DF1900ABF4F4 /* RemoteSwiftPackageReference */;
+			package = FC5FF1F02656DF1900ABF4F4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
 		};
-		FC5FF1F52656DF1900ABF4F4 /* SwiftPackageProductDependency */ = {
+		FC5FF1F52656DF1900ABF4F4 /* FirebaseFirestoreSwift-Beta */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FC5FF1F02656DF1900ABF4F4 /* RemoteSwiftPackageReference */;
+			package = FC5FF1F02656DF1900ABF4F4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseFirestoreSwift-Beta";
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -8,6 +8,9 @@
 import UIKit
 import Charts
 
+// This class uses the Charts library to create and display the charts
+// Full documentation can be found at: https://github.com/danielgindi/Charts
+
 class ChartViewController: UIViewController, DatabaseListener {
     var listenerType: ListenerType = .all
     weak var databaseController: DatabaseProtocol?
@@ -101,6 +104,10 @@ class ChartViewController: UIViewController, DatabaseListener {
     }
     
     func onUnpaidExpenseGroupChange(change: DatabaseChange, expenses: [Expense]) {
+        // Do nothing
+    }
+    
+    func onMapAnnotationChange(change: DatabaseChange, annotations: [MapAnnotation]) {
         // Do nothing
     }
 

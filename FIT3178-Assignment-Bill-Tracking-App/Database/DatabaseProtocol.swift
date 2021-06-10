@@ -17,6 +17,7 @@ enum ListenerType {
     case expense
     case unpaidGroup
     case paidGroup
+    case mapAnnotation
     case all
 }
 
@@ -25,6 +26,7 @@ protocol DatabaseListener: AnyObject {
     func onExpenseChange(change: DatabaseChange, expenses: [Expense])
     func onPaidExpenseGroupChange(change: DatabaseChange, expenses: [Expense])
     func onUnpaidExpenseGroupChange(change: DatabaseChange, expenses: [Expense])
+    func onMapAnnotationChange(change: DatabaseChange, annotations: [MapAnnotation])
 }
 
 protocol DatabaseProtocol: AnyObject {
@@ -38,6 +40,9 @@ protocol DatabaseProtocol: AnyObject {
     
     func addExpense(name: String, tag: String, amount: Float, description: String, date: Date) -> Expense
     func deleteExpense(expense: Expense)
+    
+    func addAnnotation(latitude: Double, longitude: Double, title: String, subtitle: String) -> Bool
+    func deleteAnnotation(annotation: MapAnnotation)
     
     func getChildContextExpense(expense: Expense?) -> Expense
     func saveChildContext()
