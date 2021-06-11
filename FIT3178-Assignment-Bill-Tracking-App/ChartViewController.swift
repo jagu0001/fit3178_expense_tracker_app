@@ -15,6 +15,7 @@ class ChartViewController: UIViewController, DatabaseListener {
     var listenerType: ListenerType = .all
     weak var databaseController: DatabaseProtocol?
     @IBOutlet weak var chartView: PieChartView!
+    @IBOutlet weak var dataTimeframeSegment: UISegmentedControl!
     
     var allExpenses: [Expense]?
     var tagTotals: ([String : Float])?
@@ -24,8 +25,6 @@ class ChartViewController: UIViewController, DatabaseListener {
         // Set up database controller
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         databaseController = appDelegate?.databaseController
-        
-        //customizeChart(dataPoints: players, values: goals.map {Double($0)})
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,26 +38,44 @@ class ChartViewController: UIViewController, DatabaseListener {
     }
     
     func customizeChart(dataPoints: [String], values: [Double]) {
-        // 1. Set ChartDataEntry
+        // Set ChartDataEntry
         var dataEntries: [ChartDataEntry] = []
         for i in 0..<dataPoints.count {
             let dataEntry = PieChartDataEntry(value: values[i], label: dataPoints[i], data: dataPoints[i] as AnyObject)
             dataEntries.append(dataEntry)
         }
         
-        // 2. Set ChartDataSet
+        // Set ChartDataSet
         let pieChartDataSet = PieChartDataSet(entries: dataEntries, label: nil)
-        pieChartDataSet.colors = ChartColorTemplates.colorful()
+        var colorfulTemplate = ChartColorTemplates.colorful()
+        colorfulTemplate.append(NSUIColor(red: 20/255.0, green: 67/255.0, blue: 180/255.0, alpha: 1.0))
+        pieChartDataSet.colors = colorfulTemplate
         
-        // 3. Set ChartData
+        // Set ChartData
         let pieChartData = PieChartData(dataSet: pieChartDataSet)
         let format = NumberFormatter()
         format.numberStyle = .currency
         let formatter = DefaultValueFormatter(formatter: format)
         pieChartData.setValueFormatter(formatter)
         
-        // 4. Assign it to the chart’s data
+        // Assign it to the chart’s data
         chartView.data = pieChartData
+        
+        // Add controls to segmented view
+        dataTimeframeSegment.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
+    }
+    
+    func customizeChartWithExpenses(expenses: [Expense]) {
+        let expenseTagData = calculateTotalExpenseTags(expenses: expenses)
+        var tagPoints: [String] = []
+        var tagValues: [Double] = []
+        
+        for (tag, total) in expenseTagData {
+            tagPoints.append(tag)
+            tagValues.append(Double(total))
+        }
+        
+        customizeChart(dataPoints: tagPoints, values: tagValues)
     }
     
     func calculateTotalExpenseTags(expenses: [Expense]) -> [String : Float] {
@@ -76,6 +93,39 @@ class ChartViewController: UIViewController, DatabaseListener {
         return tagTotals
     }
     
+    @objc func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            let monthExpenses = filterExpensesByMonth(expenses: allExpenses!)
+            customizeChartWithExpenses(expenses: monthExpenses)
+        }
+        else if sender.selectedSegmentIndex == 1 {
+            let quarterlyExpenses = filterExpensesByQuarter(expenses: allExpenses!)
+            customizeChartWithExpenses(expenses: quarterlyExpenses)
+        }
+        else {
+            let yearlyExpenses = filterExpensesByYear(expenses: allExpenses!)
+            customizeChartWithExpenses(expenses: yearlyExpenses)
+        }
+    }
+    
+    private func filterExpensesByMonth(expenses: [Expense]) -> [Expense] {
+        return expenses.filter {
+            return Calendar.current.component(.month, from: $0.date!) == Calendar.current.component(.month, from: Date())
+        }
+    }
+    
+    private func filterExpensesByQuarter(expenses: [Expense]) -> [Expense] {
+        return expenses.filter {
+            return Calendar.current.component(.quarter, from: $0.date!) == Calendar.current.component(.quarter, from: Date())
+        }
+    }
+    
+    private func filterExpensesByYear(expenses: [Expense]) -> [Expense] {
+        return expenses.filter {
+            return Calendar.current.component(.year, from: $0.date!) == Calendar.current.component(.year, from: Date())
+        }
+    }
+    
     // MARK: - DatabaseListener Protocol Methods
     
     func onExpenseChange(change: DatabaseChange, expenses: [Expense]) {
@@ -83,20 +133,20 @@ class ChartViewController: UIViewController, DatabaseListener {
         allExpenses = expenses
 
         // Filter expenses for only this month
-        let monthExpenses = expenses.filter {
-            return Calendar.current.component(.month, from: $0.date!) == Calendar.current.component(.month, from: Date())
+        var filteredExpenses: [Expense] = []
+        
+        switch dataTimeframeSegment.selectedSegmentIndex {
+            case 0:
+                filteredExpenses = filterExpensesByMonth(expenses: allExpenses!)
+            case 1:
+                filteredExpenses = filterExpensesByQuarter(expenses: allExpenses!)
+            case 2:
+                filteredExpenses = filterExpensesByYear(expenses: allExpenses!)
+            default:
+                filteredExpenses = []
         }
         
-        let expenseTagData = calculateTotalExpenseTags(expenses: monthExpenses)
-        var tagPoints: [String] = []
-        var tagValues: [Double] = []
-        
-        for (tag, total) in expenseTagData {
-            tagPoints.append(tag)
-            tagValues.append(Double(total))
-        }
-        
-        customizeChart(dataPoints: tagPoints, values: tagValues)
+        customizeChartWithExpenses(expenses: filteredExpenses)
     }
     
     func onPaidExpenseGroupChange(change: DatabaseChange, expenses: [Expense]) {

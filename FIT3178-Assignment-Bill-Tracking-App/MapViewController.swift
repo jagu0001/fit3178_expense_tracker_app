@@ -28,6 +28,10 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         // Add default annotations
         addDefaultAnnotations()
         
+        // Center MapView to Melbourne
+        let initialLocation = CLLocation(latitude: -37.8136, longitude: 144.9631)
+        mapView.centerToLocation(initialLocation)
+        
         // If a location was selected from previous screen, zoom in there
         if let focusLocation = self.focusLocation {
             focusOn(annotation: focusLocation)
@@ -113,4 +117,14 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     }
     */
 
+}
+
+private extension MKMapView {
+    func centerToLocation(_ location: CLLocation, regionRadius: CLLocationDistance = 10000) {
+        let coordinateRegion = MKCoordinateRegion(
+            center: location.coordinate,
+            latitudinalMeters: regionRadius,
+            longitudinalMeters: regionRadius)
+        setRegion(coordinateRegion, animated: true)
+    }
 }

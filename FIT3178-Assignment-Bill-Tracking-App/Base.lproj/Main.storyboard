@@ -304,7 +304,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6d-fL-AP8">
-                                <rect key="frame" x="20" y="108" width="374" height="734"/>
+                                <rect key="frame" x="20" y="108" width="374" height="685"/>
                                 <attributedString key="attributedText">
                                     <fragment content="About">
                                         <attributes>
@@ -400,7 +400,7 @@ Unless required by applicable law or agreed to in writing, software distributed 
             </objects>
             <point key="canvasLocation" x="2909" y="-1325"/>
         </scene>
-        <!--Settings-->
+        <!--Settings View Controller-->
         <scene sceneID="Lxx-ke-JDs">
             <objects>
                 <viewController id="qT2-hD-8bK" customClass="SettingsViewController" customModule="FIT3178_Assignment_Bill_Tracking_App" customModuleProvider="target" sceneMemberID="viewController">
@@ -419,7 +419,7 @@ Unless required by applicable law or agreed to in writing, software distributed 
                                 <rect key="frame" x="20" y="158" width="374" height="30"/>
                                 <state key="normal" title="About"/>
                                 <connections>
-                                    <segue destination="nRl-c5-u8g" kind="show" id="tj6-XP-0es"/>
+                                    <segue destination="nRl-c5-u8g" kind="show" id="7UZ-OJ-2rb"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -434,11 +434,11 @@ Unless required by applicable law or agreed to in writing, software distributed 
                             <constraint firstItem="ZAu-QF-u4R" firstAttribute="leading" secondItem="dUJ-B3-20m" secondAttribute="leading" constant="20" id="rEE-jl-iN2"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="gearshape" catalog="system" id="A9z-q8-oS6"/>
+                    <navigationItem key="navigationItem" id="KHX-wF-fIr"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S50-Qh-ckr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2897.1014492753625" y="-658.25892857142856"/>
+            <point key="canvasLocation" x="3807.2463768115945" y="-658.25892857142856"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="u4j-LI-wzc">
@@ -452,7 +452,7 @@ Unless required by applicable law or agreed to in writing, software distributed 
                     </tabBar>
                     <connections>
                         <segue destination="IZo-V8-Dgt" kind="relationship" relationship="viewControllers" id="ocR-7J-28c"/>
-                        <segue destination="qT2-hD-8bK" kind="relationship" relationship="viewControllers" id="JkX-45-la7"/>
+                        <segue destination="a7L-j5-Wlg" kind="relationship" relationship="viewControllers" id="JkX-45-la7"/>
                         <segue destination="04q-ei-nTA" kind="relationship" relationship="viewControllers" id="H84-gB-RDX"/>
                         <segue destination="sDH-dJ-zTW" kind="relationship" relationship="viewControllers" id="26h-oP-h8i"/>
                     </connections>
@@ -1002,7 +1002,7 @@ Unless required by applicable law or agreed to in writing, software distributed 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jvm-xs-QRM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3816" y="-595"/>
+            <point key="canvasLocation" x="4726.0869565217399" y="-595.3125"/>
         </scene>
         <!--Export to CSV-->
         <scene sceneID="1Zp-QN-cF9">
@@ -1083,7 +1083,7 @@ Unless required by applicable law or agreed to in writing, software distributed 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Nf-rJ-avR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4750.7246376811599" y="-595.3125"/>
+            <point key="canvasLocation" x="5660.8695652173919" y="-595.3125"/>
         </scene>
         <!--Chart View Controller-->
         <scene sceneID="iRl-Y9-d3o">
@@ -1094,61 +1094,73 @@ Unless required by applicable law or agreed to in writing, software distributed 
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rul-z5-XYH" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="141.5" width="414" height="401.5"/>
+                                <rect key="frame" x="0.0" y="141.5" width="414" height="440.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OMn-VQ-1HX">
-                                <rect key="frame" x="20" y="583" width="374" height="30"/>
-                                <state key="normal" title="Compare to Local Data"/>
-                                <connections>
-                                    <segue destination="59G-GC-Max" kind="show" identifier="localDataSegue" id="W9O-ij-Aak"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Spendings This Month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ipq-SK-xqM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Total Expenses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ipq-SK-xqM">
                                 <rect key="frame" x="5" y="98" width="389" height="33.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <color key="textColor" name="WelcomeGreen"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6gb-zY-Bvf">
-                                <rect key="frame" x="20" y="633" width="374" height="30"/>
+                                <rect key="frame" x="20" y="703" width="374" height="30"/>
                                 <state key="normal" title="Export to CSV"/>
                                 <connections>
                                     <segue destination="Avf-F2-GMM" kind="show" identifier="exportCSVSegue" id="jJg-La-Kd4"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xgf-as-eIp">
-                                <rect key="frame" x="20" y="683" width="374" height="30"/>
+                                <rect key="frame" x="20" y="753" width="374" height="30"/>
                                 <state key="normal" title="Export to PDF"/>
                                 <connections>
                                     <segue destination="5fh-f5-amw" kind="show" identifier="exportPDFSegue" id="g9M-f4-YR1"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="MpD-vq-Osj">
+                                <rect key="frame" x="20" y="602" width="374" height="32"/>
+                                <segments>
+                                    <segment title="Monthly"/>
+                                    <segment title="Quarterly"/>
+                                    <segment title="Yearly"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OMn-VQ-1HX">
+                                <rect key="frame" x="20" y="653" width="374" height="30"/>
+                                <state key="normal" title="Compare to Local Data"/>
+                                <connections>
+                                    <segue destination="59G-GC-Max" kind="show" identifier="localDataSegue" id="W9O-ij-Aak"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Rzu-6g-GVW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Rzu-6g-GVW" firstAttribute="trailing" secondItem="MpD-vq-Osj" secondAttribute="trailing" constant="20" id="28h-Ze-v1s"/>
                             <constraint firstItem="Rzu-6g-GVW" firstAttribute="trailing" secondItem="Ipq-SK-xqM" secondAttribute="trailing" constant="20" id="58e-9S-cAO"/>
+                            <constraint firstItem="MpD-vq-Osj" firstAttribute="leading" secondItem="Rzu-6g-GVW" secondAttribute="leading" constant="20" id="5Pg-1u-clj"/>
                             <constraint firstItem="6gb-zY-Bvf" firstAttribute="top" secondItem="OMn-VQ-1HX" secondAttribute="bottom" constant="20" id="5Vu-hI-UNd"/>
+                            <constraint firstItem="Rzu-6g-GVW" firstAttribute="bottom" secondItem="xgf-as-eIp" secondAttribute="bottom" constant="30" id="Eqm-s3-nhk"/>
                             <constraint firstItem="6gb-zY-Bvf" firstAttribute="leading" secondItem="Rzu-6g-GVW" secondAttribute="leading" constant="20" id="FiM-YD-Rut"/>
                             <constraint firstItem="Ipq-SK-xqM" firstAttribute="top" secondItem="Rzu-6g-GVW" secondAttribute="top" constant="10" id="G34-pE-eKL"/>
                             <constraint firstItem="Ipq-SK-xqM" firstAttribute="leading" secondItem="Rzu-6g-GVW" secondAttribute="leading" constant="5" id="RTm-EI-DPI"/>
                             <constraint firstItem="xgf-as-eIp" firstAttribute="leading" secondItem="Rzu-6g-GVW" secondAttribute="leading" constant="20" id="WzC-Aj-N6F"/>
                             <constraint firstItem="rul-z5-XYH" firstAttribute="leading" secondItem="Rzu-6g-GVW" secondAttribute="leading" id="YUn-pV-4ZR"/>
                             <constraint firstItem="Rzu-6g-GVW" firstAttribute="trailing" secondItem="6gb-zY-Bvf" secondAttribute="trailing" constant="20" id="Znt-or-dlP"/>
-                            <constraint firstItem="Rzu-6g-GVW" firstAttribute="bottom" secondItem="OMn-VQ-1HX" secondAttribute="bottom" constant="200" id="av7-ce-IEn"/>
                             <constraint firstItem="OMn-VQ-1HX" firstAttribute="leading" secondItem="Rzu-6g-GVW" secondAttribute="leading" constant="20" id="bCb-Uu-QBS"/>
+                            <constraint firstItem="MpD-vq-Osj" firstAttribute="top" secondItem="rul-z5-XYH" secondAttribute="bottom" constant="20" id="fpR-3w-I27"/>
                             <constraint firstItem="Rzu-6g-GVW" firstAttribute="trailing" secondItem="xgf-as-eIp" secondAttribute="trailing" constant="20" id="fwW-gA-l9g"/>
                             <constraint firstItem="Rzu-6g-GVW" firstAttribute="trailing" secondItem="OMn-VQ-1HX" secondAttribute="trailing" constant="20" id="h6D-OA-aVj"/>
                             <constraint firstItem="rul-z5-XYH" firstAttribute="top" secondItem="Ipq-SK-xqM" secondAttribute="bottom" constant="10" id="iAq-f9-jW1"/>
                             <constraint firstItem="Rzu-6g-GVW" firstAttribute="trailing" secondItem="rul-z5-XYH" secondAttribute="trailing" id="qn6-2m-swy"/>
-                            <constraint firstItem="OMn-VQ-1HX" firstAttribute="top" secondItem="rul-z5-XYH" secondAttribute="bottom" constant="40" id="uGn-MA-sxV"/>
+                            <constraint firstItem="OMn-VQ-1HX" firstAttribute="top" secondItem="MpD-vq-Osj" secondAttribute="bottom" constant="20" id="sOq-OX-0if"/>
                             <constraint firstItem="xgf-as-eIp" firstAttribute="top" secondItem="6gb-zY-Bvf" secondAttribute="bottom" constant="20" id="x2f-B3-grD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gku-zI-ZAS"/>
                     <connections>
                         <outlet property="chartView" destination="rul-z5-XYH" id="Bq9-bQ-als"/>
+                        <outlet property="dataTimeframeSegment" destination="MpD-vq-Osj" id="pL1-U5-LDa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GwO-cG-OhE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1326,6 +1338,25 @@ Unless required by applicable law or agreed to in writing, software distributed 
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G5S-yi-Zrk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="882.60869565217399" y="-613.39285714285711"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="UUz-jU-hsb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="a7L-j5-Wlg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="gearshape" catalog="system" id="A9z-q8-oS6"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1zg-OX-moz">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qT2-hD-8bK" kind="relationship" relationship="rootViewController" id="E41-MT-O3w"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gDd-ni-sNT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2897.1014492753625" y="-658.25892857142856"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
